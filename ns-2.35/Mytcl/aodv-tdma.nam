@@ -1,0 +1,29 @@
+n -t * -s 0  -x 50 -y 50 -Z 0 -z 10  -v circle -c black
+n -t * -s 1  -x 50 -y 250 -Z 0 -z 10  -v circle -c black
+n -t * -s 2  -x 50 -y 450 -Z 0 -z 10  -v circle -c black
+n -t * -s 3  -x 50 -y 650 -Z 0 -z 10  -v circle -c black
+n -t * -s 4  -x 50 -y 850 -Z 0 -z 10  -v circle -c black
+n -t * -s 5  -x 250 -y 50 -Z 0 -z 10  -v circle -c black
+n -t * -s 6  -x 250 -y 250 -Z 0 -z 10  -v circle -c black
+n -t * -s 7  -x 250 -y 450 -Z 0 -z 10  -v circle -c black
+n -t * -s 8  -x 250 -y 650 -Z 0 -z 10  -v circle -c black
+n -t * -s 9  -x 250 -y 850 -Z 0 -z 10  -v circle -c black
+n -t * -s 10  -x 450 -y 50 -Z 0 -z 10  -v circle -c black
+n -t * -s 11  -x 450 -y 250 -Z 0 -z 10  -v circle -c black
+n -t * -s 12  -x 450 -y 450 -Z 0 -z 10  -v circle -c black
+n -t * -s 13  -x 450 -y 650 -Z 0 -z 10  -v circle -c black
+n -t * -s 14  -x 450 -y 850 -Z 0 -z 10  -v circle -c black
+n -t * -s 15  -x 650 -y 50 -Z 0 -z 10  -v circle -c black
+n -t * -s 16  -x 650 -y 250 -Z 0 -z 10  -v circle -c black
+n -t * -s 17  -x 650 -y 450 -Z 0 -z 10  -v circle -c black
+n -t * -s 18  -x 650 -y 650 -Z 0 -z 10  -v circle -c black
+n -t * -s 19  -x 650 -y 850 -Z 0 -z 10  -v circle -c black
+n -t * -s 20  -x 850 -y 50 -Z 0 -z 10  -v circle -c black
+n -t * -s 21  -x 850 -y 250 -Z 0 -z 10  -v circle -c black
+n -t * -s 22  -x 850 -y 450 -Z 0 -z 10  -v circle -c black
+n -t * -s 23  -x 850 -y 650 -Z 0 -z 10  -v circle -c black
+n -t * -s 24  -x 850 -y 850 -Z 0 -z 10  -v circle -c black
+V -t * -v 1.0a5 -a 0
+W -t * -x 1000 -y 1000
+A -t * -n 1 -p 0 -o 0x7fffffff -c 30 -a 1
+A -t * -h 1 -m 1073741823 -s 0
