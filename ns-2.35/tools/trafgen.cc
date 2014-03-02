@@ -41,8 +41,12 @@
 // Need to initialize runnin as 0 to avoid the attempt to cancel 
 //   unscheduled timer (xuanc 1/14/02)
 // Fix contributed by Frank A. Zdarsky <frank.zdarsky@kom.tu-darmstadt.de>
+
+//calculate flow ID
+int id_ = 1;
 TrafficGenerator::TrafficGenerator() : nextPkttime_(-1), running_(0), timer_(this)
 {
+	flow_id_ = id_ ++; //to give every flow the ID
 }
 
 

@@ -672,6 +672,11 @@ struct hdr_cmn {
 
 	ModulationScheme mod_scheme_;
 	inline ModulationScheme& mod_scheme() { return (mod_scheme_); }
+
+//flow information
+public:
+int flow_id;
+double QoS_BW;
 };
 
 class PacketHeaderClass : public TclClass {

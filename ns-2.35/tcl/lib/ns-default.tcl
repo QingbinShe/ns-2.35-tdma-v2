@@ -491,6 +491,8 @@ Application/Traffic/CBR set rate_ 448Kb	;# corresponds to interval of 3.75ms
 Application/Traffic/CBR set packetSize_ 210
 Application/Traffic/CBR set random_ 0
 Application/Traffic/CBR set maxpkts_ 268435456; # 0x10000000
+#add default value of QoS
+Application/Traffic/CBR set QoS_BW_ 100Kb
 
 Application/Telnet set interval_ 1.0
 

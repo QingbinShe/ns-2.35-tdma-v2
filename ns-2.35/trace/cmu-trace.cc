@@ -273,7 +273,7 @@ CMUTrace::format_mac_common(Packet *p, const char *why, int offset)
 #ifdef LOG_POSITION
 		"%c %.9f %d (%6.2f %6.2f) %3s %4s %d %s %d ",
 #else
-		"%c %.9f _%d_ %3s %4s %d %s %d",
+		"%c %.9f _%d_ %3s %4s %d %d %s %d",
 #endif
 		op,
 		Scheduler::instance().clock(),
@@ -284,6 +284,8 @@ CMUTrace::format_mac_common(Packet *p, const char *why, int offset)
 #endif
 		tracename,
 		why,
+		
+		ch->flow_id,
 		
                 ch->uid(),                      // identifier for this event
 		

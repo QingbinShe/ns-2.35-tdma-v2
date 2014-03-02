@@ -82,16 +82,23 @@ CBR_Traffic::CBR_Traffic() : seqno_(0)
 	bind("random_", &random_);
 	bind("packetSize_", &size_);
 	bind("maxpkts_", &maxpkts_);
+
+	//add QoS_BW_ to use in otcl
+	bind("QoS_BW_", &QoS_BW_);
 }
 
 void CBR_Traffic::init()
 {
         // compute inter-packet interval 
 	interval_ = (double)(size_ << 3)/(double)rate_;
-	if (agent_)
+	if (agent_) {
 		if (agent_->get_pkttype() != PT_TCP &&
  		    agent_->get_pkttype() != PT_TFRC)
 			agent_->set_pkttype(PT_CBR);
+	//initial QoS_BW_
+	agent_->flow_id_=flow_id_;
+	agent_->QoS_BW_=QoS_BW_;
+	}
 }
 
 void CBR_Traffic::start()

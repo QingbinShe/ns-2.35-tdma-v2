@@ -70,6 +70,10 @@ struct OldValue {
 class EventTrace;
 class Agent : public Connector {
  public:
+	//add flow information
+	int flow_id_;
+	double QoS_BW_;
+
 	Agent(packet_t pktType);
 	virtual ~Agent();
 	void recv(Packet*, Handler*);

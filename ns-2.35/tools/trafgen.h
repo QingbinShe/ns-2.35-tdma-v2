@@ -98,6 +98,10 @@ protected:
 	int size_;
 	int running_;
 	TrafficTimer timer_;
+
+	//add flowID and QoS
+	int flow_id_;
+	double QoS_BW_;
 };
 
 #endif
