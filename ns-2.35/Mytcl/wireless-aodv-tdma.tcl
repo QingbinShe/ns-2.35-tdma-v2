@@ -1,12 +1,15 @@
 #
 #===============设置默认的参数val(*)===============================
 #
-set opt(rate)	20                    ;#默认的数据发送速率为30bit/s
+set opt(flow)    0                     ;#设置默认flow数目
+set opt(rate)	 0                    ;#默认的数据发送速率为0bit/s
+set opt(slot_num_)    0                ;#默认slot数目为0
 
-set opt(flow)	0			;#flow个数
 proc getopt {argc argv} {                      ;#过程geiopt从命令行获取速率参数
     global opt
-    set opt(flow) [lindex $argv 0]     
+    set opt(flow) [lindex $argv 0]
+    set opt(rate) [lindex $argv 1]
+    set opt(slot_num_) [lindex $argv 2]   
 }
 
 set val(chan)    Channel/WirelessChannel      ;#物理信道类型：无线信道
@@ -63,7 +66,8 @@ $ns node-config -adhocRouting $val(rp) \
                 -movementTrace OFF \
 
 #定义节点的slot数目
-Mac/Tdma set max_slot_num_ 5
+getopt $argc $argv
+Mac/Tdma set max_slot_num_ $opt(slot_num_)
 
 #建立节点的位置
 set i 0				;#节点数目
@@ -129,9 +133,14 @@ while {$i < 25} {
 #set cbr(10) [new Application/Traffic/CBR] ;#在UDP代理上建立CBR流
 #$cbr(10) attach-agent $udp(10)
 
-#获得数据流个数
+#设置流的发送数率
 getopt $argc $argv
+Application/Traffic/CBR set QoS_BW_ $opt(rate)Kb
+#Application/Traffic/CBR set rate_ $opt(rate)Kb
+
 puts "opt(flow)=$opt(flow)"
+puts "opt(slot_num_)=$opt(slot_num_)"
+puts "opt(rate)=$opt(rate)"
 
 #获得随机数
 proc RandomRange {min max} {
@@ -167,6 +176,8 @@ puts "$i $node0 $node1"
     $ns connect $udp($i) $null($i)
     set cbr($i) [new Application/Traffic/CBR]
     $cbr($i) attach-agent $udp($i)
+
+$cbr($i) set rate_ $opt(rate)Kb
 }
 
 
@@ -215,7 +226,7 @@ proc finish { } {
 }
 
 $ns at $val(stop) "finish"
-$ns at $val(stop) "puts \"NS EXISTING...\"; $ns hait"
+$ns at $val(stop) "puts \"NS EXISTING...\";  $opt(slot_num_) $ns hait"
 
 puts "Start Simulation..."
 
