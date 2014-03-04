@@ -1539,6 +1539,7 @@ Packet *p = Packet::alloc();
 struct hdr_cmn *ch = HDR_CMN(p);
 struct hdr_ip *ih = HDR_IP(p);
 struct hdr_aodv_reply *rh = HDR_AODV_REPLY(p);
+AODV_Neighbor *nb = nbhead.lh_first;
 
 #ifdef DEBUG
 fprintf(stderr, "sending Hello from %d at %.2f\n", index, Scheduler::instance().clock());
@@ -1555,6 +1556,14 @@ fprintf(stderr, "sending Hello from %d at %.2f\n", index, Scheduler::instance().
  for (int i = 0; i < MAX_SLOT_NUM_; i++) {
    rh->rp_slotCondition[i] = macTdma->slotTb_.slotTable[i].flag;
  }
+ for (int a = 1; nb; nb = nb->nb_link.le_next) {
+   a --;
+   for (int i = 0; i < MAX_SLOT_NUM_; i++) {
+     rh->rp_nbSlotCondition[a] = nb->nb_slotCondition[i];
+     a ++;
+   }
+ }
+ 
 
 //test hello packet
 //printf("%f:index(%d) send hello packet. slotflag is:%d,%d,%d,%d,%d,%d,%d\n", CURRENT_TIME, index, macTdma->slotTb_.slotTable[0].flag, macTdma->slotTb_.slotTable[1].flag, macTdma->slotTb_.slotTable[2].flag, macTdma->slotTb_.slotTable[3].flag, macTdma->slotTb_.slotTable[4].flag, macTdma->slotTb_.slotTable[5].flag, macTdma->slotTb_.slotTable[6].flag);
@@ -1596,6 +1605,9 @@ AODV_Neighbor *nb;
  //to record the slot's used condition
    for (int i = 0; i < MAX_SLOT_NUM_; i++) {
      nb->nb_slotCondition[i] = rp->rp_slotCondition[i];
+   }
+   for (int i = 0; i < 4 * MAX_SLOT_NUM_; i++) {
+     nb->nb_nbSlotCondition[i] = rp->rp_nbSlotCondition[i];
    }
  }
 

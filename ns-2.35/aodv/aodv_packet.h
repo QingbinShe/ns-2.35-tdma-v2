@@ -127,6 +127,7 @@ struct hdr_aodv_reply {
 						// used to compute route discovery latency
 
 	int		rp_slotCondition[MAX_SLOT_NUM_];	//slot's used condition(copy from macTdma->slotTb_.slotTable[i].flag, 0:free, 1:send, -1:receive)
+	int		rp_nbSlotCondition[4 * MAX_SLOT_NUM_];
 
 	nsaddr_t	rp_packet_src;
 	nsaddr_t	rp_packet_dst;

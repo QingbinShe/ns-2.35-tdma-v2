@@ -59,6 +59,7 @@ class AODV_Neighbor {
 
 	//slot's used condition
 	int	nb_slotCondition[MAX_SLOT_NUM_];
+	int	nb_nbSlotCondition[4 * MAX_SLOT_NUM_];
 };
 
 LIST_HEAD(aodv_ncache, AODV_Neighbor);
