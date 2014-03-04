@@ -1556,8 +1556,7 @@ fprintf(stderr, "sending Hello from %d at %.2f\n", index, Scheduler::instance().
  for (int i = 0; i < MAX_SLOT_NUM_; i++) {
    rh->rp_slotCondition[i] = macTdma->slotTb_.slotTable[i].flag;
  }
- for (int a = 1; nb; nb = nb->nb_link.le_next) {
-   a --;
+ for (int a = 0; nb; nb = nb->nb_link.le_next) {
    for (int i = 0; i < MAX_SLOT_NUM_; i++) {
      rh->rp_nbSlotCondition[a] = nb->nb_slotCondition[i];
      a ++;
@@ -1605,10 +1604,13 @@ AODV_Neighbor *nb;
  //to record the slot's used condition
    for (int i = 0; i < MAX_SLOT_NUM_; i++) {
      nb->nb_slotCondition[i] = rp->rp_slotCondition[i];
+//     printf("%d\n", nb->nb_slotCondition[i]);
    }
    for (int i = 0; i < 4 * MAX_SLOT_NUM_; i++) {
      nb->nb_nbSlotCondition[i] = rp->rp_nbSlotCondition[i];
+//     printf("%d\n", nb->nb_nbSlotCondition[i]);
    }
+
  }
 
 //test hello packet
