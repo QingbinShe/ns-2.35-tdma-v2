@@ -346,6 +346,11 @@ class AODV: public Agent {
 	/* for passing packets up to agents */
 	PortClassifier *dmux_;
 
+//////////////////////////////////////////////
+static double global_rate;
+//////////////////////////////////////////////
+
+
 };
 
 #endif /* __aodv_h__ */

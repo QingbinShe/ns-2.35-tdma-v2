@@ -99,9 +99,9 @@ protected:
 	int running_;
 	TrafficTimer timer_;
 
-	//add flowID and QoS
-	int flow_id_;
-	double QoS_BW_;
+//add flowID and QoS
+int flow_id_;
+double rate_;
 };
 
 #endif

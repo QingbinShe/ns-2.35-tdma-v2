@@ -90,6 +90,7 @@ struct hdr_aodv_request {
 					// used to compute route discovery latency
 
 	int		rq_free_slot[MAX_SLOT_NUM_];	//record the free transmitting time slot set(0:free; 1:not free)
+	int		rq_slot_factor[MAX_SLOT_NUM_];  //record the factor of slot(the Factor[i] == the value)
 
   // This define turns on gratuitous replies- see aodv.cc for implementation contributed by
   // Anant Utgikar, 09/16/02.

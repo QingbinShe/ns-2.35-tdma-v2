@@ -46,7 +46,7 @@
 int id_ = 1;
 TrafficGenerator::TrafficGenerator() : nextPkttime_(-1), running_(0), timer_(this)
 {
-	flow_id_ = id_ ++; //to give every flow the ID
+flow_id_ = id_ ++; //to give every flow the ID
 }
 
 

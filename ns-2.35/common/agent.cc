@@ -465,9 +465,10 @@ Agent::initpkt(Packet* p) const
 
 	ch->error() = 0;	/* pkt not corrupt to start with */
 
-	//flow information
-	ch->flow_id=flow_id_;
-	ch->QoS_BW=QoS_BW_;
+//flow information
+ch->flow_id()=flow_id_;
+//ch->QoS_BW=QoS_BW_;
+ch->rate()=rate_;
 
 	hdr_ip* iph = hdr_ip::access(p);
 	iph->saddr() = here_.addr_;

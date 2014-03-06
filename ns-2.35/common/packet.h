@@ -597,6 +597,8 @@ enum ns_af_enum { NS_AF_NONE, NS_AF_ILINK, NS_AF_INET };
 enum ModulationScheme {BPSK = 0, QPSK = 1, QAM16 = 2, QAM64 = 3};
 
 struct hdr_cmn {
+int flow_id_;
+double rate_;
 
 	//to identify if the packet is Hello packet
 	int hello;
@@ -673,10 +675,13 @@ struct hdr_cmn {
 	ModulationScheme mod_scheme_;
 	inline ModulationScheme& mod_scheme() { return (mod_scheme_); }
 
+inline int& flow_id() {return (flow_id_);}
+inline double& rate() {return (rate_);}
+
 //flow information
-public:
-int flow_id;
-double QoS_BW;
+//public:
+//int flow_id;
+//double rate;
 };
 
 class PacketHeaderClass : public TclClass {

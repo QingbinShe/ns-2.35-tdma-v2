@@ -46,6 +46,7 @@ The AODV code developed by the CMU/MONARCH group was optimized and tuned by Sami
 static int route_request = 0;
 #endif
 
+double AODV::global_rate = 0;
 
 /*
   TCL Hooks
@@ -157,7 +158,7 @@ AODV::AODV(nsaddr_t id) : Agent(PT_AODV),
 			  btimer(this), htimer(this), ntimer(this), 
 			  rtimer(this), lrtimer(this), rqueue() {
  
-                
+bind("global_rate", &global_rate);                
   index = id;
   seqno = 2;
   bid = 1;
@@ -581,6 +582,8 @@ AODV::recv(Packet *p, Handler*) {
 struct hdr_cmn *ch = HDR_CMN(p);
 struct hdr_ip *ih = HDR_IP(p);
 
+//printf("\nin recv, flow and QoS is:%d, %f", ch->flow_id(), global_rate);
+
  assert(initialized());
  //assert(p->incoming == 0);
  // XXXXX NOTE: use of incoming flag has been depracated; In order to track direction of pkt flow, direction_ in hdr_cmn is used instead. see packet.h for details.
@@ -686,6 +689,8 @@ AODV::recvRequest(Packet *p) {
 struct hdr_ip *ih = HDR_IP(p);
 struct hdr_aodv_request *rq = HDR_AODV_REQUEST(p);
 aodv_rt_entry *rt;
+AODV_Neighbor *nb = nbhead.lh_first;
+struct hdr_cmn *ch = HDR_CMN(p);
 
  //test sendRequest
  /*printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
@@ -748,6 +753,35 @@ aodv_rt_entry *rt;
      temp_free_slot[i] = 1;
    }
  }
+
+//calculate the factor of this node
+for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
+  if (temp_free_slot[i] != 0) {
+    temp_free_slot[i] = -1;
+  }
+  if (temp_free_slot[i] == 0) {
+    for (; nb; nb = nb->nb_link.le_next) {
+        //this algorithm is not right for my protocol
+        int b = i;
+        if ((nb->nb_slotCondition[i] == 0) && (nb->nb_nbSlotCondition[b] == 0)) {
+          temp_free_slot[i] ++;
+        }
+        b = b + MAX_SLOT_NUM_;
+
+//printf("\nvalue of b in recvRREQ:%d\n", b);
+
+    }
+    temp_free_slot[i] = temp_free_slot[i] + rq->rq_slot_factor[i];
+  }
+}
+/*
+printf("in recvRREQ:");
+for (int i = 0; i < MAX_SLOT_NUM_; i++) {
+  printf(" %d ", temp_free_slot[i]);
+}
+printf("\n");
+*/
+
  //in my project, I just need one slot, find the slot number from 2(0 and 1 send control packet)
  int free_slot = SLOT_AS_CONTROL;
  for (; free_slot < MAX_SLOT_NUM_; free_slot++) {
@@ -761,6 +795,10 @@ aodv_rt_entry *rt;
    Packet::free(p);
    return;
  }
+
+//printf("\nin recvRREQ flow and QoS_BW is %d, %f:", ch->flow_id(), global_rate);
+ //double numberOfSlot = (int)(global_rate / 2000) + ();
+// printf("\nin recvRREQ:numberOfSlot is %f:", global_rate);
 
  //test if the free_slot calculate is right
  //printf("\n%f:index(%d)'s free_slot:%d\n\n", CURRENT_TIME, index, free_slot);
@@ -1269,6 +1307,9 @@ struct hdr_cmn *ch = HDR_CMN(p);
 struct hdr_ip *ih = HDR_IP(p);
 struct hdr_aodv_request *rq = HDR_AODV_REQUEST(p);
 aodv_rt_entry *rt = rtable.rt_lookup(dst);
+AODV_Neighbor *nb = nbhead.lh_first;
+
+//printf("\nin sendRREQ,flow and QoS_BW is: %d, %f", ch->flow_id(), global_rate);
 
 //printf("the rreq dst(%d) and src(%d)\n", dst, index);
 
@@ -1399,6 +1440,25 @@ aodv_rt_entry *rt = rtable.rt_lookup(dst);
  }
  nb_free_tslot(rq->rq_free_slot);
 // nb_free_tsloto(rq->rq_free_slot);
+
+//fill the Factor of time slot set
+for (int i = 0; i < MAX_SLOT_NUM_; i++) {
+  rq->rq_slot_factor[i] = 0;
+  if (rq->rq_free_slot[i] == 1) {
+    rq->rq_slot_factor[i] = -1;
+  }
+  else {
+    for (; nb; nb = nb->nb_link.le_next) {
+      for (int b = 0; b < 4 * MAX_SLOT_NUM_; b++) {
+        //this algorithm is not right for my protocol
+        if ((nb->nb_slotCondition[b % MAX_SLOT_NUM_] == 0) && (nb->nb_nbSlotCondition[b] == 0)) {
+          rq->rq_slot_factor[b % MAX_SLOT_NUM_] ++;
+        }
+      }
+    }
+  }
+}
+
 
  //test sendrreq
  /*printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
@@ -1556,10 +1616,16 @@ fprintf(stderr, "sending Hello from %d at %.2f\n", index, Scheduler::instance().
  for (int i = 0; i < MAX_SLOT_NUM_; i++) {
    rh->rp_slotCondition[i] = macTdma->slotTb_.slotTable[i].flag;
  }
- for (int a = 0; nb; nb = nb->nb_link.le_next) {
+ int a = 0;
+ for (; nb; nb = nb->nb_link.le_next) {
    for (int i = 0; i < MAX_SLOT_NUM_; i++) {
      rh->rp_nbSlotCondition[a] = nb->nb_slotCondition[i];
      a ++;
+   }
+ }
+ if (a < 4 * MAX_SLOT_NUM_ ) {
+   for (; a < 4 * MAX_SLOT_NUM_; a ++) {
+     rh->rp_nbSlotCondition[a] = -2;
    }
  }
  

@@ -285,7 +285,7 @@ CMUTrace::format_mac_common(Packet *p, const char *why, int offset)
 		tracename,
 		why,
 		
-		ch->flow_id,
+		ch->flow_id(),
 		
                 ch->uid(),                      // identifier for this event
 		

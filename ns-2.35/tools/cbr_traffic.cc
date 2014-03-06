@@ -82,9 +82,6 @@ CBR_Traffic::CBR_Traffic() : seqno_(0)
 	bind("random_", &random_);
 	bind("packetSize_", &size_);
 	bind("maxpkts_", &maxpkts_);
-
-	//add QoS_BW_ to use in otcl
-	bind("QoS_BW_", &QoS_BW_);
 }
 
 void CBR_Traffic::init()
@@ -97,7 +94,7 @@ void CBR_Traffic::init()
 			agent_->set_pkttype(PT_CBR);
 	//initial QoS_BW_
 	agent_->flow_id_=flow_id_;
-	agent_->QoS_BW_=QoS_BW_;
+	agent_->rate_=rate_;
 	}
 }
 

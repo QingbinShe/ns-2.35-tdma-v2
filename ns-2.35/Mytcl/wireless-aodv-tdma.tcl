@@ -3,7 +3,7 @@
 #
 set opt(flow)    0                     ;#设置默认flow数目
 set opt(rate)	 0                    ;#默认的数据发送速率为0bit/s
-set opt(slot_num_)    0                ;#默认slot数目为0
+set opt(slot_num_)    0                ;#默认slot数目为0,在aodv_share.h中还需要修改MAX_SLOT_NUM_
 
 proc getopt {argc argv} {                      ;#过程geiopt从命令行获取速率参数
     global opt
@@ -68,6 +68,9 @@ $ns node-config -adhocRouting $val(rp) \
 #定义节点的slot数目
 getopt $argc $argv
 Mac/Tdma set max_slot_num_ $opt(slot_num_)
+
+#定义发送数率(以K为单位),传送的是需要的时隙数目
+Agent/AODV set global_rate [expr int (((2000.0 / $opt(slot_num_)) + $opt(rate) - 1) / (2000.0 / $opt(slot_num_)))]
 
 #建立节点的位置
 set i 0				;#节点数目
@@ -135,8 +138,7 @@ while {$i < 25} {
 
 #设置流的发送数率
 getopt $argc $argv
-Application/Traffic/CBR set QoS_BW_ $opt(rate)Kb
-#Application/Traffic/CBR set rate_ $opt(rate)Kb
+Application/Traffic/CBR set rate_ $opt(rate)
 
 puts "opt(flow)=$opt(flow)"
 puts "opt(slot_num_)=$opt(slot_num_)"
@@ -177,7 +179,7 @@ puts "$i $node0 $node1"
     set cbr($i) [new Application/Traffic/CBR]
     $cbr($i) attach-agent $udp($i)
 
-$cbr($i) set rate_ $opt(rate)Kb
+#$cbr($i) set rate_ $opt(rate)Kb
 }
 
 
