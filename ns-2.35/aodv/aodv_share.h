@@ -1,3 +1,6 @@
+#ifndef SHARE_H
+#define SHARE_H
+
 #define	MAX_SLOT_NUM_		5
 
 #define	SLOT_NOTHING		0
@@ -16,3 +19,8 @@
 };
 */
 
+//int *GLOBAL_RATE;
+
+static int Global_Rate;
+
+#endif

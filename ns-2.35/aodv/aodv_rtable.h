@@ -146,7 +146,7 @@ class aodv_rt_entry {
         aodv_ncache          rt_nblist;
 
 	//to cash the free slot
-	int rt_temp_free_slot;
+	int *rt_temp_free_slot;
 };
 
 
@@ -163,7 +163,7 @@ class aodv_rtable {
 
         aodv_rt_entry*       rt_add(nsaddr_t id);
 	//reconstruct
-	aodv_rt_entry*       rt_add(nsaddr_t id, int free_slot);
+	aodv_rt_entry*       rt_add(nsaddr_t id, int *free_slot);
 
         void                 rt_delete(nsaddr_t id);
         aodv_rt_entry*       rt_lookup(nsaddr_t id);

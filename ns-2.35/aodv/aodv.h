@@ -278,7 +278,7 @@ class AODV: public Agent {
                                   nsaddr_t rpdst, u_int32_t rpseq,
                                   u_int32_t lifetime, double timestamp,
 				//add by myself to record the slot's information
-                                  nsaddr_t packet_src, nsaddr_t packet_dst, int slot);
+                                  nsaddr_t packet_src, nsaddr_t packet_dst, int *slot);
         void            sendError(Packet *p, bool jitter = true);
                                           
         /*

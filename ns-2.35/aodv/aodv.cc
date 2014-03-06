@@ -158,7 +158,8 @@ AODV::AODV(nsaddr_t id) : Agent(PT_AODV),
 			  btimer(this), htimer(this), ntimer(this), 
 			  rtimer(this), lrtimer(this), rqueue() {
  
-bind("global_rate", &global_rate);                
+bind("global_rate", &global_rate);
+Global_Rate = global_rate;                
   index = id;
   seqno = 2;
   bid = 1;
@@ -783,19 +784,42 @@ printf("\n");
 */
 
  //in my project, I just need one slot, find the slot number from 2(0 and 1 send control packet)
- int free_slot = SLOT_AS_CONTROL;
+/* int free_slot = SLOT_AS_CONTROL;
  for (; free_slot < MAX_SLOT_NUM_; free_slot++) {
    if (temp_free_slot[free_slot] == 0) {
      break;
    }
  }
+*/
+
+//////////////////////////////////////////////////////////////////////
+//find global_rate of slot in temp_free_slot[i]
+int free_slot_new[(int)(global_rate)];
+int free_slot = SLOT_AS_CONTROL;
+for (int a = 0; a < global_rate; a++) {
+  for (int b = SLOT_AS_CONTROL; b < MAX_SLOT_NUM_; b++ ) {
+    if ((temp_free_slot[free_slot] > temp_free_slot[b]) && (temp_free_slot[b] != -1)) {
+      free_slot = b;
+    }
+  }
+  if (temp_free_slot[free_slot] == -1) {
+    printf("index(%d) has not enought slot to allocate!!!\n", index);
+    Packet::free(p);
+    return;
+  }
+  free_slot_new[a] = free_slot;
+  temp_free_slot[free_slot] = -1;
+}
+
+////////////////////////////////////////////////////////////////////////
+
  //drop if there is no free slot in the path
- if (free_slot == MAX_SLOT_NUM_) {
+/* if (free_slot == MAX_SLOT_NUM_) {
    printf("index(%d) has no slot to allocate!!!!\n", index);
    Packet::free(p);
    return;
  }
-
+*/
 //printf("\nin recvRREQ flow and QoS_BW is %d, %f:", ch->flow_id(), global_rate);
  //double numberOfSlot = (int)(global_rate / 2000) + ();
 // printf("\nin recvRREQ:numberOfSlot is %f:", global_rate);
@@ -804,11 +828,12 @@ printf("\n");
  //printf("\n%f:index(%d)'s free_slot:%d\n\n", CURRENT_TIME, index, free_slot);
 
  //change the slot_usage_table
- macTdma->slotTb_.slotTable[free_slot].flag = -1;
- macTdma->slotTb_.slotTable[free_slot].expire = CURRENT_TIME + REV_ROUTE_LIFE;
- macTdma->slotTb_.slotTable[free_slot].src = rq->rq_src;
- macTdma->slotTb_.slotTable[free_slot].dst = rq->rq_dst;
-
+for (int i = 0; i < global_rate; i++) {
+ macTdma->slotTb_.slotTable[free_slot_new[i]].flag = -1;
+ macTdma->slotTb_.slotTable[free_slot_new[i]].expire = CURRENT_TIME + REV_ROUTE_LIFE;
+ macTdma->slotTb_.slotTable[free_slot_new[i]].src = rq->rq_src;
+ macTdma->slotTb_.slotTable[free_slot_new[i]].dst = rq->rq_dst;
+}
 /////////////////////////////////////////////////////
 printf("\n%f:recvRREQ:index(%d):", CURRENT_TIME, index);
 for (int i = 0; i < MAX_SLOT_NUM_; i++) {
@@ -834,11 +859,11 @@ printf("\n\n");
    if(rt0 == 0) { /* if not in the route table */
    // create an entry for the reverse route.
      //rt0 = rtable.rt_add(rq->rq_src);
-     rt0 = rtable.rt_add(rq->rq_src, free_slot);
+     rt0 = rtable.rt_add(rq->rq_src, free_slot_new);
    }
    else { /*because I need slot information, so I should change the information of reverse table*/
      rtable.rt_delete(rq->rq_src);
-     rt0 = rtable.rt_add(rq->rq_src, free_slot);
+     rt0 = rtable.rt_add(rq->rq_src, free_slot_new);
    }
    //test if the reverse has free_slot
    /*printf("\nindex(%d) temp the free slot:", index);
@@ -907,8 +932,11 @@ rt_update(rt0, rq->rq_src_seqno, rq->rq_hop_count, ih->saddr(),
    if (seqno%2) seqno++;
 
    //change the slot_table
-   macTdma->slotTb_.slotTable[free_slot].expire = CURRENT_TIME + TEST_ROUTE_TIMEOUT;
-
+   for (int i = 0; i < global_rate; i++) {
+     macTdma->slotTb_.slotTable[free_slot_new[i]].expire = CURRENT_TIME + TEST_ROUTE_TIMEOUT;
+   }
+   
+   
    sendReply(rq->rq_src,           // IP Destination
              1,                    // Hop Count
              index,                // Dest IP Address
@@ -917,7 +945,7 @@ rt_update(rt0, rq->rq_src_seqno, rq->rq_hop_count, ih->saddr(),
              rq->rq_timestamp,     // timestamp
              rq->rq_src,            //the packet's src
              index,                 //the packet's dst
-             free_slot);           //the packet's slot
+             free_slot_new);           //the packet's slot
  
    Packet::free(p);
  }
@@ -993,6 +1021,22 @@ rt_update(rt0, rq->rq_src_seqno, rq->rq_hop_count, ih->saddr(),
    }
    printf("\n");*/
 
+for (int i = 0; i < MAX_SLOT_NUM_; i++) {
+  rq->rq_slot_factor[i] = 0;
+  if (rq->rq_free_slot[i] == 1) {
+    rq->rq_slot_factor[i] = -1;
+  }
+  else {
+    for (; nb; nb = nb->nb_link.le_next) {
+      for (int b = 0; b < 4 * MAX_SLOT_NUM_; b++) {
+        if ((nb->nb_slotCondition[b % MAX_SLOT_NUM_] == 0) && (nb->nb_nbSlotCondition[b] == 0)) {
+          rq->rq_slot_factor[b % MAX_SLOT_NUM_] ++;
+        }
+      }
+    }
+  }
+}
+
    // Maximum sequence number seen en route
    if (rt) rq->rq_dst_seqno = max(rt->rt_seqno, rq->rq_dst_seqno);
    forward((aodv_rt_entry*) 0, p, DELAY);
@@ -1015,11 +1059,12 @@ double delay = 0.0;
 #endif // DEBUG
 
 //if the slot that reply has is not free, drop
-if (macTdma->slotTb_.slotTable[rp->rp_slot].flag != 0) {
+for (int i = 0; i < global_rate; i++) {
+if (macTdma->slotTb_.slotTable[rp->rp_slot[i]].flag != 0) {
 	Packet::free(p);
 	return;
 }
-
+}
 
  /*
   *  Got a reply. So reset the "soft state" maintained for 
@@ -1067,11 +1112,12 @@ if (ih->daddr() == index) { // If I am the original source
     rt->hist_indx = (rt->hist_indx + 1) % MAX_HISTORY;
 
     //change slot_usage_table
-    macTdma->slotTb_.slotTable[rp->rp_slot].flag = 1;
-    macTdma->slotTb_.slotTable[rp->rp_slot].src = rp->rp_packet_src;
-    macTdma->slotTb_.slotTable[rp->rp_slot].dst = rp->rp_packet_dst;
-    macTdma->slotTb_.slotTable[rp->rp_slot].expire = CURRENT_TIME + TEST_ROUTE_TIMEOUT;
-  	
+for (int i = 0; i < global_rate; i ++) {
+    macTdma->slotTb_.slotTable[rp->rp_slot[i]].flag = 1;
+    macTdma->slotTb_.slotTable[rp->rp_slot[i]].src = rp->rp_packet_src;
+    macTdma->slotTb_.slotTable[rp->rp_slot[i]].dst = rp->rp_packet_dst;
+    macTdma->slotTb_.slotTable[rp->rp_slot[i]].expire = CURRENT_TIME + TEST_ROUTE_TIMEOUT;
+}
 
 /////////////////////////////////////////////////////////////////////
 printf("\n%f:recvRREP:origin:index(%d):", CURRENT_TIME, index);
@@ -1137,12 +1183,13 @@ printf("\n\n");
    if(rt0 && (rt0->rt_hops != INFINITY2)) {
 
 //change slot_usage_table
-   macTdma->slotTb_.slotTable[rp->rp_slot].flag = 1;
-   macTdma->slotTb_.slotTable[rp->rp_slot].src = rp->rp_packet_src;
-   macTdma->slotTb_.slotTable[rp->rp_slot].dst = rp->rp_packet_dst;
-   macTdma->slotTb_.slotTable[rp->rp_slot].expire = CURRENT_TIME + TEST_ROUTE_TIMEOUT;
-   macTdma->slotTb_.slotTable[rt0->rt_temp_free_slot].expire = CURRENT_TIME + TEST_ROUTE_TIMEOUT;
-
+for (int i = 0; i < global_rate; i++){
+   macTdma->slotTb_.slotTable[rp->rp_slot[i]].flag = 1;
+   macTdma->slotTb_.slotTable[rp->rp_slot[i]].src = rp->rp_packet_src;
+   macTdma->slotTb_.slotTable[rp->rp_slot[i]].dst = rp->rp_packet_dst;
+   macTdma->slotTb_.slotTable[rp->rp_slot[i]].expire = CURRENT_TIME + TEST_ROUTE_TIMEOUT;
+   macTdma->slotTb_.slotTable[rt0->rt_temp_free_slot[i]].expire = CURRENT_TIME + TEST_ROUTE_TIMEOUT;
+}
 //////////////////////////////////////////////////////////////////
 printf("\n%f:recvRREP:forward:index(%d)", CURRENT_TIME, index);
 for (int i = 0; i < MAX_SLOT_NUM_; i++) {
@@ -1156,8 +1203,9 @@ printf("\n\n");
      rp->rp_src = index;
 
      //add by myself
-     rp->rp_slot = rt0->rt_temp_free_slot;
-
+for (int i = 0; i < global_rate; i++) {
+     rp->rp_slot[i] = rt0->rt_temp_free_slot[i];
+}
      forward(rt0, p, NO_DELAY);
      // Insert the nexthop towards the RREQ source to 
      // the precursor list of the RREQ destination
@@ -1482,7 +1530,7 @@ printf("\n\n");
 void
 AODV::sendReply(nsaddr_t ipdst, u_int32_t hop_count, nsaddr_t rpdst,
                 u_int32_t rpseq, u_int32_t lifetime, double timestamp,
-		nsaddr_t packet_src, nsaddr_t packet_dst, int slot) {
+		nsaddr_t packet_src, nsaddr_t packet_dst, int *slot) {
 Packet *p = Packet::alloc();
 struct hdr_cmn *ch = HDR_CMN(p);
 struct hdr_ip *ih = HDR_IP(p);
@@ -1520,7 +1568,9 @@ fprintf(stderr, "sending Reply from %d at %.2f\n", index, Scheduler::instance().
  //the information of slot
  rp->rp_packet_src = packet_src;
  rp->rp_packet_dst = packet_dst;
- rp->rp_slot = slot;
+ for (int i = 0; i < global_rate; i++) {
+   rp->rp_slot[i] = slot[i];
+ }
    
  // ch->uid() = 0;
  ch->ptype() = PT_AODV;
