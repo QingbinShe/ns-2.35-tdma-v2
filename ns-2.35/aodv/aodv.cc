@@ -159,7 +159,7 @@ AODV::AODV(nsaddr_t id) : Agent(PT_AODV),
 			  rtimer(this), lrtimer(this), rqueue() {
  
 bind("global_rate", &global_rate);
-Global_Rate = global_rate;                
+//Global_Rate = global_rate;                
   index = id;
   seqno = 2;
   bid = 1;
@@ -763,14 +763,11 @@ for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
   if (temp_free_slot[i] == 0) {
     for (; nb; nb = nb->nb_link.le_next) {
         //this algorithm is not right for my protocol
-        int b = i;
-        if ((nb->nb_slotCondition[i] == 0) && (nb->nb_nbSlotCondition[b] == 0)) {
+	for (int b = i; b < 4 * MAX_SLOT_NUM_; b = b + MAX_SLOT_NUM_) {
+	  if ((nb->nb_slotCondition[i] == 0) && (nb->nb_nbSlotCondition[b] == 0)) {
           temp_free_slot[i] ++;
-        }
-        b = b + MAX_SLOT_NUM_;
-
-//printf("\nvalue of b in recvRREQ:%d\n", b);
-
+          }
+	}
     }
     temp_free_slot[i] = temp_free_slot[i] + rq->rq_slot_factor[i];
   }
@@ -793,7 +790,7 @@ printf("\n");
 */
 
 //////////////////////////////////////////////////////////////////////
-//find global_rate of slot in temp_free_slot[i]
+//find global_rate of slots in temp_free_slot[i]
 int free_slot_new[(int)(global_rate)];
 int free_slot = SLOT_AS_CONTROL;
 for (int a = 0; a < global_rate; a++) {
@@ -859,11 +856,11 @@ printf("\n\n");
    if(rt0 == 0) { /* if not in the route table */
    // create an entry for the reverse route.
      //rt0 = rtable.rt_add(rq->rq_src);
-     rt0 = rtable.rt_add(rq->rq_src, free_slot_new);
+     rt0 = rtable.rt_add(rq->rq_src, free_slot_new, global_rate);
    }
    else { /*because I need slot information, so I should change the information of reverse table*/
      rtable.rt_delete(rq->rq_src);
-     rt0 = rtable.rt_add(rq->rq_src, free_slot_new);
+     rt0 = rtable.rt_add(rq->rq_src, free_slot_new, global_rate);
    }
    //test if the reverse has free_slot
    /*printf("\nindex(%d) temp the free slot:", index);
@@ -1021,7 +1018,7 @@ rt_update(rt0, rq->rq_src_seqno, rq->rq_hop_count, ih->saddr(),
    }
    printf("\n");*/
 
-for (int i = 0; i < MAX_SLOT_NUM_; i++) {
+for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
   rq->rq_slot_factor[i] = 0;
   if (rq->rq_free_slot[i] == 1) {
     rq->rq_slot_factor[i] = -1;
@@ -1060,10 +1057,10 @@ double delay = 0.0;
 
 //if the slot that reply has is not free, drop
 for (int i = 0; i < global_rate; i++) {
-if (macTdma->slotTb_.slotTable[rp->rp_slot[i]].flag != 0) {
+  if (macTdma->slotTb_.slotTable[rp->rp_slot[i]].flag != 0) {
 	Packet::free(p);
 	return;
-}
+  }
 }
 
  /*

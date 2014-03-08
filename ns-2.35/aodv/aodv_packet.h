@@ -132,7 +132,11 @@ struct hdr_aodv_reply {
 
 	nsaddr_t	rp_packet_src;
 	nsaddr_t	rp_packet_dst;
-	int		*rp_slot;
+/////////////////////////////////////////////////////////////////////
+//add newly
+int rp_global_rate;
+//////////////////////////////////////////////////////////////////////
+	int		rp_slot[global_rate];
 						
   inline int size() { 
   int sz = 0;

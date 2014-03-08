@@ -212,7 +212,7 @@ aodv_rt_entry *rt;
 }
 
 aodv_rt_entry*
-aodv_rtable::rt_add(nsaddr_t id, int *free_slot)
+aodv_rtable::rt_add(nsaddr_t id, int *free_slot, int Global_Rate)
 {
  aodv_rt_entry *rt;
  

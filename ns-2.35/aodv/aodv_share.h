@@ -21,6 +21,6 @@
 
 //int *GLOBAL_RATE;
 
-static int Global_Rate;
+//static int Global_Rate;
 
 #endif
