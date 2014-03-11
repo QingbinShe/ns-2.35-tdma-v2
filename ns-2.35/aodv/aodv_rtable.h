@@ -144,9 +144,10 @@ class aodv_rt_entry {
          * a list of neighbors that are using this route.
          */
         aodv_ncache          rt_nblist;
-
+//extern double global_rate;
+//static const int test = global_rate;
 	//to cash the free slot
-	int rt_temp_free_slot[global_rate];
+	int rt_temp_free_slot[MAX_SLOT_NUM_];
 };
 
 

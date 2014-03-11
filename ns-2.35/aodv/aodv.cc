@@ -157,9 +157,10 @@ AODV::command(int argc, const char*const* argv) {
 AODV::AODV(nsaddr_t id) : Agent(PT_AODV),
 			  btimer(this), htimer(this), ntimer(this), 
 			  rtimer(this), lrtimer(this), rqueue() {
- 
+//extern const int global_rate;
 bind("global_rate", &global_rate);
 //Global_Rate = global_rate;                
+
   index = id;
   seqno = 2;
   bid = 1;
