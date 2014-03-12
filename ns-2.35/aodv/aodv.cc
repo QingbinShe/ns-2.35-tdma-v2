@@ -762,9 +762,11 @@ for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
     temp_free_slot[i] = -1;
   }
   if (temp_free_slot[i] == 0) {
-    for (; nb; nb = nb->nb_link.le_next) {
+    struct hdr_cmn *ch = HDR_CMN(p);
+    for (AODV_Neighbor *nb = nbhead.lh_first; nb; nb = nb->nb_link.le_next) {
         //this algorithm is not right for my protocol
 	for (int b = i; b < 4 * MAX_SLOT_NUM_; b = b + MAX_SLOT_NUM_) {
+          if (nb->nb_nbSlotCondition[b] == -2) break;
 	  if ((nb->nb_slotCondition[i] == 0) && (nb->nb_nbSlotCondition[b] == 0)) {
           temp_free_slot[i] ++;
           }
@@ -791,10 +793,16 @@ printf("\n");
 */
 
 //////////////////////////////////////////////////////////////////////
-//find global_rate of slots in temp_free_slot[i]
-int free_slot_new[(int)(global_rate)];
-int free_slot = SLOT_AS_CONTROL;
+//find global_rate slots in temp_free_slot[i]
+int *free_slot_new = new int[(int)(global_rate)];
+
+printf("\nrecvRREQ:original free_slot_new[i]:");
+for (int i = 0; i < global_rate; i++) {
+  printf("%d,", free_slot_new[i]);
+}
+
 for (int a = 0; a < global_rate; a++) {
+  int free_slot = SLOT_AS_CONTROL;
   for (int b = SLOT_AS_CONTROL; b < MAX_SLOT_NUM_; b++ ) {
     if ((temp_free_slot[free_slot] > temp_free_slot[b]) && (temp_free_slot[b] != -1)) {
       free_slot = b;
@@ -833,11 +841,16 @@ for (int i = 0; i < global_rate; i++) {
  macTdma->slotTb_.slotTable[free_slot_new[i]].dst = rq->rq_dst;
 }
 /////////////////////////////////////////////////////
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 printf("\n%f:recvRREQ:index(%d):", CURRENT_TIME, index);
 for (int i = 0; i < MAX_SLOT_NUM_; i++) {
   printf("%d,", macTdma->slotTb_.slotTable[i].flag);
 }
-printf("\n\n");
+printf("\nrecvRREQ:free_slot_new[i]:");
+for (int i = 0; i < global_rate; i ++) {
+  printf("%d,", free_slot_new[i]);
+}
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
 ///////////////////////////////////////////////////
  /*
   * Cache the broadcast ID
@@ -900,7 +913,7 @@ rt_update(rt0, rq->rq_src_seqno, rq->rq_hop_count, ih->saddr(),
      while ((buffered_pkt = rqueue.deque(rt0->rt_dst))) {
        if (rt0 && (rt0->rt_flags == RTF_UP)) {
 	assert(rt0->rt_hops != INFINITY2);
-         forward(rt0, buffered_pkt, NO_DELAY);
+        // forward(rt0, buffered_pkt, NO_DELAY);     //delete by me, because I don't need it
        }
      }
    } 
@@ -1025,8 +1038,10 @@ for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
     rq->rq_slot_factor[i] = -1;
   }
   else {
-    for (; nb; nb = nb->nb_link.le_next) {
+    for (AODV_Neighbor *nb = nbhead.lh_first; nb; nb = nb->nb_link.le_next) {
       for (int b = 0; b < 4 * MAX_SLOT_NUM_; b++) {
+        if ((b % MAX_SLOT_NUM_) < SLOT_AS_CONTROL) continue;
+        if (nb->nb_nbSlotCondition[b] == -2) break;
         if ((nb->nb_slotCondition[b % MAX_SLOT_NUM_] == 0) && (nb->nb_nbSlotCondition[b] == 0)) {
           rq->rq_slot_factor[b % MAX_SLOT_NUM_] ++;
         }
@@ -1118,11 +1133,16 @@ for (int i = 0; i < global_rate; i ++) {
 }
 
 /////////////////////////////////////////////////////////////////////
+printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 printf("\n%f:recvRREP:origin:index(%d):", CURRENT_TIME, index);
 for(int i = 0; i < MAX_SLOT_NUM_; i++) {
   printf("%d,", macTdma->slotTb_.slotTable[i].flag);
 }
-printf("\n\n");
+printf("\nrecvRREP:rp_slot[i]:");
+for (int i = 0; i < MAX_SLOT_NUM_; i++) {
+  printf("%d,", rp->rp_slot[i]);
+}
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
 ///////////////////////////////////////////////////////////////////////
 }
 
@@ -1488,15 +1508,17 @@ AODV_Neighbor *nb = nbhead.lh_first;
 // nb_free_tsloto(rq->rq_free_slot);
 
 //fill the Factor of time slot set
-for (int i = 0; i < MAX_SLOT_NUM_; i++) {
+for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
   rq->rq_slot_factor[i] = 0;
   if (rq->rq_free_slot[i] == 1) {
     rq->rq_slot_factor[i] = -1;
   }
   else {
-    for (; nb; nb = nb->nb_link.le_next) {
+    for (AODV_Neighbor *nb = nbhead.lh_first; nb; nb = nb->nb_link.le_next) {
       for (int b = 0; b < 4 * MAX_SLOT_NUM_; b++) {
         //this algorithm is not right for my protocol
+        if ((b % MAX_SLOT_NUM_) < SLOT_AS_CONTROL) continue;
+        if (nb->nb_nbSlotCondition[b] == -2) break;
         if ((nb->nb_slotCondition[b % MAX_SLOT_NUM_] == 0) && (nb->nb_nbSlotCondition[b] == 0)) {
           rq->rq_slot_factor[b % MAX_SLOT_NUM_] ++;
         }
@@ -1515,11 +1537,16 @@ for (int i = 0; i < MAX_SLOT_NUM_; i++) {
  printf("\n"); 
 */
 /////////////////////////////////////////////////////////////////////
-printf("\n%f:recvRREP:origin:index(%d):", CURRENT_TIME, index);
+printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n%f:sendRREQ:origin:index(%d):", CURRENT_TIME, index);
 for(int i = 0; i < MAX_SLOT_NUM_; i++) {
   printf("%d,", macTdma->slotTb_.slotTable[i].flag);
 }
-printf("\n\n");
+printf("\nsendRREQ:rq->rq_slot_factor:");
+for (int i = 0; i < MAX_SLOT_NUM_; i ++) {
+  printf("%d,", rq->rq_slot_factor[i]);
+}
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
 ///////////////////////////////////////////////////////////////////////
  
  Scheduler::instance().schedule(target_, p, 0.006*MAX_SLOT_NUM_*(0.5+Random::uniform()));
@@ -1569,6 +1596,9 @@ fprintf(stderr, "sending Reply from %d at %.2f\n", index, Scheduler::instance().
  for (int i = 0; i < global_rate; i++) {
    rp->rp_slot[i] = slot[i];
  }
+ for (int i = global_rate; i < MAX_SLOT_NUM_; i++) {
+   rp->rp_slot[i] = -1;
+ }
    
  // ch->uid() = 0;
  ch->ptype() = PT_AODV;
@@ -1587,11 +1617,16 @@ fprintf(stderr, "sending Reply from %d at %.2f\n", index, Scheduler::instance().
  ih->ttl_ = NETWORK_DIAMETER;
 
 /////////////////////////////////////////////////////////////////////
-printf("\n%f:recvRREP:origin:index(%d):", CURRENT_TIME, index);
+printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n%f:sendRREP:origin:index(%d):", CURRENT_TIME, index);
 for(int i = 0; i < MAX_SLOT_NUM_; i++) {
   printf("%d,", macTdma->slotTb_.slotTable[i].flag);
 }
-printf("\n\n");
+printf("\nsendRREP:rp_slot[i]:");
+for (int i = 0; i < global_rate; i ++) {
+  printf("%d,", rp->rp_slot[i]);
+}
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
 ///////////////////////////////////////////////////////////////////////
 
  Scheduler::instance().schedule(target_, p, 0.006*MAX_SLOT_NUM_*(0.5+Random::uniform()));
@@ -1665,7 +1700,7 @@ fprintf(stderr, "sending Hello from %d at %.2f\n", index, Scheduler::instance().
    rh->rp_slotCondition[i] = macTdma->slotTb_.slotTable[i].flag;
  }
  int a = 0;
- for (; nb; nb = nb->nb_link.le_next) {
+ for (AODV_Neighbor *nb = nbhead.lh_first; nb; nb = nb->nb_link.le_next) {
    for (int i = 0; i < MAX_SLOT_NUM_; i++) {
      rh->rp_nbSlotCondition[a] = nb->nb_slotCondition[i];
      a ++;
@@ -1759,6 +1794,11 @@ AODV_Neighbor *nb = new AODV_Neighbor(rp->rp_dst);
  for (int i = 0; i < MAX_SLOT_NUM_; i++) {
    nb->nb_slotCondition[i] = rp->rp_slotCondition[i];
  }
+ for (int i = 0; i < 4 * MAX_SLOT_NUM_; i++) {
+   nb->nb_nbSlotCondition[i] = rp->rp_nbSlotCondition[i];
+//     printf("%d\n", nb->nb_nbSlotCondition[i]);
+ }
+
 
  LIST_INSERT_HEAD(&nbhead, nb, nb_link);
  seqno += 2;             // set of neighbors changed

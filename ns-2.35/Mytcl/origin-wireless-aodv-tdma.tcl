@@ -62,7 +62,7 @@ $ns node-config -adhocRouting $val(rp) \
 		-phyTrace OFF
 
 #定义节点的slot数目
-Mac/Tdma set max_slot_num_ 7
+Mac/Tdma set max_slot_num_ 5
 
 #建立节点的位置
 set n(0) [$ns node]

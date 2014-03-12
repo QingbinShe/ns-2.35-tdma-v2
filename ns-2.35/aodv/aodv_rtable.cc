@@ -223,6 +223,9 @@ aodv_rtable::rt_add(nsaddr_t id, int *free_slot, int Global_Rate)
 for (int i = 0; i < Global_Rate; i++) {
  rt->rt_temp_free_slot[i] = free_slot[i];
 }
+for (int i = Global_Rate; i < MAX_SLOT_NUM_; i++) {
+ rt->rt_temp_free_slot[i] = -1;
+}
  LIST_INSERT_HEAD(&rthead, rt, rt_link);
  return rt;
 }
