@@ -1,308 +1,311 @@
 opt(flow)=1
 opt(slot_num_)=10
-opt(rate)=90
-0 0 10
-57.933113238743097 81.83420355517147
+opt(rate)=50
+0 23 18
+47.674186363664546 60.050214109965708
 Start Simulation...
 num_nodes is set 25
 channel.cc:sendUp - Calc highestAntennaZ_ and distCST_
 highestAntennaZ_ = 1.5,  distCST_ = 550.0
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-57.933113:sendRREQ:origin:index(0):0,0,0,0,0,0,0,0,0,0,
-sendRREQ:rq->rq_slot_factor:0,0,48,42,36,30,24,18,12,6,
+47.674186:sendRREQ:origin:index(23):0,0,0,0,0,0,0,0,0,0,
+sendRREQ:rq->rq_slot_factor:0,0,72,63,54,45,36,27,18,9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 recvRREQ:origin rq_path_slot:-1,
-recvRREQ:temp_free_slot:1103482191,0,0,0,0,0,0,0,0,0,
+recvRREQ:temp_free_slot:1104214995,0,0,0,0,0,0,0,0,0,
 
-recvRREQ:original free_slot_new[i]:157438304,
+recvRREQ:original free_slot_new[i]:0,
 recvRREQ:new rq_path_slot:9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.048762:recvRREQ:index(1):0,0,0,0,0,0,0,0,0,-1,
+47.788762:recvRREQ:index(22):0,0,0,0,0,0,0,0,0,-1,
 recvRREQ:free_slot_new[i]:9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 recvRREQ:origin rq_path_slot:-1,
-recvRREQ:temp_free_slot:1103482191,0,0,0,0,0,0,0,0,0,
+recvRREQ:temp_free_slot:1104214995,0,0,0,0,0,0,0,0,0,
 
-recvRREQ:original free_slot_new[i]:156069400,
+recvRREQ:original free_slot_new[i]:-1218603912,
 recvRREQ:new rq_path_slot:9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.048762:recvRREQ:index(5):0,0,0,0,0,0,0,0,0,-1,
+47.788762:recvRREQ:index(18):0,0,0,0,0,0,0,0,0,-1,
 recvRREQ:free_slot_new[i]:9,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-recvRREQ:origin rq_path_slot:9,-1,
-recvRREQ:temp_free_slot:1103483668,0,0,0,0,0,0,0,0,1,
-
-recvRREQ:original free_slot_new[i]:0,
-recvRREQ:new rq_path_slot:9,8,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.108762:recvRREQ:index(2):0,0,0,0,0,0,0,0,-1,0,
-recvRREQ:free_slot_new[i]:8,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-recvRREQ:origin rq_path_slot:9,-1,
-recvRREQ:temp_free_slot:1103483668,0,0,0,0,0,0,0,0,1,
-
-recvRREQ:original free_slot_new[i]:-1217883016,
-recvRREQ:new rq_path_slot:9,8,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.108762:recvRREQ:index(6):0,0,0,0,0,0,0,0,-1,0,
-recvRREQ:free_slot_new[i]:8,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-recvRREQ:origin rq_path_slot:9,-1,
-recvRREQ:temp_free_slot:1103483668,0,0,0,0,0,0,0,0,1,
-
-recvRREQ:original free_slot_new[i]:-1217883016,
-recvRREQ:new rq_path_slot:9,8,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.108762:recvRREQ:index(10):0,0,0,0,0,0,0,0,-1,0,
-recvRREQ:free_slot_new[i]:8,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.108762:sendRREP:origin:index(10):0,0,0,0,0,0,0,0,-1,0,
-sendRREP:rp_slot[i]:8,
+47.788762:sendRREP:origin:index(18):0,0,0,0,0,0,0,0,0,-1,
+sendRREP:rp_slot[i]:9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+recvRREQ:origin rq_path_slot:-1,
+recvRREQ:temp_free_slot:1104214995,0,0,0,0,0,0,0,0,0,
+
+recvRREQ:original free_slot_new[i]:-1218603912,
+recvRREQ:new rq_path_slot:9,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+47.788762:recvRREQ:index(24):0,0,0,0,0,0,0,0,0,-1,
+recvRREQ:free_slot_new[i]:9,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+recvRREQ:origin rq_path_slot:9,-1,
+recvRREQ:temp_free_slot:1104216392,0,0,0,0,0,0,0,0,1,
+
+recvRREQ:original free_slot_new[i]:0,
+recvRREQ:new rq_path_slot:9,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+47.848762:recvRREQ:index(21):0,0,0,0,0,0,0,0,-1,0,
+recvRREQ:free_slot_new[i]:8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+recvRREQ:origin rq_path_slot:9,-1,
+recvRREQ:temp_free_slot:1104216392,0,0,0,0,0,0,0,0,1,
+
+recvRREQ:original free_slot_new[i]:-1218603912,
+recvRREQ:new rq_path_slot:9,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+47.848762:recvRREQ:index(17):0,0,0,0,0,0,0,0,-1,0,
+recvRREQ:free_slot_new[i]:8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+recvRREQ:origin rq_path_slot:9,-1,
+recvRREQ:temp_free_slot:1104216392,0,0,0,0,0,0,0,0,1,
+
+recvRREQ:original free_slot_new[i]:-1218603912,
+recvRREQ:new rq_path_slot:9,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+47.848762:recvRREQ:index(19):0,0,0,0,0,0,0,0,-1,0,
+recvRREQ:free_slot_new[i]:8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 recvRREQ:origin rq_path_slot:9,8,-1,
-recvRREQ:temp_free_slot:1103485145,0,0,0,0,0,0,0,1,1,
+recvRREQ:temp_free_slot:1104217790,0,0,0,0,0,0,0,1,1,
 
 recvRREQ:original free_slot_new[i]:0,
 recvRREQ:new rq_path_slot:9,8,7,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.168762:recvRREQ:index(3):0,0,0,0,0,0,0,-1,0,0,
+47.908762:recvRREQ:index(16):0,0,0,0,0,0,0,-1,0,0,
 recvRREQ:free_slot_new[i]:7,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 recvRREQ:origin rq_path_slot:9,8,-1,
-recvRREQ:temp_free_slot:1103485145,0,0,0,0,0,0,0,1,1,
+recvRREQ:temp_free_slot:1104217790,0,0,0,0,0,0,0,1,1,
 
-recvRREQ:original free_slot_new[i]:-1217883016,
+recvRREQ:original free_slot_new[i]:-1218603912,
 recvRREQ:new rq_path_slot:9,8,7,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.168762:recvRREQ:index(7):0,0,0,0,0,0,0,-1,0,0,
+47.908762:recvRREQ:index(12):0,0,0,0,0,0,0,-1,0,0,
 recvRREQ:free_slot_new[i]:7,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 recvRREQ:origin rq_path_slot:9,8,-1,
-recvRREQ:temp_free_slot:1103485145,0,0,0,0,0,0,0,1,1,
+recvRREQ:temp_free_slot:1104217790,0,0,0,0,0,0,0,1,1,
 
-recvRREQ:original free_slot_new[i]:-1217883016,
+recvRREQ:original free_slot_new[i]:-1218603912,
 recvRREQ:new rq_path_slot:9,8,7,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.168762:recvRREQ:index(11):0,0,0,0,0,0,0,-1,0,0,
+47.908762:recvRREQ:index(14):0,0,0,0,0,0,0,-1,0,0,
+recvRREQ:free_slot_new[i]:7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+recvRREQ:origin rq_path_slot:9,8,-1,
+recvRREQ:temp_free_slot:1104217790,0,0,0,0,0,0,0,1,1,
+
+recvRREQ:original free_slot_new[i]:-1218603912,
+recvRREQ:new rq_path_slot:9,8,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+47.908762:recvRREQ:index(20):0,0,0,0,0,0,0,-1,0,0,
 recvRREQ:free_slot_new[i]:7,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 recvRREQ:origin rq_path_slot:9,8,7,-1,
-recvRREQ:temp_free_slot:1103486621,0,0,0,0,0,0,1,1,0,
+recvRREQ:temp_free_slot:1104219187,0,0,0,0,0,0,1,1,0,
 
 recvRREQ:original free_slot_new[i]:0,
 recvRREQ:new rq_path_slot:9,8,7,9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.228762:recvRREQ:index(4):0,0,0,0,0,0,0,0,0,-1,
+47.968762:recvRREQ:index(11):0,0,0,0,0,0,0,0,0,-1,
 recvRREQ:free_slot_new[i]:9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 recvRREQ:origin rq_path_slot:9,8,7,-1,
-recvRREQ:temp_free_slot:1103486621,0,0,0,0,0,0,1,1,0,
+recvRREQ:temp_free_slot:1104219187,0,0,0,0,0,0,1,1,0,
 
-recvRREQ:original free_slot_new[i]:-1217883016,
+recvRREQ:original free_slot_new[i]:-1218603912,
 recvRREQ:new rq_path_slot:9,8,7,9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.228762:recvRREQ:index(8):0,0,0,0,0,0,0,0,0,-1,
+47.968762:recvRREQ:index(7):0,0,0,0,0,0,0,0,0,-1,
 recvRREQ:free_slot_new[i]:9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 recvRREQ:origin rq_path_slot:9,8,7,-1,
-recvRREQ:temp_free_slot:1103486621,0,0,0,0,0,0,1,1,0,
+recvRREQ:temp_free_slot:1104219187,0,0,0,0,0,0,1,1,0,
 
-recvRREQ:original free_slot_new[i]:-1217883016,
+recvRREQ:original free_slot_new[i]:-1218603912,
 recvRREQ:new rq_path_slot:9,8,7,9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.228762:recvRREQ:index(12):0,0,0,0,0,0,0,0,0,-1,
+47.968762:recvRREQ:index(13):0,0,0,0,0,0,0,0,0,-1,
 recvRREQ:free_slot_new[i]:9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 recvRREQ:origin rq_path_slot:9,8,7,-1,
-recvRREQ:temp_free_slot:1103486621,0,0,0,0,0,0,1,1,0,
+recvRREQ:temp_free_slot:1104219187,0,0,0,0,0,0,1,1,0,
 
-recvRREQ:original free_slot_new[i]:-1217883016,
+recvRREQ:original free_slot_new[i]:-1218603912,
 recvRREQ:new rq_path_slot:9,8,7,9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.228762:recvRREQ:index(16):0,0,0,0,0,0,0,0,0,-1,
+47.968762:recvRREQ:index(9):0,0,0,0,0,0,0,0,0,-1,
 recvRREQ:free_slot_new[i]:9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-recvRREQ:origin rq_path_slot:9,8,7,9,-1,
-recvRREQ:temp_free_slot:1103488098,0,0,0,0,0,0,1,0,1,
+recvRREQ:origin rq_path_slot:9,8,7,-1,
+recvRREQ:temp_free_slot:1104219187,0,0,0,0,0,0,1,1,0,
 
-recvRREQ:original free_slot_new[i]:0,
-recvRREQ:new rq_path_slot:9,8,7,9,8,
+recvRREQ:original free_slot_new[i]:-1218603912,
+recvRREQ:new rq_path_slot:9,8,7,9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.288762:recvRREQ:index(9):0,0,0,0,0,0,0,0,-1,0,
-recvRREQ:free_slot_new[i]:8,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-recvRREQ:origin rq_path_slot:9,8,7,9,-1,
-recvRREQ:temp_free_slot:1103488098,0,0,0,0,0,0,1,0,1,
-
-recvRREQ:original free_slot_new[i]:-1217883016,
-recvRREQ:new rq_path_slot:9,8,7,9,8,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.288762:recvRREQ:index(13):0,0,0,0,0,0,0,0,-1,0,
-recvRREQ:free_slot_new[i]:8,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-recvRREQ:origin rq_path_slot:9,8,7,9,-1,
-recvRREQ:temp_free_slot:1103488098,0,0,0,0,0,0,1,0,1,
-
-recvRREQ:original free_slot_new[i]:-1217883016,
-recvRREQ:new rq_path_slot:9,8,7,9,8,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.288762:recvRREQ:index(17):0,0,0,0,0,0,0,0,-1,0,
-recvRREQ:free_slot_new[i]:8,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-recvRREQ:origin rq_path_slot:9,8,7,9,-1,
-recvRREQ:temp_free_slot:1103488098,0,0,0,0,0,0,1,0,1,
-
-recvRREQ:original free_slot_new[i]:-1217883016,
-recvRREQ:new rq_path_slot:9,8,7,9,8,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.288762:recvRREQ:index(15):0,0,0,0,0,0,0,0,-1,0,
-recvRREQ:free_slot_new[i]:8,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-recvRREQ:origin rq_path_slot:9,8,7,9,-1,
-recvRREQ:temp_free_slot:1103488098,0,0,0,0,0,0,1,0,1,
-
-recvRREQ:original free_slot_new[i]:-1217883016,
-recvRREQ:new rq_path_slot:9,8,7,9,8,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.288762:recvRREQ:index(21):0,0,0,0,0,0,0,0,-1,0,
-recvRREQ:free_slot_new[i]:8,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-58.333418:recvRREP:forward:index(5)0,0,0,0,0,0,0,0,1,-1,
-
-
-recvRREQ:origin rq_path_slot:9,8,7,9,8,-1,
-recvRREQ:temp_free_slot:1103489575,0,0,0,0,0,0,0,1,1,
-
-recvRREQ:original free_slot_new[i]:0,
-recvRREQ:new rq_path_slot:9,8,7,9,8,7,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.348762:recvRREQ:index(14):0,0,0,0,0,0,0,-1,0,0,
-recvRREQ:free_slot_new[i]:7,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-recvRREQ:origin rq_path_slot:9,8,7,9,8,-1,
-recvRREQ:temp_free_slot:1103489575,0,0,0,0,0,0,0,1,1,
-
-recvRREQ:original free_slot_new[i]:-1217883016,
-recvRREQ:new rq_path_slot:9,8,7,9,8,7,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.348762:recvRREQ:index(18):0,0,0,0,0,0,0,-1,0,0,
-recvRREQ:free_slot_new[i]:7,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-recvRREQ:origin rq_path_slot:9,8,7,9,8,-1,
-recvRREQ:temp_free_slot:1103489575,0,0,0,0,0,0,0,1,1,
-
-recvRREQ:original free_slot_new[i]:-1217883016,
-recvRREQ:new rq_path_slot:9,8,7,9,8,7,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.348762:recvRREQ:index(20):0,0,0,0,0,0,0,-1,0,0,
-recvRREQ:free_slot_new[i]:7,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-recvRREQ:origin rq_path_slot:9,8,7,9,8,-1,
-recvRREQ:temp_free_slot:1103489575,0,0,0,0,0,0,0,1,1,
-
-recvRREQ:original free_slot_new[i]:-1217883016,
-recvRREQ:new rq_path_slot:9,8,7,9,8,7,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.348762:recvRREQ:index(22):0,0,0,0,0,0,0,-1,0,0,
-recvRREQ:free_slot_new[i]:7,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-recvRREQ:origin rq_path_slot:9,8,7,9,8,7,-1,
-recvRREQ:temp_free_slot:1103491052,0,0,0,0,0,0,1,1,0,
-
-recvRREQ:original free_slot_new[i]:0,
-recvRREQ:new rq_path_slot:9,8,7,9,8,7,9,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.408762:recvRREQ:index(19):0,0,0,0,0,0,0,0,0,-1,
+47.968762:recvRREQ:index(15):0,0,0,0,0,0,0,0,0,-1,
 recvRREQ:free_slot_new[i]:9,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-recvRREQ:origin rq_path_slot:9,8,7,9,8,7,-1,
-recvRREQ:temp_free_slot:1103491052,0,0,0,0,0,0,1,1,0,
-
-recvRREQ:original free_slot_new[i]:-1217883016,
-recvRREQ:new rq_path_slot:9,8,7,9,8,7,9,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.408762:recvRREQ:index(23):0,0,0,0,0,0,0,0,0,-1,
-recvRREQ:free_slot_new[i]:9,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-recvRREQ:origin rq_path_slot:9,8,7,9,8,7,9,-1,
-recvRREQ:temp_free_slot:1103492529,0,0,0,0,0,0,1,0,1,
-
-recvRREQ:original free_slot_new[i]:0,
-recvRREQ:new rq_path_slot:9,8,7,9,8,7,9,8,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.468762:recvRREQ:index(24):0,0,0,0,0,0,0,0,-1,0,
-recvRREQ:free_slot_new[i]:8,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-58.513418:recvRREP:origin:index(0):0,0,0,0,0,0,0,0,0,1,
+48.013418:recvRREP:origin:index(23):0,0,0,0,0,0,0,0,0,1,
 recvRREP:rp_slot[i]:9,-1,-1,-1,-1,-1,-1,-1,-1,-1,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-62.052000:index(1)'s slot(9) timeout!
+recvRREQ:origin rq_path_slot:9,8,7,9,-1,
+recvRREQ:temp_free_slot:1104220584,0,0,0,0,0,0,1,0,1,
 
-62.112000:index(2)'s slot(8) timeout!
+recvRREQ:original free_slot_new[i]:0,
+recvRREQ:new rq_path_slot:9,8,7,9,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+48.028762:recvRREQ:index(6):0,0,0,0,0,0,0,0,-1,0,
+recvRREQ:free_slot_new[i]:8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-62.112000:index(6)'s slot(8) timeout!
+recvRREQ:origin rq_path_slot:9,8,7,9,-1,
+recvRREQ:temp_free_slot:1104220584,0,0,0,0,0,0,1,0,1,
 
-62.172000:index(3)'s slot(7) timeout!
+recvRREQ:original free_slot_new[i]:-1218603912,
+recvRREQ:new rq_path_slot:9,8,7,9,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+48.028762:recvRREQ:index(2):0,0,0,0,0,0,0,0,-1,0,
+recvRREQ:free_slot_new[i]:8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-62.172000:index(7)'s slot(7) timeout!
+recvRREQ:origin rq_path_slot:9,8,7,9,-1,
+recvRREQ:temp_free_slot:1104220584,0,0,0,0,0,0,1,0,1,
 
-62.172000:index(11)'s slot(7) timeout!
+recvRREQ:original free_slot_new[i]:-1218603912,
+recvRREQ:new rq_path_slot:9,8,7,9,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+48.028762:recvRREQ:index(8):0,0,0,0,0,0,0,0,-1,0,
+recvRREQ:free_slot_new[i]:8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-62.232000:index(4)'s slot(9) timeout!
+recvRREQ:origin rq_path_slot:9,8,7,9,-1,
+recvRREQ:temp_free_slot:1104220584,0,0,0,0,0,0,1,0,1,
 
-62.232000:index(8)'s slot(9) timeout!
+recvRREQ:original free_slot_new[i]:-1218603912,
+recvRREQ:new rq_path_slot:9,8,7,9,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+48.028762:recvRREQ:index(4):0,0,0,0,0,0,0,0,-1,0,
+recvRREQ:free_slot_new[i]:8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-62.232000:index(12)'s slot(9) timeout!
+recvRREQ:origin rq_path_slot:9,8,7,9,-1,
+recvRREQ:temp_free_slot:1104220584,0,0,0,0,0,0,1,0,1,
 
-62.232000:index(16)'s slot(9) timeout!
+recvRREQ:original free_slot_new[i]:-1218603912,
+recvRREQ:new rq_path_slot:9,8,7,9,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+48.028762:recvRREQ:index(10):0,0,0,0,0,0,0,0,-1,0,
+recvRREQ:free_slot_new[i]:8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-62.292000:index(9)'s slot(8) timeout!
+recvRREQ:origin rq_path_slot:9,8,7,9,8,-1,
+recvRREQ:temp_free_slot:1104221982,0,0,0,0,0,0,0,1,1,
 
-62.292000:index(13)'s slot(8) timeout!
+recvRREQ:original free_slot_new[i]:0,
+recvRREQ:new rq_path_slot:9,8,7,9,8,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+48.088762:recvRREQ:index(1):0,0,0,0,0,0,0,-1,0,0,
+recvRREQ:free_slot_new[i]:7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-62.292000:index(15)'s slot(8) timeout!
+recvRREQ:origin rq_path_slot:9,8,7,9,8,-1,
+recvRREQ:temp_free_slot:1104221982,0,0,0,0,0,0,0,1,1,
 
-62.292000:index(17)'s slot(8) timeout!
+recvRREQ:original free_slot_new[i]:-1218603912,
+recvRREQ:new rq_path_slot:9,8,7,9,8,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+48.088762:recvRREQ:index(3):0,0,0,0,0,0,0,-1,0,0,
+recvRREQ:free_slot_new[i]:7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-62.292000:index(21)'s slot(8) timeout!
+recvRREQ:origin rq_path_slot:9,8,7,9,8,-1,
+recvRREQ:temp_free_slot:1104221982,0,0,0,0,0,0,0,1,1,
 
-62.352000:index(14)'s slot(7) timeout!
+recvRREQ:original free_slot_new[i]:-1218603912,
+recvRREQ:new rq_path_slot:9,8,7,9,8,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+48.088762:recvRREQ:index(5):0,0,0,0,0,0,0,-1,0,0,
+recvRREQ:free_slot_new[i]:7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-62.352000:index(18)'s slot(7) timeout!
+recvRREQ:origin rq_path_slot:9,8,7,9,8,7,-1,
+recvRREQ:temp_free_slot:1104223379,0,0,0,0,0,0,1,1,0,
 
-62.352000:index(20)'s slot(7) timeout!
+recvRREQ:original free_slot_new[i]:0,
+recvRREQ:new rq_path_slot:9,8,7,9,8,7,9,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+48.148762:recvRREQ:index(0):0,0,0,0,0,0,0,0,0,-1,
+recvRREQ:free_slot_new[i]:9,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-62.352000:index(22)'s slot(7) timeout!
+51.792000:index(22)'s slot(9) timeout!
 
-62.412000:index(19)'s slot(9) timeout!
+51.792000:index(24)'s slot(9) timeout!
 
-62.412000:index(23)'s slot(9) timeout!
+51.852000:index(17)'s slot(8) timeout!
 
-62.472000:index(24)'s slot(8) timeout!
+51.852000:index(19)'s slot(8) timeout!
+
+51.852000:index(21)'s slot(8) timeout!
+
+51.912000:index(12)'s slot(7) timeout!
+
+51.912000:index(14)'s slot(7) timeout!
+
+51.912000:index(16)'s slot(7) timeout!
+
+51.912000:index(20)'s slot(7) timeout!
+
+51.972000:index(7)'s slot(9) timeout!
+
+51.972000:index(9)'s slot(9) timeout!
+
+51.972000:index(11)'s slot(9) timeout!
+
+51.972000:index(13)'s slot(9) timeout!
+
+51.972000:index(15)'s slot(9) timeout!
+
+52.032000:index(2)'s slot(8) timeout!
+
+52.032000:index(4)'s slot(8) timeout!
+
+52.032000:index(6)'s slot(8) timeout!
+
+52.032000:index(8)'s slot(8) timeout!
+
+52.032000:index(10)'s slot(8) timeout!
+
+52.092000:index(1)'s slot(7) timeout!
+
+52.092000:index(3)'s slot(7) timeout!
+
+52.092000:index(5)'s slot(7) timeout!
+
+52.152000:index(0)'s slot(9) timeout!
+
+97.794000:index(18)'s slot(9) timeout!
+
+98.016000:index(23)'s slot(9) timeout!

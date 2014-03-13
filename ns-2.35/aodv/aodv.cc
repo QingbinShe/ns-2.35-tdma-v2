@@ -1395,10 +1395,10 @@ if (ih->daddr() == (nsaddr_t) IP_BROADCAST) {
    assert(rt == 0);
    if (ch->ptype() == PT_AODV) {
      /*
-      *  Jitter the sending of AODV broadcast packets by 10ms
+      *  Jitter the sending of AODV broadcast packets by 1ms
       */
      Scheduler::instance().schedule(target_, p,
-      				   0.01 * Random::uniform());
+      				   0.0001 * Random::uniform());
    } else {
      Scheduler::instance().schedule(target_, p, 0.);  // No jitter
    }
