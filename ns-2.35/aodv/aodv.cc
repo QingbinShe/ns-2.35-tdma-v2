@@ -746,6 +746,7 @@ struct hdr_cmn *ch = HDR_CMN(p);
  nb_free_rslot(temp_free_slot);
 //nb_free_rsloto(temp_free_slot);
 
+
  //calculate the free time slot of the path
  for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
    if ((temp_free_slot[i] == 0) && (rq->rq_free_slot[i] == 0)) {
@@ -755,6 +756,33 @@ struct hdr_cmn *ch = HDR_CMN(p);
      temp_free_slot[i] = 1;
    }
  }
+
+//to calculate the free slot under the incluence of two hop-neighbor
+ printf("\nrecvRREQ:origin rq_path_slot:");
+ for (int i = 0; i < 1000; i++) {
+   printf("%d,", rq->rq_path_slot[i]);
+   if (rq->rq_path_slot[i] == -1) {
+     if ((i - 2 * global_rate) >= 0){
+       i = i - 2 * global_rate;
+       for (int b = i; b < i + global_rate; b++) {
+         temp_free_slot[rq->rq_path_slot[b]] = 1;
+       }
+       break;
+     }
+     else {
+       break;
+     }
+   }
+ }
+
+/////////////////////////////////////////////////////////
+printf("\nrecvRREQ:temp_free_slot:");
+for (int i = 0; i < MAX_SLOT_NUM_; i++) {
+  printf("%d,", temp_free_slot[i]);
+}
+printf("\n");
+////////////////////////////////////////////////////////
+
 
 //calculate the factor of this node
 for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
@@ -804,12 +832,16 @@ for (int i = 0; i < global_rate; i++) {
 for (int a = 0; a < global_rate; a++) {
   int free_slot = SLOT_AS_CONTROL;
   for (int b = SLOT_AS_CONTROL; b < MAX_SLOT_NUM_; b++ ) {
-    if ((temp_free_slot[free_slot] > temp_free_slot[b]) && (temp_free_slot[b] != -1)) {
+    if ((temp_free_slot[free_slot] >= temp_free_slot[b]) && (temp_free_slot[b] != -1)) {
       free_slot = b;
     }
   }
   if (temp_free_slot[free_slot] == -1) {
-    printf("index(%d) has not enought slot to allocate!!!\n", index);
+    printf("index(%d) has not enought slot to allocate!!!temp_free_slot[]:%d\n", index, temp_free_slot[free_slot]);
+    printf("\ntemp_free_slot[]:");
+    for (int i = 0; i < MAX_SLOT_NUM_; i++) {
+      printf("%d,", temp_free_slot[i]);
+    }
     Packet::free(p);
     return;
   }
@@ -818,6 +850,25 @@ for (int a = 0; a < global_rate; a++) {
 }
 
 ////////////////////////////////////////////////////////////////////////
+
+//record assigned slots in rq_path_slot
+for (int i = 0; i < 1000; i++) {
+  if (rq->rq_path_slot[i] == -1) {
+    for (int b = 0; b < global_rate; b++) {
+      rq->rq_path_slot[i + b] = free_slot_new[b];
+    }
+    break;
+  }
+}
+
+printf("\nrecvRREQ:new rq_path_slot:");
+for (int i = 0; i < 1000; i++) {
+  if (rq->rq_path_slot[i] >= 0){
+    printf("%d,", rq->rq_path_slot[i]);
+  }
+  else 
+    break;
+}
 
  //drop if there is no free slot in the path
 /* if (free_slot == MAX_SLOT_NUM_) {
@@ -1374,6 +1425,11 @@ struct hdr_ip *ih = HDR_IP(p);
 struct hdr_aodv_request *rq = HDR_AODV_REQUEST(p);
 aodv_rt_entry *rt = rtable.rt_lookup(dst);
 AODV_Neighbor *nb = nbhead.lh_first;
+
+//initiate the rq_path_slot[1000]
+for (int i = 0; i < 1000; i++) {
+  rq->rq_path_slot[i] = -1;
+}
 
 //printf("\nin sendRREQ,flow and QoS_BW is: %d, %f", ch->flow_id(), global_rate);
 

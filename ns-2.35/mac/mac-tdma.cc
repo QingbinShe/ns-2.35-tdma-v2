@@ -474,7 +474,9 @@ void MacTdma::sendUp(Packet* p)
 
 	/* Can't receive while transmitting. Should not happen...?*/
 	if (tx_state_ && ch->error() == 0) {
-		printf("<%d>, can't receive while transmitting!\n", index_);
+//////////////////////////////////////delete by me
+//printf("<%d>, can't receive while transmitting!\n", index_);
+////////////////////////////////////////////////////////
 		ch->error() = 1;
 	};
 
@@ -494,7 +496,9 @@ void MacTdma::sendUp(Packet* p)
 		/* Note: we don't take the channel status into account, 
 		   as collision should not happen...
 		*/
-		printf("<%d>, receiving, but the channel is not idle....???\n", index_);
+////////////////////////////////////////delete by me
+//printf("<%d>, receiving, but the channel is not idle....???\n", index_);
+////////////////////////////////////////////////////////////////
 	}
 }
 

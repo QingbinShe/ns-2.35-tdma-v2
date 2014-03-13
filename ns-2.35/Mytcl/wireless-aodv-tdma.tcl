@@ -19,12 +19,12 @@ set val(mac)     Mac/Tdma                     ;#MAC层：Tdma
 set val(ifq)     Queue/DropTail/PriQueue      ;#接口队列类型：IFQ队列
 set val(ll)      LL                           ;#逻辑链路层类型：LL层
 set val(ant)     Antenna/OmniAntenna          ;#天线模型：全向天线
-set val(ifqlen)  50                           ;#网络接口队列大小：50
+set val(ifqlen)  100                           ;#网络接口队列大小：50
 set val(rp)      AODV                         ;#无线路由协议：AODV
 set val(nn)      25                           ;#节点数目：9
 set val(x)       1000                         ;#仿真区域长度1000m
 set val(y)       1000                         ;#仿真区域宽度1000m
-set val(stop)    10.0                          ;#设定模拟时间1.0s
+set val(stop)    100.0                          ;#设定模拟时间1.0s
 
 #
 #==============启动实例和文件等===============================

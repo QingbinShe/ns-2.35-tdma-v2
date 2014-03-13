@@ -92,13 +92,14 @@ struct hdr_aodv_request {
 	int		rq_free_slot[MAX_SLOT_NUM_];	//record the free transmitting time slot set(0:free; 1:not free)
 	int		rq_slot_factor[MAX_SLOT_NUM_];  //record the factor of slot(the Factor[i] == the value)
 
+	int		rq_path_slot[1000];             //record the used slots by every link in the path
   // This define turns on gratuitous replies- see aodv.cc for implementation contributed by
   // Anant Utgikar, 09/16/02.
   //#define RREQ_GRAT_RREP	0x80
 
   inline int size() { 
   int sz = 0;
-  /*
+  
   	sz = sizeof(u_int8_t)		// rq_type
 	     + 2*sizeof(u_int8_t) 	// reserved
 	     + sizeof(u_int8_t)		// rq_hop_count
@@ -107,9 +108,11 @@ struct hdr_aodv_request {
 	     + sizeof(nsaddr_t)		// rq_dst
 	     + sizeof(u_int32_t)	// rq_dst_seqno
 	     + sizeof(nsaddr_t)		// rq_src
-	     + sizeof(u_int32_t);	// rq_src_seqno
-  */
-  	sz = 7*sizeof(u_int32_t);
+	     + sizeof(u_int32_t)	// rq_src_seqno
+	     + MAX_SLOT_NUM_ * sizeof(int)           //rq_free_slot
+             + MAX_SLOT_NUM_ * sizeof(int)           //re_slot_factor
+             + 1000 * sizeof(int);                   //re_path_slot
+  //	sz = 7*sizeof(u_int32_t);
   	assert (sz >= 0);
 	return sz;
   }
@@ -141,7 +144,7 @@ struct hdr_aodv_reply {
 						
   inline int size() { 
   int sz = 0;
-  /*
+  
   	sz = sizeof(u_int8_t)		// rp_type
 	     + 2*sizeof(u_int8_t) 	// rp_flags + reserved
 	     + sizeof(u_int8_t)		// rp_hop_count
@@ -149,9 +152,14 @@ struct hdr_aodv_reply {
 	     + sizeof(nsaddr_t)		// rp_dst
 	     + sizeof(u_int32_t)	// rp_dst_seqno
 	     + sizeof(nsaddr_t)		// rp_src
-	     + sizeof(u_int32_t);	// rp_lifetime
-  */
-  	sz = 6*sizeof(u_int32_t);
+	     + sizeof(u_int32_t)	// rp_lifetime
+             + MAX_SLOT_NUM_ * sizeof(int)          //rp_slotCondition
+             + 4 * MAX_SLOT_NUM_ * sizeof(int)      //rp_nbSlotCondition
+             + sizeof(nsaddr_t)                     //rp_packet_src
+             + sizeof(nsaddr_t)                     //rp_packet_dst
+             + MAX_SLOT_NUM_ * sizeof(int);         //rp_slot
+             
+//  	sz = 6*sizeof(u_int32_t);
   	assert (sz >= 0);
 	return sz;
   }

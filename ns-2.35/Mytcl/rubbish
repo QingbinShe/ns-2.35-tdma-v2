@@ -1,1709 +1,308 @@
 opt(flow)=1
 opt(slot_num_)=10
-opt(rate)=110
-0 10 15
-1.9191215475644552 4.675849915796821
+opt(rate)=90
+0 0 10
+57.933113238743097 81.83420355517147
 Start Simulation...
 num_nodes is set 25
 channel.cc:sendUp - Calc highestAntennaZ_ and distCST_
 highestAntennaZ_ = 1.5,  distCST_ = 550.0
-<1>, can't receive while transmitting!
-<5>, can't receive while transmitting!
-<0>, can't receive while transmitting!
-<2>, can't receive while transmitting!
-<6>, can't receive while transmitting!
-<1>, can't receive while transmitting!
-<1>, receiving, but the channel is not idle....???
-<3>, can't receive while transmitting!
-<7>, can't receive while transmitting!
-<2>, can't receive while transmitting!
-<2>, receiving, but the channel is not idle....???
-<4>, can't receive while transmitting!
-<8>, can't receive while transmitting!
-<3>, can't receive while transmitting!
-<3>, receiving, but the channel is not idle....???
-<9>, can't receive while transmitting!
-<0>, can't receive while transmitting!
-<0>, receiving, but the channel is not idle....???
-<6>, can't receive while transmitting!
-<6>, receiving, but the channel is not idle....???
-<10>, can't receive while transmitting!
-<5>, can't receive while transmitting!
-<5>, receiving, but the channel is not idle....???
-<1>, can't receive while transmitting!
-<1>, receiving, but the channel is not idle....???
-<7>, can't receive while transmitting!
-<7>, receiving, but the channel is not idle....???
-<11>, can't receive while transmitting!
-<6>, can't receive while transmitting!
-<6>, receiving, but the channel is not idle....???
-<2>, can't receive while transmitting!
-<2>, receiving, but the channel is not idle....???
-<8>, can't receive while transmitting!
-<8>, receiving, but the channel is not idle....???
-<12>, can't receive while transmitting!
-<7>, can't receive while transmitting!
-<7>, receiving, but the channel is not idle....???
-<3>, can't receive while transmitting!
-<3>, receiving, but the channel is not idle....???
-<9>, can't receive while transmitting!
-<9>, receiving, but the channel is not idle....???
-<13>, can't receive while transmitting!
-<8>, can't receive while transmitting!
-<8>, receiving, but the channel is not idle....???
-<4>, can't receive while transmitting!
-<4>, receiving, but the channel is not idle....???
-<14>, can't receive while transmitting!
-<5>, can't receive while transmitting!
-<5>, receiving, but the channel is not idle....???
-<11>, can't receive while transmitting!
-<11>, receiving, but the channel is not idle....???
-<15>, can't receive while transmitting!
-<10>, can't receive while transmitting!
-<10>, receiving, but the channel is not idle....???
-<6>, can't receive while transmitting!
-<6>, receiving, but the channel is not idle....???
-<12>, can't receive while transmitting!
-<12>, receiving, but the channel is not idle....???
-<16>, can't receive while transmitting!
-<11>, can't receive while transmitting!
-<11>, receiving, but the channel is not idle....???
-<7>, can't receive while transmitting!
-<7>, receiving, but the channel is not idle....???
-<13>, can't receive while transmitting!
-<13>, receiving, but the channel is not idle....???
-<17>, can't receive while transmitting!
-<12>, can't receive while transmitting!
-<12>, receiving, but the channel is not idle....???
-<8>, can't receive while transmitting!
-<8>, receiving, but the channel is not idle....???
-<14>, can't receive while transmitting!
-<14>, receiving, but the channel is not idle....???
-<18>, can't receive while transmitting!
-<13>, can't receive while transmitting!
-<13>, receiving, but the channel is not idle....???
-<9>, can't receive while transmitting!
-<9>, receiving, but the channel is not idle....???
-<19>, can't receive while transmitting!
-<10>, can't receive while transmitting!
-<10>, receiving, but the channel is not idle....???
-<16>, can't receive while transmitting!
-<16>, receiving, but the channel is not idle....???
-<20>, can't receive while transmitting!
-<15>, can't receive while transmitting!
-<15>, receiving, but the channel is not idle....???
-<11>, can't receive while transmitting!
-<11>, receiving, but the channel is not idle....???
-<17>, can't receive while transmitting!
-<17>, receiving, but the channel is not idle....???
-<21>, can't receive while transmitting!
-<16>, can't receive while transmitting!
-<16>, receiving, but the channel is not idle....???
-<12>, can't receive while transmitting!
-<12>, receiving, but the channel is not idle....???
-<18>, can't receive while transmitting!
-<18>, receiving, but the channel is not idle....???
-<22>, can't receive while transmitting!
-<17>, can't receive while transmitting!
-<17>, receiving, but the channel is not idle....???
-<13>, can't receive while transmitting!
-<13>, receiving, but the channel is not idle....???
-<19>, can't receive while transmitting!
-<19>, receiving, but the channel is not idle....???
-<23>, can't receive while transmitting!
-<18>, can't receive while transmitting!
-<18>, receiving, but the channel is not idle....???
-<14>, can't receive while transmitting!
-<14>, receiving, but the channel is not idle....???
-<24>, can't receive while transmitting!
-<15>, can't receive while transmitting!
-<15>, receiving, but the channel is not idle....???
-<21>, can't receive while transmitting!
-<21>, receiving, but the channel is not idle....???
-<20>, can't receive while transmitting!
-<20>, receiving, but the channel is not idle....???
-<16>, can't receive while transmitting!
-<16>, receiving, but the channel is not idle....???
-<22>, can't receive while transmitting!
-<22>, receiving, but the channel is not idle....???
-<21>, can't receive while transmitting!
-<21>, receiving, but the channel is not idle....???
-<17>, can't receive while transmitting!
-<17>, receiving, but the channel is not idle....???
-<23>, can't receive while transmitting!
-<23>, receiving, but the channel is not idle....???
-<22>, can't receive while transmitting!
-<22>, receiving, but the channel is not idle....???
-<18>, can't receive while transmitting!
-<18>, receiving, but the channel is not idle....???
-<24>, can't receive while transmitting!
-<24>, receiving, but the channel is not idle....???
-<23>, can't receive while transmitting!
-<23>, receiving, but the channel is not idle....???
-<19>, can't receive while transmitting!
-<19>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<0>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<4>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<20>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<24>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<0>, receiving, but the channel is not idle....???
-<4>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<0>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<20>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<4>, receiving, but the channel is not idle....???
-<24>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<20>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<24>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<4>, receiving, but the channel is not idle....???
-<0>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<0>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<20>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<4>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<24>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<20>, receiving, but the channel is not idle....???
-<24>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<4>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<19>, can't receive while transmitting!
-<18>, can't receive while transmitting!
-<7>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<24>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<20>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<20>, receiving, but the channel is not idle....???
-<24>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<14>, can't receive while transmitting!
-<9>, can't receive while transmitting!
-<13>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<4>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<16>, can't receive while transmitting!
-<11>, can't receive while transmitting!
-<15>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<0>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<0>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<20>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<2>, can't receive while transmitting!
-<1>, can't receive while transmitting!
-<14>, can't receive while transmitting!
-<9>, can't receive while transmitting!
-<5>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<0>, receiving, but the channel is not idle....???
-<4>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<0>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<4>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-1.919122:sendRREQ:origin:index(10):0,0,0,0,0,0,0,0,0,0,
-sendRREQ:rq->rq_slot_factor:0,0,40,35,30,25,20,15,10,5,
+57.933113:sendRREQ:origin:index(0):0,0,0,0,0,0,0,0,0,0,
+sendRREQ:rq->rq_slot_factor:0,0,48,42,36,30,24,18,12,6,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-<2>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<18>, can't receive while transmitting!
-<13>, can't receive while transmitting!
-<13>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<4>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<4>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<24>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
 
-recvRREQ:original free_slot_new[i]:-1217899400,170844488,
+recvRREQ:origin rq_path_slot:-1,
+recvRREQ:temp_free_slot:1103482191,0,0,0,0,0,0,0,0,0,
+
+recvRREQ:original free_slot_new[i]:157438304,
+recvRREQ:new rq_path_slot:9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.052426:recvRREQ:index(5):0,0,0,0,0,0,0,0,-1,-1,
-recvRREQ:free_slot_new[i]:9,8,
+58.048762:recvRREQ:index(1):0,0,0,0,0,0,0,0,0,-1,
+recvRREQ:free_slot_new[i]:9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-recvRREQ:original free_slot_new[i]:-1217899400,169564600,
+recvRREQ:origin rq_path_slot:-1,
+recvRREQ:temp_free_slot:1103482191,0,0,0,0,0,0,0,0,0,
+
+recvRREQ:original free_slot_new[i]:156069400,
+recvRREQ:new rq_path_slot:9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.052426:recvRREQ:index(11):0,0,0,0,0,0,0,0,-1,-1,
-recvRREQ:free_slot_new[i]:9,8,
+58.048762:recvRREQ:index(5):0,0,0,0,0,0,0,0,0,-1,
+recvRREQ:free_slot_new[i]:9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-recvRREQ:original free_slot_new[i]:-1217899400,168849120,
+recvRREQ:origin rq_path_slot:9,-1,
+recvRREQ:temp_free_slot:1103483668,0,0,0,0,0,0,0,0,1,
+
+recvRREQ:original free_slot_new[i]:0,
+recvRREQ:new rq_path_slot:9,8,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.052426:recvRREQ:index(15):0,0,0,0,0,0,0,0,-1,-1,
-recvRREQ:free_slot_new[i]:9,8,
+58.108762:recvRREQ:index(2):0,0,0,0,0,0,0,0,-1,0,
+recvRREQ:free_slot_new[i]:8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+recvRREQ:origin rq_path_slot:9,-1,
+recvRREQ:temp_free_slot:1103483668,0,0,0,0,0,0,0,0,1,
+
+recvRREQ:original free_slot_new[i]:-1217883016,
+recvRREQ:new rq_path_slot:9,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+58.108762:recvRREQ:index(6):0,0,0,0,0,0,0,0,-1,0,
+recvRREQ:free_slot_new[i]:8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+recvRREQ:origin rq_path_slot:9,-1,
+recvRREQ:temp_free_slot:1103483668,0,0,0,0,0,0,0,0,1,
+
+recvRREQ:original free_slot_new[i]:-1217883016,
+recvRREQ:new rq_path_slot:9,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+58.108762:recvRREQ:index(10):0,0,0,0,0,0,0,0,-1,0,
+recvRREQ:free_slot_new[i]:8,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.052426:sendRREP:origin:index(15):0,0,0,0,0,0,0,0,-1,-1,
-sendRREP:rp_slot[i]:9,8,
+58.108762:sendRREP:origin:index(10):0,0,0,0,0,0,0,0,-1,0,
+sendRREP:rp_slot[i]:8,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-<15>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<20>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<0>, receiving, but the channel is not idle....???
 
-recvRREQ:original free_slot_new[i]:-1217899400,170423792,
+recvRREQ:origin rq_path_slot:9,8,-1,
+recvRREQ:temp_free_slot:1103485145,0,0,0,0,0,0,0,1,1,
+
+recvRREQ:original free_slot_new[i]:0,
+recvRREQ:new rq_path_slot:9,8,7,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.112426:recvRREQ:index(0):0,0,0,0,0,0,-1,-1,0,0,
-recvRREQ:free_slot_new[i]:7,6,
+58.168762:recvRREQ:index(3):0,0,0,0,0,0,0,-1,0,0,
+recvRREQ:free_slot_new[i]:7,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-recvRREQ:original free_slot_new[i]:-1217899400,170110320,
+recvRREQ:origin rq_path_slot:9,8,-1,
+recvRREQ:temp_free_slot:1103485145,0,0,0,0,0,0,0,1,1,
+
+recvRREQ:original free_slot_new[i]:-1217883016,
+recvRREQ:new rq_path_slot:9,8,7,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.112426:recvRREQ:index(6):0,0,0,0,0,0,-1,-1,0,0,
-recvRREQ:free_slot_new[i]:7,6,
+58.168762:recvRREQ:index(7):0,0,0,0,0,0,0,-1,0,0,
+recvRREQ:free_slot_new[i]:7,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-recvRREQ:original free_slot_new[i]:-1217899400,168585632,
+recvRREQ:origin rq_path_slot:9,8,-1,
+recvRREQ:temp_free_slot:1103485145,0,0,0,0,0,0,0,1,1,
+
+recvRREQ:original free_slot_new[i]:-1217883016,
+recvRREQ:new rq_path_slot:9,8,7,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.112426:recvRREQ:index(12):0,0,0,0,0,0,-1,-1,0,0,
-recvRREQ:free_slot_new[i]:7,6,
+58.168762:recvRREQ:index(11):0,0,0,0,0,0,0,-1,0,0,
+recvRREQ:free_slot_new[i]:7,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-recvRREQ:original free_slot_new[i]:-1217899400,170267048,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.112426:recvRREQ:index(16):0,0,0,0,0,0,-1,-1,0,0,
-recvRREQ:free_slot_new[i]:7,6,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-<5>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<16>, can't receive while transmitting!
-<15>, can't receive while transmitting!
-<11>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<20>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
+recvRREQ:origin rq_path_slot:9,8,7,-1,
+recvRREQ:temp_free_slot:1103486621,0,0,0,0,0,0,1,1,0,
 
-recvRREQ:original free_slot_new[i]:-1217899400,169197904,
+recvRREQ:original free_slot_new[i]:0,
+recvRREQ:new rq_path_slot:9,8,7,9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.172426:recvRREQ:index(1):0,0,0,0,0,0,0,0,-1,-1,
-recvRREQ:free_slot_new[i]:9,8,
+58.228762:recvRREQ:index(4):0,0,0,0,0,0,0,0,0,-1,
+recvRREQ:free_slot_new[i]:9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-recvRREQ:original free_slot_new[i]:-1217899400,170291904,
+recvRREQ:origin rq_path_slot:9,8,7,-1,
+recvRREQ:temp_free_slot:1103486621,0,0,0,0,0,0,1,1,0,
+
+recvRREQ:original free_slot_new[i]:-1217883016,
+recvRREQ:new rq_path_slot:9,8,7,9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.172426:recvRREQ:index(7):0,0,0,0,0,0,0,0,-1,-1,
-recvRREQ:free_slot_new[i]:9,8,
+58.228762:recvRREQ:index(8):0,0,0,0,0,0,0,0,0,-1,
+recvRREQ:free_slot_new[i]:9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-recvRREQ:original free_slot_new[i]:-1217899400,169208888,
+recvRREQ:origin rq_path_slot:9,8,7,-1,
+recvRREQ:temp_free_slot:1103486621,0,0,0,0,0,0,1,1,0,
+
+recvRREQ:original free_slot_new[i]:-1217883016,
+recvRREQ:new rq_path_slot:9,8,7,9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.172426:recvRREQ:index(13):0,0,0,0,0,0,0,0,-1,-1,
-recvRREQ:free_slot_new[i]:9,8,
+58.228762:recvRREQ:index(12):0,0,0,0,0,0,0,0,0,-1,
+recvRREQ:free_slot_new[i]:9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-recvRREQ:original free_slot_new[i]:-1217899400,168638584,
+recvRREQ:origin rq_path_slot:9,8,7,-1,
+recvRREQ:temp_free_slot:1103486621,0,0,0,0,0,0,1,1,0,
+
+recvRREQ:original free_slot_new[i]:-1217883016,
+recvRREQ:new rq_path_slot:9,8,7,9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.172426:recvRREQ:index(17):0,0,0,0,0,0,0,0,-1,-1,
-recvRREQ:free_slot_new[i]:9,8,
+58.228762:recvRREQ:index(16):0,0,0,0,0,0,0,0,0,-1,
+recvRREQ:free_slot_new[i]:9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-recvRREQ:original free_slot_new[i]:-1217899400,170788096,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.172426:recvRREQ:index(21):0,0,0,0,0,0,0,0,-1,-1,
-recvRREQ:free_slot_new[i]:9,8,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-<14>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<0>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<20>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<0>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<4>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<20>, receiving, but the channel is not idle....???
-<24>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
+recvRREQ:origin rq_path_slot:9,8,7,9,-1,
+recvRREQ:temp_free_slot:1103488098,0,0,0,0,0,0,1,0,1,
 
-recvRREQ:original free_slot_new[i]:0,169713448,
+recvRREQ:original free_slot_new[i]:0,
+recvRREQ:new rq_path_slot:9,8,7,9,8,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.232426:recvRREQ:index(2):0,0,0,0,0,0,-1,-1,0,0,
-recvRREQ:free_slot_new[i]:7,6,
+58.288762:recvRREQ:index(9):0,0,0,0,0,0,0,0,-1,0,
+recvRREQ:free_slot_new[i]:8,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-recvRREQ:original free_slot_new[i]:-1217899400,169649928,
+recvRREQ:origin rq_path_slot:9,8,7,9,-1,
+recvRREQ:temp_free_slot:1103488098,0,0,0,0,0,0,1,0,1,
+
+recvRREQ:original free_slot_new[i]:-1217883016,
+recvRREQ:new rq_path_slot:9,8,7,9,8,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.232426:recvRREQ:index(8):0,0,0,0,0,0,-1,-1,0,0,
-recvRREQ:free_slot_new[i]:7,6,
+58.288762:recvRREQ:index(13):0,0,0,0,0,0,0,0,-1,0,
+recvRREQ:free_slot_new[i]:8,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-recvRREQ:original free_slot_new[i]:-1217899400,168665528,
+recvRREQ:origin rq_path_slot:9,8,7,9,-1,
+recvRREQ:temp_free_slot:1103488098,0,0,0,0,0,0,1,0,1,
+
+recvRREQ:original free_slot_new[i]:-1217883016,
+recvRREQ:new rq_path_slot:9,8,7,9,8,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.232426:recvRREQ:index(14):0,0,0,0,0,0,-1,-1,0,0,
-recvRREQ:free_slot_new[i]:7,6,
+58.288762:recvRREQ:index(17):0,0,0,0,0,0,0,0,-1,0,
+recvRREQ:free_slot_new[i]:8,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-recvRREQ:original free_slot_new[i]:-1217899400,169020296,
+recvRREQ:origin rq_path_slot:9,8,7,9,-1,
+recvRREQ:temp_free_slot:1103488098,0,0,0,0,0,0,1,0,1,
+
+recvRREQ:original free_slot_new[i]:-1217883016,
+recvRREQ:new rq_path_slot:9,8,7,9,8,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.232426:recvRREQ:index(18):0,0,0,0,0,0,-1,-1,0,0,
-recvRREQ:free_slot_new[i]:7,6,
+58.288762:recvRREQ:index(15):0,0,0,0,0,0,0,0,-1,0,
+recvRREQ:free_slot_new[i]:8,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-recvRREQ:original free_slot_new[i]:-1217899400,169829504,
+recvRREQ:origin rq_path_slot:9,8,7,9,-1,
+recvRREQ:temp_free_slot:1103488098,0,0,0,0,0,0,1,0,1,
+
+recvRREQ:original free_slot_new[i]:-1217883016,
+recvRREQ:new rq_path_slot:9,8,7,9,8,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.232426:recvRREQ:index(22):0,0,0,0,0,0,-1,-1,0,0,
-recvRREQ:free_slot_new[i]:7,6,
+58.288762:recvRREQ:index(21):0,0,0,0,0,0,0,0,-1,0,
+recvRREQ:free_slot_new[i]:8,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-recvRREQ:original free_slot_new[i]:-1217899400,168425152,
+58.333418:recvRREP:forward:index(5)0,0,0,0,0,0,0,0,1,-1,
+
+
+recvRREQ:origin rq_path_slot:9,8,7,9,8,-1,
+recvRREQ:temp_free_slot:1103489575,0,0,0,0,0,0,0,1,1,
+
+recvRREQ:original free_slot_new[i]:0,
+recvRREQ:new rq_path_slot:9,8,7,9,8,7,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.232426:recvRREQ:index(20):0,0,0,0,0,0,-1,-1,0,0,
-recvRREQ:free_slot_new[i]:7,6,
+58.348762:recvRREQ:index(14):0,0,0,0,0,0,0,-1,0,0,
+recvRREQ:free_slot_new[i]:7,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-<7>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<20>, can't receive while transmitting!
-<13>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<15>, can't receive while transmitting!
-<21>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<4>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<4>, receiving, but the channel is not idle....???
-<24>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<20>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<24>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
+
+recvRREQ:origin rq_path_slot:9,8,7,9,8,-1,
+recvRREQ:temp_free_slot:1103489575,0,0,0,0,0,0,0,1,1,
+
+recvRREQ:original free_slot_new[i]:-1217883016,
+recvRREQ:new rq_path_slot:9,8,7,9,8,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+58.348762:recvRREQ:index(18):0,0,0,0,0,0,0,-1,0,0,
+recvRREQ:free_slot_new[i]:7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+recvRREQ:origin rq_path_slot:9,8,7,9,8,-1,
+recvRREQ:temp_free_slot:1103489575,0,0,0,0,0,0,0,1,1,
+
+recvRREQ:original free_slot_new[i]:-1217883016,
+recvRREQ:new rq_path_slot:9,8,7,9,8,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+58.348762:recvRREQ:index(20):0,0,0,0,0,0,0,-1,0,0,
+recvRREQ:free_slot_new[i]:7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+recvRREQ:origin rq_path_slot:9,8,7,9,8,-1,
+recvRREQ:temp_free_slot:1103489575,0,0,0,0,0,0,0,1,1,
+
+recvRREQ:original free_slot_new[i]:-1217883016,
+recvRREQ:new rq_path_slot:9,8,7,9,8,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+58.348762:recvRREQ:index(22):0,0,0,0,0,0,0,-1,0,0,
+recvRREQ:free_slot_new[i]:7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+recvRREQ:origin rq_path_slot:9,8,7,9,8,7,-1,
+recvRREQ:temp_free_slot:1103491052,0,0,0,0,0,0,1,1,0,
+
+recvRREQ:original free_slot_new[i]:0,
+recvRREQ:new rq_path_slot:9,8,7,9,8,7,9,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+58.408762:recvRREQ:index(19):0,0,0,0,0,0,0,0,0,-1,
+recvRREQ:free_slot_new[i]:9,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+recvRREQ:origin rq_path_slot:9,8,7,9,8,7,-1,
+recvRREQ:temp_free_slot:1103491052,0,0,0,0,0,0,1,1,0,
+
+recvRREQ:original free_slot_new[i]:-1217883016,
+recvRREQ:new rq_path_slot:9,8,7,9,8,7,9,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+58.408762:recvRREQ:index(23):0,0,0,0,0,0,0,0,0,-1,
+recvRREQ:free_slot_new[i]:9,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+recvRREQ:origin rq_path_slot:9,8,7,9,8,7,9,-1,
+recvRREQ:temp_free_slot:1103492529,0,0,0,0,0,0,1,0,1,
+
+recvRREQ:original free_slot_new[i]:0,
+recvRREQ:new rq_path_slot:9,8,7,9,8,7,9,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+58.468762:recvRREQ:index(24):0,0,0,0,0,0,0,0,-1,0,
+recvRREQ:free_slot_new[i]:8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.292410:recvRREP:origin:index(10):0,0,0,0,0,0,0,0,1,1,
-recvRREP:rp_slot[i]:9,8,-1,-1,-1,-1,-1,-1,-1,-1,
+58.513418:recvRREP:origin:index(0):0,0,0,0,0,0,0,0,0,1,
+recvRREP:rp_slot[i]:9,-1,-1,-1,-1,-1,-1,-1,-1,-1,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-recvRREQ:original free_slot_new[i]:0,169374896,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.292426:recvRREQ:index(3):0,0,0,0,0,0,0,0,-1,-1,
-recvRREQ:free_slot_new[i]:9,8,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+62.052000:index(1)'s slot(9) timeout!
 
-recvRREQ:original free_slot_new[i]:-1217899400,170021568,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.292426:recvRREQ:index(9):0,0,0,0,0,0,0,0,-1,-1,
-recvRREQ:free_slot_new[i]:9,8,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+62.112000:index(2)'s slot(8) timeout!
 
-recvRREQ:original free_slot_new[i]:-1217899400,170537264,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.292426:recvRREQ:index(19):0,0,0,0,0,0,0,0,-1,-1,
-recvRREQ:free_slot_new[i]:9,8,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+62.112000:index(6)'s slot(8) timeout!
 
-recvRREQ:original free_slot_new[i]:-1217899400,170535792,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.292426:recvRREQ:index(23):0,0,0,0,0,0,0,0,-1,-1,
-recvRREQ:free_slot_new[i]:9,8,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-<8>, receiving, but the channel is not idle....???
-<4>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<24>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
+62.172000:index(3)'s slot(7) timeout!
 
-recvRREQ:original free_slot_new[i]:0,168756432,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.352426:recvRREQ:index(4):0,0,0,0,0,0,-1,-1,0,0,
-recvRREQ:free_slot_new[i]:7,6,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+62.172000:index(7)'s slot(7) timeout!
 
-recvRREQ:original free_slot_new[i]:-1217899400,168849120,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.352426:recvRREQ:index(24):0,0,0,0,0,0,-1,-1,0,0,
-recvRREQ:free_slot_new[i]:7,6,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-<14>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<1>, can't receive while transmitting!
-<0>, can't receive while transmitting!
-<6>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<8>, can't receive while transmitting!
-<3>, can't receive while transmitting!
-<13>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<23>, can't receive while transmitting!
-<18>, can't receive while transmitting!
-<7>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<4>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<24>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<4>, receiving, but the channel is not idle....???
-<24>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<1>, can't receive while transmitting!
-<0>, can't receive while transmitting!
-<13>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<0>, receiving, but the channel is not idle....???
-<4>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<13>, can't receive while transmitting!
-<12>, can't receive while transmitting!
-<14>, can't receive while transmitting!
-<13>, can't receive while transmitting!
-<13>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<4>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<24>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<0>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<23>, can't receive while transmitting!
-<22>, can't receive while transmitting!
-<18>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<24>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<24>, can't receive while transmitting!
-<19>, can't receive while transmitting!
-<23>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<9>, can't receive while transmitting!
-<8>, can't receive while transmitting!
-<4>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<23>, can't receive while transmitting!
-<22>, can't receive while transmitting!
-<18>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<24>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<1>, can't receive while transmitting!
-<0>, can't receive while transmitting!
-<14>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<0>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<4>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
+62.172000:index(11)'s slot(7) timeout!
 
-6.054000:index(5)'s slot(8) timeout!
+62.232000:index(4)'s slot(9) timeout!
 
-6.054000:index(5)'s slot(9) timeout!
+62.232000:index(8)'s slot(9) timeout!
 
-6.054000:index(11)'s slot(8) timeout!
+62.232000:index(12)'s slot(9) timeout!
 
-6.054000:index(11)'s slot(9) timeout!
+62.232000:index(16)'s slot(9) timeout!
 
-6.114000:index(0)'s slot(6) timeout!
+62.292000:index(9)'s slot(8) timeout!
 
-6.114000:index(0)'s slot(7) timeout!
+62.292000:index(13)'s slot(8) timeout!
 
-6.114000:index(6)'s slot(6) timeout!
+62.292000:index(15)'s slot(8) timeout!
 
-6.114000:index(6)'s slot(7) timeout!
+62.292000:index(17)'s slot(8) timeout!
 
-6.114000:index(12)'s slot(6) timeout!
+62.292000:index(21)'s slot(8) timeout!
 
-6.114000:index(12)'s slot(7) timeout!
+62.352000:index(14)'s slot(7) timeout!
 
-6.114000:index(16)'s slot(6) timeout!
+62.352000:index(18)'s slot(7) timeout!
 
-6.114000:index(16)'s slot(7) timeout!
-<20>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
+62.352000:index(20)'s slot(7) timeout!
 
-6.174000:index(1)'s slot(8) timeout!
+62.352000:index(22)'s slot(7) timeout!
 
-6.174000:index(1)'s slot(9) timeout!
+62.412000:index(19)'s slot(9) timeout!
 
-6.174000:index(7)'s slot(8) timeout!
+62.412000:index(23)'s slot(9) timeout!
 
-6.174000:index(7)'s slot(9) timeout!
-
-6.174000:index(13)'s slot(8) timeout!
-
-6.174000:index(13)'s slot(9) timeout!
-
-6.174000:index(17)'s slot(8) timeout!
-
-6.174000:index(17)'s slot(9) timeout!
-
-6.174000:index(21)'s slot(8) timeout!
-
-6.174000:index(21)'s slot(9) timeout!
-<8>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-
-6.234000:index(2)'s slot(6) timeout!
-
-6.234000:index(2)'s slot(7) timeout!
-
-6.234000:index(8)'s slot(6) timeout!
-
-6.234000:index(8)'s slot(7) timeout!
-
-6.234000:index(14)'s slot(6) timeout!
-
-6.234000:index(14)'s slot(7) timeout!
-
-6.234000:index(18)'s slot(6) timeout!
-
-6.234000:index(18)'s slot(7) timeout!
-
-6.234000:index(20)'s slot(6) timeout!
-
-6.234000:index(20)'s slot(7) timeout!
-
-6.234000:index(22)'s slot(6) timeout!
-
-6.234000:index(22)'s slot(7) timeout!
-<15>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-
-6.294000:index(3)'s slot(8) timeout!
-
-6.294000:index(3)'s slot(9) timeout!
-
-6.294000:index(9)'s slot(8) timeout!
-
-6.294000:index(9)'s slot(9) timeout!
-
-6.294000:index(19)'s slot(8) timeout!
-
-6.294000:index(19)'s slot(9) timeout!
-
-6.294000:index(23)'s slot(8) timeout!
-
-6.294000:index(23)'s slot(9) timeout!
-<23>, can't receive while transmitting!
-<22>, can't receive while transmitting!
-<18>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<24>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-
-6.354000:index(4)'s slot(6) timeout!
-
-6.354000:index(4)'s slot(7) timeout!
-
-6.354000:index(24)'s slot(6) timeout!
-
-6.354000:index(24)'s slot(7) timeout!
-<11>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<11>, can't receive while transmitting!
-<7>, receiving, but the channel is not idle....???
-<9>, can't receive while transmitting!
-<8>, can't receive while transmitting!
-<6>, can't receive while transmitting!
-<10>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<4>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<0>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<18>, can't receive while transmitting!
-<17>, can't receive while transmitting!
-<13>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<24>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<24>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<20>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<0>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<4>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<9>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<0>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<20>, receiving, but the channel is not idle....???
-<5>, can't receive while transmitting!
-<1>, receiving, but the channel is not idle....???
-<0>, can't receive while transmitting!
-<6>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<0>, receiving, but the channel is not idle....???
-<4>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<23>, can't receive while transmitting!
-<22>, can't receive while transmitting!
-<24>, can't receive while transmitting!
-<23>, can't receive while transmitting!
-<23>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<24>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<3>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<16>, receiving, but the channel is not idle....???
-<16>, can't receive while transmitting!
-<15>, can't receive while transmitting!
-<21>, can't receive while transmitting!
-<20>, receiving, but the channel is not idle....???
-<16>, can't receive while transmitting!
-<16>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<21>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<20>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<15>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<17>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<23>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<22>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<5>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<0>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<8>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<12>, receiving, but the channel is not idle....???
-<13>, receiving, but the channel is not idle....???
-<2>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
-<18>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<7>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<1>, receiving, but the channel is not idle....???
-<11>, receiving, but the channel is not idle....???
-<19>, receiving, but the channel is not idle....???
-<14>, receiving, but the channel is not idle....???
-<10>, receiving, but the channel is not idle....???
-<6>, receiving, but the channel is not idle....???
+62.472000:index(24)'s slot(8) timeout!
