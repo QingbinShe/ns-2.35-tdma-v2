@@ -837,13 +837,19 @@ int *free_slot_new = new int[(int)(global_rate)];
 */
 for (int a = 0; a < global_rate; a++) {
   int free_slot = SLOT_AS_CONTROL;
+  for (int c = SLOT_AS_CONTROL; c < MAX_SLOT_NUM_; c++) {
+    if (temp_free_slot[c] != -1) {
+      free_slot = c;
+      break;
+    }
+  }
   for (int b = SLOT_AS_CONTROL; b < MAX_SLOT_NUM_; b++ ) {
     if ((temp_free_slot[free_slot] >= temp_free_slot[b]) && (temp_free_slot[b] != -1)) {
       free_slot = b;
     }
   }
   if (temp_free_slot[free_slot] == -1) {
-    printf("index(%d) has not enought slot to allocate!!!temp_free_slot[]:%d\n", index, temp_free_slot[free_slot]);
+    printf("index(%d) has not enought slot to allocate!!!temp_free_slot[%d]:%d\n", index, temp_free_slot[free_slot], free_slot);
     printf("\ntemp_free_slot[]:");
     for (int i = 0; i < MAX_SLOT_NUM_; i++) {
       printf("%d,", temp_free_slot[i]);
