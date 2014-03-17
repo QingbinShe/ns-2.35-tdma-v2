@@ -171,7 +171,6 @@ bind("global_rate", &global_rate);
   logtarget = 0;
   ifqueue = 0;
 
-  
   //test aodv visit tdma:wrong, because initialing the command to let aodv visit tdma is behind initialing the nodes in .tcl
   //printf("Get Node %d mac slot_packet_len_:%d\n", index, macTdma -> slotTb_.slotTable[0].flag);
 }
@@ -715,7 +714,8 @@ struct hdr_cmn *ch = HDR_CMN(p);
     Packet::free(p);
     return;
   } 
-
+//only when the node is forwarding node, it can drop request if it recently heard this request
+if (rq->rq_dst != index) {
  if (id_lookup(rq->rq_src, rq->rq_bcast_id)) {
 
 #ifdef DEBUG
@@ -725,6 +725,7 @@ struct hdr_cmn *ch = HDR_CMN(p);
    Packet::free(p);
    return;
  }
+}
 
 //record the condition of slots before the assignment of slots
  for (int a = 0; a < 10; a++) {
@@ -735,6 +736,89 @@ struct hdr_cmn *ch = HDR_CMN(p);
      break;
    }
  }
+ for (int a = 0; a < 10; a++) {
+   printf("\n");
+   for (int b = SLOT_AS_CONTROL; b < MAX_SLOT_NUM_; b++) {
+     printf("%d,", rq->rq_route_all_slot[a][b]);
+   }
+ }
+
+
+//calculate the estimated bandwidth
+if (rq->rq_dst == index) {
+  int estimateBW = 0;
+  for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
+    if ((rq->rq_route_all_slot[0][i] == 0) && (rq->rq_route_all_slot[1][i] == 0)) {
+      estimateBW ++;
+    }
+  }
+  printf("\nestimateBW01:%d", estimateBW);
+  for (int a = 2; rq->rq_route_all_slot[a][SLOT_AS_CONTROL] != -2; a++) {
+    int tempBWA = 0;
+    int tempBWB = 0;
+    for (int b = SLOT_AS_CONTROL; b < MAX_SLOT_NUM_; b++) {
+      if ((rq->rq_route_all_slot[a-1][b] == 0) && (rq->rq_route_all_slot[a][b] == 0)) {
+        tempBWA++;
+      }
+    }
+    printf("\ntempBWA01:%d", tempBWA);
+    for (int b = SLOT_AS_CONTROL; b < MAX_SLOT_NUM_; b++) {
+      if ((rq->rq_route_all_slot[a-1][b] == 0) && (rq->rq_route_all_slot[a][b] == 0)\
+          && (rq->rq_route_all_slot[a-2][b] == 0) && (rq->rq_route_all_slot[a-1][b] == 0)) {
+        tempBWB++;
+      }
+    }
+    printf("\ntempBWB:%d", tempBWB);
+    tempBWA = tempBWA - tempBWB / 2;
+    printf("\ntempBWA02:%d", tempBWA);
+    if (estimateBW > tempBWA) {
+      estimateBW = tempBWA;
+    }
+    printf("\nestimateBW02:%d", estimateBW);
+  }
+
+  //update the table which used to select the path
+  //find out if the packet has been received before
+  packetNode *mark = rreqQueue.head;
+  while (mark != NULL) {
+    if ((HDR_AODV_REQUEST(mark->p)->rq_src == rq->rq_src) \
+          && (HDR_AODV_REQUEST(mark->p)->rq_bcast_id == rq->rq_bcast_id)) {
+      break;
+    }
+    mark = mark->next;
+  }
+  //the packet has been received
+  if (mark != NULL) {
+    if (mark->estimateBW >= estimateBW) {
+      Packet::free(p);
+      return;
+    }
+    if (mark->estimateBW < estimateBW) {
+      mark->p = p;
+      mark->estimateBW = estimateBW;
+      return;
+    }
+  }
+  //the packet has not been received
+  if (mark == NULL) {
+    if (rreqQueue.head == NULL) {
+      packetNode tempNode(p, estimateBW);
+      rreqQueue.head = &tempNode;
+      rreqQueue.tail = &tempNode;
+    }
+    if (rreqQueue.head != NULL) {
+      packetNode tempNode(p, estimateBW);
+      rreqQueue.tail->next = &tempNode;
+      rreqQueue.tail = &tempNode;
+    }
+  }
+  //test
+  for (packetNode *test = rreqQueue.head; test != NULL; test = test->next) {
+    printf("\n%f:index(%d):rq_src,rq_bcast_id,estimateBW:%d, %d, %d:\n", CURRENT_TIME, index, \
+           HDR_AODV_REQUEST(test->p)->rq_src, HDR_AODV_REQUEST(test->p)->rq_bcast_id, test->estimateBW);
+  }
+}
+
 
  int temp_free_slot[MAX_SLOT_NUM_];	//to cash the free slot
  //itself's free receiving time slot
