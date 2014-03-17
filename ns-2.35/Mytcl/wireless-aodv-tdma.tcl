@@ -24,7 +24,7 @@ set val(rp)      AODV                         ;#无线路由协议：AODV
 set val(nn)      25                           ;#节点数目：9
 set val(x)       1000                         ;#仿真区域长度1000m
 set val(y)       1000                         ;#仿真区域宽度1000m
-set val(stop)    100.0                          ;#设定模拟时间1.0s
+set val(stop)    10.0                          ;#设定模拟时间1.0s
 
 #
 #==============启动实例和文件等===============================
@@ -70,7 +70,7 @@ getopt $argc $argv
 Mac/Tdma set max_slot_num_ $opt(slot_num_)
 
 #定义发送数率(以K为单位),传送的是需要的时隙数目
-Agent/AODV set global_rate [expr int (((1000.0 / $opt(slot_num_)) + $opt(rate) - 1) / (1000.0 / $opt(slot_num_)))]
+Agent/AODV set global_rate [expr int (((500.0 / $opt(slot_num_)) + $opt(rate) - 1) / (500.0 / $opt(slot_num_)))]
 
 #建立节点的位置
 set i 0				;#节点数目

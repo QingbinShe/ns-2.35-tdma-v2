@@ -93,6 +93,8 @@ struct hdr_aodv_request {
 	int		rq_slot_factor[MAX_SLOT_NUM_];  //record the factor of slot(the Factor[i] == the value)
 
 	int		rq_path_slot[1000];             //record the used slots by every link in the path
+
+	int		rq_route_all_slot[10][MAX_SLOT_NUM_];//record condition of all the slots in the path for destination node to choose path, !!!our model decides the maximun nodes in a path is less than 9,so use 10
   // This define turns on gratuitous replies- see aodv.cc for implementation contributed by
   // Anant Utgikar, 09/16/02.
   //#define RREQ_GRAT_RREP	0x80
@@ -111,7 +113,8 @@ struct hdr_aodv_request {
 	     + sizeof(u_int32_t)	// rq_src_seqno
 	     + MAX_SLOT_NUM_ * sizeof(int)           //rq_free_slot
              + MAX_SLOT_NUM_ * sizeof(int)           //re_slot_factor
-             + 1000 * sizeof(int);                   //re_path_slot
+             + 1000 * sizeof(int)                    //re_path_slot
+             + 10 * MAX_SLOT_NUM_ * sizeof(int);       //re_route_all_slot
   //	sz = 7*sizeof(u_int32_t);
   	assert (sz >= 0);
 	return sz;

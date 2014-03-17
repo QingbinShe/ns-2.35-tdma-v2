@@ -726,6 +726,15 @@ struct hdr_cmn *ch = HDR_CMN(p);
    return;
  }
 
+//record the condition of slots before the assignment of slots
+ for (int a = 0; a < 10; a++) {
+   if (rq->rq_route_all_slot[a][SLOT_AS_CONTROL] == -2) {
+     for (int b = SLOT_AS_CONTROL; b < MAX_SLOT_NUM_; b++) {
+       rq->rq_route_all_slot[a][b] = macTdma->slotTb_.slotTable[b].flag;
+     }
+     break;
+   }
+ }
 
  int temp_free_slot[MAX_SLOT_NUM_];	//to cash the free slot
  //itself's free receiving time slot
@@ -1011,7 +1020,33 @@ rt_update(rt0, rq->rq_src_seqno, rq->rq_hop_count, ih->saddr(),
      macTdma->slotTb_.slotTable[free_slot_new[i]].expire = CURRENT_TIME + TEST_ROUTE_TIMEOUT;
    }
    
-   
+//////////////////////////////////////////////
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+
+for (int a = 0; a < 10; a++) {
+  printf("\n");
+  for (int b = SLOT_AS_CONTROL; b < MAX_SLOT_NUM_; b++) {
+    printf("%d,", rq->rq_route_all_slot[a][b]);
+  }
+}
+/////////////////////////////////////////  
+
+
+ 
    sendReply(rq->rq_src,           // IP Destination
              1,                    // Hop Count
              index,                // Dest IP Address
@@ -1470,6 +1505,16 @@ AODV_Neighbor *nb = nbhead.lh_first;
 for (int i = 0; i < 1000; i++) {
   rq->rq_path_slot[i] = -1;
 }
+//initialize
+ for (int i = 0; i < 10; i++) {
+   for (int b = 0; b < MAX_SLOT_NUM_; b++) {
+     rq->rq_route_all_slot[i][b] = -2;
+   }
+ }
+ for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
+   rq->rq_route_all_slot[0][i] = macTdma->slotTb_.slotTable[i].flag;
+ }
+
 
 //printf("\nin sendRREQ,flow and QoS_BW is: %d, %f", ch->flow_id(), global_rate);
 
@@ -1584,6 +1629,7 @@ for (int i = 0; i < 1000; i++) {
  assert ((seqno%2) == 0);
  rq->rq_src_seqno = seqno;
  rq->rq_timestamp = CURRENT_TIME;
+
 
  //fill the free transmitting time slot set
  for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
