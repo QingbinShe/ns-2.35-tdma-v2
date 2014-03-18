@@ -349,26 +349,11 @@ class AODV: public Agent {
 //////////////////////////////////////////////
 static double global_rate;
 //////////////////////////////////////////////
-class packetNode {
-  public:
+struct packetNode {
     Packet *p;
     int estimateBW;
     packetNode *next;
-    packetNode(Packet *newpacket, int newBW) {
-      p = newpacket;
-      estimateBW = newBW;
-      next = NULL;
-    }
-}; 
-class packetQueue {
-  public:
-    packetNode *head;
-    packetNode *tail;
-    packetQueue() {
-      head = NULL;
-      tail = NULL;
-    }
-} rreqQueue;
+} *rreq_queue_head;
 
 
 };

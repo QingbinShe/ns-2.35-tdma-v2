@@ -29,6 +29,7 @@ The AODV code developed by the CMU/MONARCH group was optimized and tuned by Sami
 */
 
 //#include <ip.h>
+#include <unistd.h>
 
 #include <aodv/aodv.h>
 #include <aodv/aodv_packet.h>
@@ -160,6 +161,7 @@ AODV::AODV(nsaddr_t id) : Agent(PT_AODV),
 //extern const int global_rate;
 bind("global_rate", &global_rate);
 //Global_Rate = global_rate;                
+rreq_queue_head = NULL;
 
   index = id;
   seqno = 2;
@@ -662,6 +664,7 @@ AODV::recvAODV(Packet *p) {
 
  case AODVTYPE_RREQ:
  //  ch->tdma_ = 1;        //if receive rreq packet, then ask tdma to allot slot
+   //printf("\n%f:recvAODV:index(%d):recvRequest\n", CURRENT_TIME, index);
    recvRequest(p);
    break;
 
@@ -694,9 +697,9 @@ AODV_Neighbor *nb = nbhead.lh_first;
 struct hdr_cmn *ch = HDR_CMN(p);
 
  //test sendRequest
- /*printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
- printf("\n%f:index(%d) receive rreq from index(%d):", CURRENT_TIME, index, rq->rq_src);
- for (int i = 0; i < MAX_SLOT_NUM_; i++) {
+ //printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+ //printf("\n%f:index(%d) receive rreq from index(%d):", CURRENT_TIME, index, rq->rq_src);
+ /*for (int i = 0; i < MAX_SLOT_NUM_; i++) {
    printf("%d,",rq->rq_free_slot[i]);
  }
  printf("\n"); */
@@ -719,7 +722,7 @@ if (rq->rq_dst != index) {
  if (id_lookup(rq->rq_src, rq->rq_bcast_id)) {
 
 #ifdef DEBUG
-   fprintf(stderr, "%s: discarding request\n", __FUNCTION__);
+   printf("\n%f:index(%d):%s: discarding request\n", CURRENT_TIME, index, __FUNCTION__);
 #endif // DEBUG
  
    Packet::free(p);
@@ -744,8 +747,9 @@ if (rq->rq_dst != index) {
  }
 
 
-//calculate the estimated bandwidth
 if (rq->rq_dst == index) {
+  //calculate the estimated bandwidth
+//  printf("\n%f:index(%d):receive rreq!!!!!!!!!!!!!!!!!!!!!\n", CURRENT_TIME, index);
   int estimateBW = 0;
   for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
     if ((rq->rq_route_all_slot[0][i] == 0) && (rq->rq_route_all_slot[1][i] == 0)) {
@@ -779,10 +783,11 @@ if (rq->rq_dst == index) {
 
   //update the table which used to select the path
   //find out if the packet has been received before
-  packetNode *mark = rreqQueue.head;
+  packetNode *mark = rreq_queue_head;
   while (mark != NULL) {
     if ((HDR_AODV_REQUEST(mark->p)->rq_src == rq->rq_src) \
           && (HDR_AODV_REQUEST(mark->p)->rq_bcast_id == rq->rq_bcast_id)) {
+      printf("\n%f:index(%d):drop rreq from index(%d)(the estimateBW not better)", CURRENT_TIME, index, rq->rq_src);
       break;
     }
     mark = mark->next;
@@ -793,33 +798,45 @@ if (rq->rq_dst == index) {
       Packet::free(p);
       return;
     }
-    if (mark->estimateBW < estimateBW) {
+    else {
+      Packet *deletePacket = mark->p;
       mark->p = p;
       mark->estimateBW = estimateBW;
+      Packet::free(deletePacket);
       return;
     }
   }
   //the packet has not been received
-  if (mark == NULL) {
-    if (rreqQueue.head == NULL) {
-      packetNode tempNode(p, estimateBW);
-      rreqQueue.head = &tempNode;
-      rreqQueue.tail = &tempNode;
+  else {
+    if (rreq_queue_head == NULL) {
+      packetNode *tempNode = new packetNode;
+      tempNode->p = p;
+      tempNode->estimateBW = estimateBW;
+      tempNode->next = NULL;
+      rreq_queue_head = tempNode;
     }
-    if (rreqQueue.head != NULL) {
-      packetNode tempNode(p, estimateBW);
-      rreqQueue.tail->next = &tempNode;
-      rreqQueue.tail = &tempNode;
+    else {
+      packetNode *tempNode = new packetNode;
+      tempNode->p = p;
+      tempNode->estimateBW = estimateBW;
+      tempNode->next = NULL;
+      for (packetNode *temp = rreq_queue_head; temp != NULL; temp = temp->next) {
+        if ((temp->next) == NULL) {
+          temp->next = tempNode;
+          break;
+        }
+      }
     }
   }
+
   //test
-  for (packetNode *test = rreqQueue.head; test != NULL; test = test->next) {
-    printf("\n%f:index(%d):rq_src,rq_bcast_id,estimateBW:%d, %d, %d:\n", CURRENT_TIME, index, \
-           HDR_AODV_REQUEST(test->p)->rq_src, HDR_AODV_REQUEST(test->p)->rq_bcast_id, test->estimateBW);
+  for (packetNode *test = rreq_queue_head; test != NULL; test = test->next) {
+    printf("\n%f:index(%d):rq_src,rq_dst,rq_bcast_id,estimateBW:%d, %d, %d, %d:\n", CURRENT_TIME, index, \
+           HDR_AODV_REQUEST(test->p)->rq_src, HDR_AODV_REQUEST(test->p)->rq_dst, HDR_AODV_REQUEST(test->p)->rq_bcast_id, test->estimateBW);
+    printf("\nthe address of packetNode is:%f\n", test);
   }
 }
-
-
+  
  int temp_free_slot[MAX_SLOT_NUM_];	//to cash the free slot
  //itself's free receiving time slot
  for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
@@ -1130,7 +1147,9 @@ for (int a = 0; a < 10; a++) {
 /////////////////////////////////////////  
 
 
- 
+   /*my experiment shows that: when the node sendReply, the neighbor nodes receive reply, then neighbor nodes 
+    *will no longer send request to destination node
+    */
    sendReply(rq->rq_src,           // IP Destination
              1,                    // Hop Count
              index,                // Dest IP Address
@@ -1964,14 +1983,14 @@ fprintf(stderr, "sending Hello from %d at %.2f\n", index, Scheduler::instance().
 
 //test hello packet
 //printf("%f:index(%d) send hello packet. slotflag is:%d,%d,%d,%d,%d,%d,%d\n", CURRENT_TIME, index, macTdma->slotTb_.slotTable[0].flag, macTdma->slotTb_.slotTable[1].flag, macTdma->slotTb_.slotTable[2].flag, macTdma->slotTb_.slotTable[3].flag, macTdma->slotTb_.slotTable[4].flag, macTdma->slotTb_.slotTable[5].flag, macTdma->slotTb_.slotTable[6].flag);
-printf("\n%f:index(%d):sendHello:rp_slotCondition[MAX_SLOT_NUM_]:\n", CURRENT_TIME, index);
+/*printf("\n%f:index(%d):sendHello:rp_slotCondition[MAX_SLOT_NUM_]:\n", CURRENT_TIME, index);
 for (int i = 0; i < MAX_SLOT_NUM_; i++) {
   printf("%d,", rh->rp_slotCondition[i]);
 }
 printf("\n%f:index(%d):sendHello:rp_nbSlotCondition[4 * MAX_SLOT_NUM_]:\n", CURRENT_TIME, index);
 for (int i = 0; i < 4 * MAX_SLOT_NUM_; i++) {
   printf("%d,", rh->rp_nbSlotCondition[i]);
-}
+}*/
 
  // ch->uid() = 0;
  ch->ptype() = PT_AODV;
@@ -2021,14 +2040,14 @@ AODV_Neighbor *nb;
 //test hello packet
 //if (nb != 0)
 //printf("%f:receive:index(%d) receive hello packet from index(%d). slotflag is:%d,%d,%d,%d,%d,%d,%d\n", CURRENT_TIME, index, rp->rp_dst, rp->rp_slotCondition[0], rp->rp_slotCondition[1], rp->rp_slotCondition[2], rp->rp_slotCondition[3], rp->rp_slotCondition[4], rp->rp_slotCondition[5], rp->rp_slotCondition[6]);
-printf("\n%f:index(%d):recvHello:rp_slotCondition[MAX_SLOT_NUM_]:\n", CURRENT_TIME, index);
+/*printf("\n%f:index(%d):recvHello:rp_slotCondition[MAX_SLOT_NUM_]:\n", CURRENT_TIME, index);
 for (int i = 0; i < MAX_SLOT_NUM_; i++) {
   printf("%d,", rp->rp_slotCondition[i]);
 }
 printf("\n%f:index(%d):recvHello:rp_nbSlotCondition[4 * MAX_SLOT_NUM_]:\n", CURRENT_TIME, index);
 for (int i = 0; i < 4 * MAX_SLOT_NUM_; i++) {
   printf("%d,", rp->rp_nbSlotCondition[i]);
-}
+}*/
 
  //test if hello packet can cash in the list successfully
  /*nb = nbhead.lh_first;
