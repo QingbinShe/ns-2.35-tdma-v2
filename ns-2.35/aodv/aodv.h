@@ -131,6 +131,15 @@ class AODV;
 /*
   Timers (Broadcast ID, Hello, Neighbor Cache, Route Cache)
 */
+//define scheduler:destination node wait for a period of time after it receive rreq
+class rreqTimer : public TimerHandler {
+public:
+	rreqTimer(AODV* a) : TimerHandler() { agent = a; }
+private:
+	AODV *agent;
+	virtual void expire(Event* e);
+};
+
 class BroadcastTimer : public Handler {
 public:
         BroadcastTimer(AODV* a) : agent(a) {}
@@ -209,7 +218,9 @@ class AODV: public Agent {
         friend class NeighborTimer;
         friend class RouteCacheTimer;
         friend class LocalRepairTimer;
-
+        
+        friend class rreqTimer;
+      
  public:
         AODV(nsaddr_t id);
 
@@ -313,6 +324,7 @@ class AODV: public Agent {
         NeighborTimer   ntimer;
         RouteCacheTimer rtimer;
         LocalRepairTimer lrtimer;
+rreqTimer rreqtimer;
 
         /*
          * Routing Table
@@ -355,7 +367,7 @@ struct packetNode {
     packetNode *next;
 } *rreq_queue_head;
 
-
 };
+
 
 #endif /* __aodv_h__ */

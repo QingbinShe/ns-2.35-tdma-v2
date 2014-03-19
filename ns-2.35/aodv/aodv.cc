@@ -157,7 +157,7 @@ AODV::command(int argc, const char*const* argv) {
 
 AODV::AODV(nsaddr_t id) : Agent(PT_AODV),
 			  btimer(this), htimer(this), ntimer(this), 
-			  rtimer(this), lrtimer(this), rqueue() {
+			  rtimer(this), lrtimer(this), rreqtimer(this), rqueue() {
 //extern const int global_rate;
 bind("global_rate", &global_rate);
 //Global_Rate = global_rate;                
@@ -180,6 +180,11 @@ rreq_queue_head = NULL;
 /*
   Timers
 */
+void 
+rreqTimer::expire(Event *e) {
+  printf("\n%f:rreqTimer::handle\n", CURRENT_TIME);
+}
+
 
 void
 BroadcastTimer::handle(Event*) {
@@ -319,10 +324,10 @@ aodv_rt_failed_callback(Packet *p, void *arg) {
  */
 void
 AODV::rt_ll_failed(Packet *p) {
-struct hdr_cmn *ch = HDR_CMN(p);
-struct hdr_ip *ih = HDR_IP(p);
-aodv_rt_entry *rt;
-nsaddr_t broken_nbr = ch->next_hop_;
+//struct hdr_cmn *ch = HDR_CMN(p);
+//struct hdr_ip *ih = HDR_IP(p);
+//aodv_rt_entry *rt;
+//nsaddr_t broken_nbr = ch->next_hop_;
 
 #ifndef AODV_LINK_LAYER_DETECTION
  drop(p, DROP_RTR_MAC_CALLBACK);
@@ -693,8 +698,8 @@ AODV::recvRequest(Packet *p) {
 struct hdr_ip *ih = HDR_IP(p);
 struct hdr_aodv_request *rq = HDR_AODV_REQUEST(p);
 aodv_rt_entry *rt;
-AODV_Neighbor *nb = nbhead.lh_first;
-struct hdr_cmn *ch = HDR_CMN(p);
+//AODV_Neighbor *nb = nbhead.lh_first;
+//struct hdr_cmn *ch = HDR_CMN(p);
 
  //test sendRequest
  //printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
@@ -833,10 +838,18 @@ if (rq->rq_dst == index) {
   for (packetNode *test = rreq_queue_head; test != NULL; test = test->next) {
     printf("\n%f:index(%d):rq_src,rq_dst,rq_bcast_id,estimateBW:%d, %d, %d, %d:\n", CURRENT_TIME, index, \
            HDR_AODV_REQUEST(test->p)->rq_src, HDR_AODV_REQUEST(test->p)->rq_dst, HDR_AODV_REQUEST(test->p)->rq_bcast_id, test->estimateBW);
-    printf("\nthe address of packetNode is:%f\n", test);
+    //printf("\nthe address of packetNode is:%f\n", test);
   }
+
+printf("\n%f:index(%d):before timer:", CURRENT_TIME, index);
+//Scheduler::instance().schedule(&rreqtimer_, p, 2);
+rreqtimer.sched((double) 1.0);
 }
-  
+ 
+/*printf("\n%f:index(%d):before timer:", CURRENT_TIME, index);
+Scheduler::instance().schedule(&rreqtimer_, p, 10);
+*///rreqtimer_.handle((Event*) 2);
+ 
  int temp_free_slot[MAX_SLOT_NUM_];	//to cash the free slot
  //itself's free receiving time slot
  for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
@@ -913,7 +926,7 @@ for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
   }
 }
 
-printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+//printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
 printf("\n%f:index(%d):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):\n", CURRENT_TIME, index);
 for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
   printf("%d,", temp_free_slot[i]);
@@ -1602,7 +1615,7 @@ struct hdr_cmn *ch = HDR_CMN(p);
 struct hdr_ip *ih = HDR_IP(p);
 struct hdr_aodv_request *rq = HDR_AODV_REQUEST(p);
 aodv_rt_entry *rt = rtable.rt_lookup(dst);
-AODV_Neighbor *nb = nbhead.lh_first;
+//AODV_Neighbor *nb = nbhead.lh_first;
 
 //initiate the rq_path_slot[1000]
 for (int i = 0; i < 1000; i++) {
@@ -1950,7 +1963,7 @@ Packet *p = Packet::alloc();
 struct hdr_cmn *ch = HDR_CMN(p);
 struct hdr_ip *ih = HDR_IP(p);
 struct hdr_aodv_reply *rh = HDR_AODV_REPLY(p);
-AODV_Neighbor *nb = nbhead.lh_first;
+//AODV_Neighbor *nb = nbhead.lh_first;
 
 #ifdef DEBUG
 fprintf(stderr, "sending Hello from %d at %.2f\n", index, Scheduler::instance().clock());
