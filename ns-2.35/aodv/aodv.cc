@@ -180,11 +180,6 @@ rreq_queue_head = NULL;
 /*
   Timers
 */
-void 
-rreqTimer::expire(Event *e) {
-  printf("\n%f:rreqTimer::handle\n", CURRENT_TIME);
-}
-
 
 void
 BroadcastTimer::handle(Event*) {
@@ -692,6 +687,294 @@ AODV::recvAODV(Packet *p) {
 
 }
 
+//this timer used by recvRequest when the node recv rreq which send to it
+void 
+rreqTimer::expire(Event *e) {
+ Packet *p = agent->rreq_queue_head->p;
+ agent->rreq_queue_head = agent->rreq_queue_head->next;
+ struct hdr_ip *ih = HDR_IP(p);
+ struct hdr_aodv_request *rq = HDR_AODV_REQUEST(p);
+ aodv_rt_entry *rt;
+ 
+ printf("\n%f:rreqTimer::handle\n", CURRENT_TIME);
+
+ int temp_free_slot[MAX_SLOT_NUM_];	//to cash the free slot
+ //itself's free receiving time slot
+ for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
+     temp_free_slot[i] = 0;
+     if (agent->macTdma->slotTb_.slotTable[i].flag != 0) {
+       temp_free_slot[i] = 1;
+     }
+     /*else {
+       for (AODV_Neighbor *nb = nbhead.lh_first; nb; nb = nb->nb_link.le_next) {
+         if (nb->nb_slotCondition[i] == 1) {
+           temp_free_slot[i] = 1;
+           break;
+         }
+       }
+     }*/
+ }
+ agent->nb_free_rslot(temp_free_slot);
+//nb_free_rsloto(temp_free_slot);
+
+
+ //calculate the free time slot of the path
+ for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
+   if ((temp_free_slot[i] == 0) && (rq->rq_free_slot[i] == 0)) {
+     temp_free_slot[i] = 0;
+   }
+   else {
+     temp_free_slot[i] = 1;
+   }
+ }
+
+//to calculate the free slot under the incluence of two hop-neighbor
+ //printf("\nrecvRREQ:origin rq_path_slot:");
+ for (int i = 0; i < 1000; i++) {
+ //  printf("%d,", rq->rq_path_slot[i]);
+   if (rq->rq_path_slot[i] == -1) {
+     if ((i - 2 * (agent->global_rate)) >= 0){
+       i = i - 2 * (agent->global_rate);
+       for (int b = i; b < i + (agent->global_rate); b++) {
+         temp_free_slot[rq->rq_path_slot[b]] = 1;
+       }
+       break;
+     }
+     else {
+       break;
+     }
+   }
+ }
+
+/////////////////////////////////////////////////////////
+/*printf("\nrecvRREQ:temp_free_slot:");
+for (int i = 0; i < MAX_SLOT_NUM_; i++) {
+  printf("%d,", temp_free_slot[i]);
+}
+printf("\n");
+*/
+///////////////////////////////////////////////////////
+
+
+//calculate the factor of this node
+for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
+  if (temp_free_slot[i] != 0) {
+    temp_free_slot[i] = -1;
+  }
+  if (temp_free_slot[i] == 0) {
+    for (AODV_Neighbor *nb = (agent->nbhead).lh_first; nb; nb = nb->nb_link.le_next) {
+        //this algorithm is not right for my protocol
+	for (int b = i; b < 4 * MAX_SLOT_NUM_; b = b + MAX_SLOT_NUM_) {
+	  if ((nb->nb_slotCondition[i] == 0) && (nb->nb_nbSlotCondition[b] == 0)) {
+            temp_free_slot[i] ++;
+          }
+	}
+    }
+    temp_free_slot[i] = temp_free_slot[i] + rq->rq_slot_factor[i];
+  }
+}
+
+//printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+//printf("\n%f:index(%d):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):\n", CURRENT_TIME, index);
+/*for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
+  printf("%d,", temp_free_slot[i]);
+}
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+*/
+/*
+printf("in recvRREQ:");
+for (int i = 0; i < MAX_SLOT_NUM_; i++) {
+  printf(" %d ", temp_free_slot[i]);
+}
+printf("\n");
+*/
+
+ //in my project, I just need one slot, find the slot number from 2(0 and 1 send control packet)
+/* int free_slot = SLOT_AS_CONTROL;
+ for (; free_slot < MAX_SLOT_NUM_; free_slot++) {
+   if (temp_free_slot[free_slot] == 0) {
+     break;
+   }
+ }
+*/
+
+//////////////////////////////////////////////////////////////////////
+//find global_rate slots in temp_free_slot[i]
+int *free_slot_new = new int[(int)(agent->global_rate)];
+
+//printf("\nrecvRREQ:original free_slot_new[i]:");
+/*for (int i = 0; i < global_rate; i++) {
+  printf("%d,", free_slot_new[i]);
+}
+*/
+for (int a = 0; a < agent->global_rate; a++) {
+  int free_slot = SLOT_AS_CONTROL;
+  for (int c = SLOT_AS_CONTROL; c < MAX_SLOT_NUM_; c++) {
+    if (temp_free_slot[c] != -1) {
+      free_slot = c;
+      break;
+    }
+  }
+  for (int b = SLOT_AS_CONTROL; b < MAX_SLOT_NUM_; b++ ) {
+    if ((temp_free_slot[free_slot] >= temp_free_slot[b]) && (temp_free_slot[b] != -1)) {
+      free_slot = b;
+    }
+  }
+  if (temp_free_slot[free_slot] == -1) {
+    printf("index(%d) has not enought slot to allocate!!!temp_free_slot[%d]:%d\n", \
+            agent->index, temp_free_slot[free_slot], free_slot);
+    //printf("\ntemp_free_slot[]:");
+    for (int i = 0; i < MAX_SLOT_NUM_; i++) {
+      printf("%d,", temp_free_slot[i]);
+    }
+    Packet::free(p);
+    return;
+  }
+  free_slot_new[a] = free_slot;
+  temp_free_slot[free_slot] = -1;
+}
+
+////////////////////////////////////////////////////////////////////////
+
+
+ //change the slot_usage_table
+for (int i = 0; i < agent->global_rate; i++) {
+ agent->macTdma->slotTb_.slotTable[free_slot_new[i]].flag = -1;
+ agent->macTdma->slotTb_.slotTable[free_slot_new[i]].expire = CURRENT_TIME + REV_ROUTE_LIFE;
+ agent->macTdma->slotTb_.slotTable[free_slot_new[i]].src = rq->rq_src;
+ agent->macTdma->slotTb_.slotTable[free_slot_new[i]].dst = rq->rq_dst;
+}
+ /*
+  * Cache the broadcast ID
+  */
+ agent->id_insert(rq->rq_src, rq->rq_bcast_id);
+
+ /* 
+  * We are either going to forward the REQUEST or generate a
+  * REPLY. Before we do anything, we make sure that the REVERSE
+  * route is in the route table.
+  */
+   aodv_rt_entry *rt0; // rt0 is the reverse route 
+   
+   rt0 = agent->rtable.rt_lookup(rq->rq_src);
+   if(rt0 == 0) { /* if not in the route table */
+   // create an entry for the reverse route.
+     //rt0 = rtable.rt_add(rq->rq_src);
+     rt0 = agent->rtable.rt_add(rq->rq_src, free_slot_new, agent->global_rate);
+   }
+   else { /*because I need slot information, so I should change the information of reverse table*/
+     agent->rtable.rt_delete(rq->rq_src);
+     rt0 = agent->rtable.rt_add(rq->rq_src, free_slot_new, agent->global_rate);
+   }
+   //test if the reverse has free_slot
+   /*printf("\nindex(%d) temp the free slot:", index);
+   for (aodv_rt_entry *rt1 = rtable.head(); rt1; rt1 = rt1->rt_link.le_next) {
+     printf("index(%d):%d,", rt1->rt_dst, rt1->rt_temp_free_slot);
+   }
+   printf("\n");
+   */
+
+   rt0->rt_expire = max(rt0->rt_expire, (CURRENT_TIME + REV_ROUTE_LIFE));
+
+   if ( (rq->rq_src_seqno > rt0->rt_seqno ) ||
+    	((rq->rq_src_seqno == rt0->rt_seqno) && 
+	 (rq->rq_hop_count < rt0->rt_hops)) ) {
+     // If we have a fresher seq no. or lesser #hops for the 
+     // same seq no., update the rt entry. Else don't bother.
+     agent->rt_update(rt0, rq->rq_src_seqno, rq->rq_hop_count, ih->saddr(),
+     	       max(rt0->rt_expire, (CURRENT_TIME + REV_ROUTE_LIFE)) );
+     if (rt0->rt_req_timeout > 0.0) {
+     // Reset the soft state and 
+     // Set expiry time to CURRENT_TIME + ACTIVE_ROUTE_TIMEOUT
+     // This is because route is used in the forward direction,
+     // but only sources get benefited by this change
+       rt0->rt_req_cnt = 0;
+       rt0->rt_req_timeout = 0.0; 
+       rt0->rt_req_last_ttl = rq->rq_hop_count;
+       rt0->rt_expire = CURRENT_TIME + ACTIVE_ROUTE_TIMEOUT;
+     }
+
+     /* Find out whether any buffered packet can benefit from the 
+      * reverse route.
+      * May need some change in the following code - Mahesh 09/11/99
+      */
+     assert (rt0->rt_flags == RTF_UP);
+     Packet *buffered_pkt;
+     while ((buffered_pkt = agent->rqueue.deque(rt0->rt_dst))) {
+       if (rt0 && (rt0->rt_flags == RTF_UP)) {
+	assert(rt0->rt_hops != INFINITY2);
+        // forward(rt0, buffered_pkt, NO_DELAY);     //delete by me, because I don't need it
+       }
+     }
+   } 
+   // End for putting reverse route in rt table
+
+
+ /*
+  * We have taken care of the reverse route stuff.
+  * Now see whether we can send a route reply. 
+  */
+
+ rt = agent->rtable.rt_lookup(rq->rq_dst);
+
+ // First check if I am the destination ..
+
+#ifdef DEBUG
+   fprintf(stderr, "%d - %s: destination sending reply\n",
+                   index, __FUNCTION__);
+#endif // DEBUG
+
+               
+   // Just to be safe, I use the max. Somebody may have
+   // incremented the dst seqno.
+   agent->seqno = max(agent->seqno, rq->rq_dst_seqno)+1;
+   if (agent->seqno%2) agent->seqno++;
+
+   //change the slot_table
+   for (int i = 0; i < agent->global_rate; i++) {
+     agent->macTdma->slotTb_.slotTable[free_slot_new[i]].expire = CURRENT_TIME + TEST_ROUTE_TIMEOUT;
+   }
+   
+//////////////////////////////////////////////
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+
+for (int a = 0; a < 10; a++) {
+  printf("\n");
+  for (int b = SLOT_AS_CONTROL; b < MAX_SLOT_NUM_; b++) {
+    printf("%d,", rq->rq_route_all_slot[a][b]);
+  }
+}
+/////////////////////////////////////////  
+
+
+   /*my experiment shows that: when the node sendReply, the neighbor nodes receive reply, then neighbor nodes 
+    *will no longer send request to destination node
+    */
+   agent->sendReply(rq->rq_src,           // IP Destination
+             1,                    // Hop Count
+             agent->index,                // Dest IP Address
+             agent->seqno,                // Dest Sequence Num
+             MY_ROUTE_TIMEOUT,     // Lifetime
+             rq->rq_timestamp,     // timestamp
+             rq->rq_src,            //the packet's src
+             agent->index,                 //the packet's dst
+             free_slot_new);           //the packet's slot
+ 
+   Packet::free(p);
+}
 
 void
 AODV::recvRequest(Packet *p) {
@@ -712,7 +995,7 @@ aodv_rt_entry *rt;
   /*
    * Drop if:
    *      - I'm the source
-   *      - I recently heard this request.
+   *      - I'm the forwarding node and I recently heard this request.
    */
 
   if(rq->rq_src == index) {
@@ -744,13 +1027,13 @@ if (rq->rq_dst != index) {
      break;
    }
  }
- for (int a = 0; a < 10; a++) {
+/* for (int a = 0; a < 10; a++) {
    printf("\n");
    for (int b = SLOT_AS_CONTROL; b < MAX_SLOT_NUM_; b++) {
      printf("%d,", rq->rq_route_all_slot[a][b]);
    }
  }
-
+*/
 
 if (rq->rq_dst == index) {
   //calculate the estimated bandwidth
@@ -761,7 +1044,7 @@ if (rq->rq_dst == index) {
       estimateBW ++;
     }
   }
-  printf("\nestimateBW01:%d", estimateBW);
+  //printf("\nestimateBW01:%d", estimateBW);
   for (int a = 2; rq->rq_route_all_slot[a][SLOT_AS_CONTROL] != -2; a++) {
     int tempBWA = 0;
     int tempBWB = 0;
@@ -770,20 +1053,20 @@ if (rq->rq_dst == index) {
         tempBWA++;
       }
     }
-    printf("\ntempBWA01:%d", tempBWA);
+    //printf("\ntempBWA01:%d", tempBWA);
     for (int b = SLOT_AS_CONTROL; b < MAX_SLOT_NUM_; b++) {
       if ((rq->rq_route_all_slot[a-1][b] == 0) && (rq->rq_route_all_slot[a][b] == 0)\
           && (rq->rq_route_all_slot[a-2][b] == 0) && (rq->rq_route_all_slot[a-1][b] == 0)) {
         tempBWB++;
       }
     }
-    printf("\ntempBWB:%d", tempBWB);
+    //printf("\ntempBWB:%d", tempBWB);
     tempBWA = tempBWA - tempBWB / 2;
-    printf("\ntempBWA02:%d", tempBWA);
+    //printf("\ntempBWA02:%d", tempBWA);
     if (estimateBW > tempBWA) {
       estimateBW = tempBWA;
     }
-    printf("\nestimateBW02:%d", estimateBW);
+    //printf("\nestimateBW02:%d", estimateBW);
   }
 
   //update the table which used to select the path
@@ -792,7 +1075,6 @@ if (rq->rq_dst == index) {
   while (mark != NULL) {
     if ((HDR_AODV_REQUEST(mark->p)->rq_src == rq->rq_src) \
           && (HDR_AODV_REQUEST(mark->p)->rq_bcast_id == rq->rq_bcast_id)) {
-      printf("\n%f:index(%d):drop rreq from index(%d)(the estimateBW not better)", CURRENT_TIME, index, rq->rq_src);
       break;
     }
     mark = mark->next;
@@ -800,6 +1082,7 @@ if (rq->rq_dst == index) {
   //the packet has been received
   if (mark != NULL) {
     if (mark->estimateBW >= estimateBW) {
+      printf("\n%f:index(%d):drop rreq from index(%d)(the estimateBW not better)", CURRENT_TIME, index, rq->rq_src);
       Packet::free(p);
       return;
     }
@@ -807,6 +1090,7 @@ if (rq->rq_dst == index) {
       Packet *deletePacket = mark->p;
       mark->p = p;
       mark->estimateBW = estimateBW;
+      printf("\n%f:index(%d):drop rreqtimer from index(%d)(the estimateBW is better)", CURRENT_TIME, index, rq->rq_src);
       Packet::free(deletePacket);
       return;
     }
@@ -814,6 +1098,7 @@ if (rq->rq_dst == index) {
   //the packet has not been received
   else {
     if (rreq_queue_head == NULL) {
+      printf("\n%f:index(%d):add packet to rreq_queue_head\n", CURRENT_TIME, index);
       packetNode *tempNode = new packetNode;
       tempNode->p = p;
       tempNode->estimateBW = estimateBW;
@@ -821,6 +1106,7 @@ if (rq->rq_dst == index) {
       rreq_queue_head = tempNode;
     }
     else {
+      printf("\n%f:index(%d):update packet in rreq_queue_head\n", CURRENT_TIME, index);
       packetNode *tempNode = new packetNode;
       tempNode->p = p;
       tempNode->estimateBW = estimateBW;
@@ -837,19 +1123,21 @@ if (rq->rq_dst == index) {
   //test
   for (packetNode *test = rreq_queue_head; test != NULL; test = test->next) {
     printf("\n%f:index(%d):rq_src,rq_dst,rq_bcast_id,estimateBW:%d, %d, %d, %d:\n", CURRENT_TIME, index, \
-           HDR_AODV_REQUEST(test->p)->rq_src, HDR_AODV_REQUEST(test->p)->rq_dst, HDR_AODV_REQUEST(test->p)->rq_bcast_id, test->estimateBW);
+           HDR_AODV_REQUEST(test->p)->rq_src, HDR_AODV_REQUEST(test->p)->rq_dst, \
+           HDR_AODV_REQUEST(test->p)->rq_bcast_id, test->estimateBW);
     //printf("\nthe address of packetNode is:%f\n", test);
   }
 
 printf("\n%f:index(%d):before timer:", CURRENT_TIME, index);
-//Scheduler::instance().schedule(&rreqtimer_, p, 2);
-rreqtimer.sched((double) 1.0);
+//for preventing the error:couldn't schedule timer, we should judge the status of timer
+if (rreqtimer.status() == TIMER_IDLE)
+  rreqtimer.sched((double) 1.0);
+else 
+  rreqtimer.resched((double) 1.0);
 }
- 
-/*printf("\n%f:index(%d):before timer:", CURRENT_TIME, index);
-Scheduler::instance().schedule(&rreqtimer_, p, 10);
-*///rreqtimer_.handle((Event*) 2);
- 
+
+//else, index is the forwarding nodes
+else { 
  int temp_free_slot[MAX_SLOT_NUM_];	//to cash the free slot
  //itself's free receiving time slot
  for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
@@ -908,7 +1196,7 @@ printf("\n");
 ///////////////////////////////////////////////////////
 
 
-//calculate the factor of this node
+//calculate the factor of this link
 for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
   if (temp_free_slot[i] != 0) {
     temp_free_slot[i] = -1;
@@ -972,7 +1260,8 @@ for (int a = 0; a < global_rate; a++) {
     }
   }
   if (temp_free_slot[free_slot] == -1) {
-    printf("index(%d) has not enought slot to allocate!!!temp_free_slot[%d]:%d\n", index, temp_free_slot[free_slot], free_slot);
+    printf("index(%d) has not enought slot to allocate!!!temp_free_slot[%d]:%d\n", \
+            index, temp_free_slot[free_slot], free_slot);
     printf("\ntemp_free_slot[]:");
     for (int i = 0; i < MAX_SLOT_NUM_; i++) {
       printf("%d,", temp_free_slot[i]);
@@ -1076,9 +1365,9 @@ printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
    if ( (rq->rq_src_seqno > rt0->rt_seqno ) ||
     	((rq->rq_src_seqno == rt0->rt_seqno) && 
 	 (rq->rq_hop_count < rt0->rt_hops)) ) {
-   // If we have a fresher seq no. or lesser #hops for the 
-   // same seq no., update the rt entry. Else don't bother.
-rt_update(rt0, rq->rq_src_seqno, rq->rq_hop_count, ih->saddr(),
+     // If we have a fresher seq no. or lesser #hops for the 
+     // same seq no., update the rt entry. Else don't bother.
+     rt_update(rt0, rq->rq_src_seqno, rq->rq_hop_count, ih->saddr(),
      	       max(rt0->rt_expire, (CURRENT_TIME + REV_ROUTE_LIFE)) );
      if (rt0->rt_req_timeout > 0.0) {
      // Reset the soft state and 
@@ -1109,115 +1398,13 @@ rt_update(rt0, rq->rq_src_seqno, rq->rq_hop_count, ih->saddr(),
 
  /*
   * We have taken care of the reverse route stuff.
-  * Now see whether we can send a route reply. 
   */
 
  rt = rtable.rt_lookup(rq->rq_dst);
 
- // First check if I am the destination ..
-
- if(rq->rq_dst == index) {
-
-#ifdef DEBUG
-   fprintf(stderr, "%d - %s: destination sending reply\n",
-                   index, __FUNCTION__);
-#endif // DEBUG
-
-               
-   // Just to be safe, I use the max. Somebody may have
-   // incremented the dst seqno.
-   seqno = max(seqno, rq->rq_dst_seqno)+1;
-   if (seqno%2) seqno++;
-
-   //change the slot_table
-   for (int i = 0; i < global_rate; i++) {
-     macTdma->slotTb_.slotTable[free_slot_new[i]].expire = CURRENT_TIME + TEST_ROUTE_TIMEOUT;
-   }
-   
-//////////////////////////////////////////////
-printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-
-for (int a = 0; a < 10; a++) {
-  printf("\n");
-  for (int b = SLOT_AS_CONTROL; b < MAX_SLOT_NUM_; b++) {
-    printf("%d,", rq->rq_route_all_slot[a][b]);
-  }
-}
-/////////////////////////////////////////  
-
-
-   /*my experiment shows that: when the node sendReply, the neighbor nodes receive reply, then neighbor nodes 
-    *will no longer send request to destination node
-    */
-   sendReply(rq->rq_src,           // IP Destination
-             1,                    // Hop Count
-             index,                // Dest IP Address
-             seqno,                // Dest Sequence Num
-             MY_ROUTE_TIMEOUT,     // Lifetime
-             rq->rq_timestamp,     // timestamp
-             rq->rq_src,            //the packet's src
-             index,                 //the packet's dst
-             free_slot_new);           //the packet's slot
- 
-   Packet::free(p);
- }
-
- // I am not the destination, but I may have a fresh enough route.
- // delete, because if node reply here, the behind node will not allocate slot
-/*
- else if (rt && (rt->rt_hops != INFINITY2) && 
-	  	(rt->rt_seqno >= rq->rq_dst_seqno) ) {
-
-   //assert (rt->rt_flags == RTF_UP);
-   assert(rq->rq_dst == rt->rt_dst);
-   //assert ((rt->rt_seqno%2) == 0);	// is the seqno even?
-   sendReply(rq->rq_src,
-             rt->rt_hops + 1,
-             rq->rq_dst,
-             rt->rt_seqno,
-	     (u_int32_t) (rt->rt_expire - CURRENT_TIME),
-	     //             rt->rt_expire - CURRENT_TIME,
-             rq->rq_timestamp);
-   // Insert nexthops to RREQ source and RREQ destination in the
-   // precursor lists of destination and source respectively
-   rt->pc_insert(rt0->rt_nexthop); // nexthop to RREQ source
-   rt0->pc_insert(rt->rt_nexthop); // nexthop to RREQ destination
-
-#ifdef RREQ_GRAT_RREP  
-
-   sendReply(rq->rq_dst,
-             rq->rq_hop_count,
-             rq->rq_src,
-             rq->rq_src_seqno,
-	     (u_int32_t) (rt->rt_expire - CURRENT_TIME),
-	     //             rt->rt_expire - CURRENT_TIME,
-             rq->rq_timestamp);
-#endif
-   
-// TODO: send grat RREP to dst if G flag set in RREQ using rq->rq_src_seqno, rq->rq_hop_counT
-   
-// DONE: Included gratuitous replies to be sent as per IETF aodv draft specification. As of now, G flag has not been dynamically used and is always set or reset in aodv-packet.h --- Anant Utgikar, 09/16/02.
-
-	Packet::free(p);
- }*/
  /*
-  * Can't reply. So forward the  Route Request
+  *  Forward the  Route Request
   */
- else {
    ih->saddr() = index;
    ih->daddr() = IP_BROADCAST;
    rq->rq_hop_count += 1;
@@ -1293,8 +1480,7 @@ printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
    // Maximum sequence number seen en route
    if (rt) rq->rq_dst_seqno = max(rt->rt_seqno, rq->rq_dst_seqno);
    forward((aodv_rt_entry*) 0, p, DELAY);
- }
-
+}
 }
 
 

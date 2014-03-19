@@ -49,6 +49,7 @@ The AODV code developed by the CMU/MONARCH group was optimized and tuned by Sami
 class AODV_Neighbor {
         friend class AODV;
         friend class aodv_rt_entry;
+	friend class rreqTimer;
  public:
         AODV_Neighbor(u_int32_t a) { nb_addr = a; }
 	
@@ -89,6 +90,7 @@ class aodv_rt_entry {
         friend class aodv_rtable;
         friend class AODV;
 	friend class LocalRepairTimer;
+	friend class rreqTimer;
  public:
         aodv_rt_entry();
         ~aodv_rt_entry();

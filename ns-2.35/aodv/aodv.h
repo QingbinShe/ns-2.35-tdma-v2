@@ -135,6 +135,7 @@ class AODV;
 class rreqTimer : public TimerHandler {
 public:
 	rreqTimer(AODV* a) : TimerHandler() { agent = a; }
+	//AODV *aodv;
 private:
 	AODV *agent;
 	virtual void expire(Event* e);
