@@ -5,9 +5,9 @@ BEGIN {
 	event = $1;
 	time = $2;
 	node_ = $3;
-	uid = $6;
-	pkt_type = $7;
-	pkt_size = $8;
+	uid = $7;
+	pkt_type = $8;
+	pkt_size = $9;
 
 	node = substr(node_,2,1);
 	if (event=="r" && pkt_type=="cbr") {

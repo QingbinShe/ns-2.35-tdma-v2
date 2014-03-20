@@ -1128,12 +1128,12 @@ if (rq->rq_dst == index) {
     //printf("\nthe address of packetNode is:%f\n", test);
   }
 
-printf("\n%f:index(%d):before timer:", CURRENT_TIME, index);
-//for preventing the error:couldn't schedule timer, we should judge the status of timer
-if (rreqtimer.status() == TIMER_IDLE)
-  rreqtimer.sched((double) 1.0);
-else 
-  rreqtimer.resched((double) 1.0);
+  printf("\n%f:index(%d):before timer:", CURRENT_TIME, index);
+  //for preventing the error:couldn't schedule timer, we should judge the status of timer
+  if (rreqtimer.status() == TIMER_IDLE)
+    rreqtimer.sched((double) 1.0);
+  else 
+    rreqtimer.resched((double) 1.0);
 }
 
 //else, index is the forwarding nodes

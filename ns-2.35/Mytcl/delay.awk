@@ -5,8 +5,8 @@ BEGIN{
 {
 	event = $1;
 	time = $2;
-	uid = $6;
-	pkt_type = $7;
+	uid = $7;
+	pkt_type = $8;
 	
 	if (event=="s" && pkt_type=="cbr") {
 		starttime[uid] = time;

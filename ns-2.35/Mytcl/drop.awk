@@ -4,7 +4,7 @@ BEGIN{
 }
 {
 	event = $1;
-	pkt_type = $7;
+	pkt_type = $8;
 	if (event=="s" && pkt_type=="cbr") 
 		nums++;
 	if (event=="D" && pkt_type=="cbr")

@@ -3,10 +3,10 @@ BEGIN{
 	count = 0;
 }
 {
-	flow_num = $1;
+	flow_rate = $1;
 	data = $2;
 
-	sum[flow_num] = sum[flow_num] + data;
+	sum[flow_rate] = sum[flow_rate] + data;
 	
 	ele[count] = data;
 
@@ -32,8 +32,8 @@ BEGIN{
 	count++;
 }
 END{
-	for (f = 1; f < 31; f=f+2) {
+	for (f = 10; f < 151; f=f+10) {
 		printf("%d	%f\n", f, sum[f]/80);
 	}
-	printf("%d	%f\n", 30, sum[30]/80);
+	printf("%d	%f\n", 150, sum[150]/80);
 }
