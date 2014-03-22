@@ -21,7 +21,7 @@ set val(ll)      LL                           ;#逻辑链路层类型：LL层
 set val(ant)     Antenna/OmniAntenna          ;#天线模型：全向天线
 set val(ifqlen)  100                           ;#网络接口队列大小：50
 set val(rp)      AODV                         ;#无线路由协议：AODV
-set val(nn)      25                           ;#节点数目：9
+set val(nn)      16                           ;#节点数目：9
 set val(x)       1000                         ;#仿真区域长度1000m
 set val(y)       1000                         ;#仿真区域宽度1000m
 set val(stop)    100.0                          ;#设定模拟时间1.0s
@@ -74,7 +74,7 @@ Agent/AODV set global_rate [expr int (((500.0 / $opt(slot_num_)) + $opt(rate) - 
 
 #建立节点的位置
 set i 0				;#节点数目
-while {$i < 5} {		;#第一列
+while {$i < 4} {		;#第一列
 	set n($i) [$ns node]
 	$n($i) set X_ 50
 	$n($i) set Y_ [expr 50+200*$i]
@@ -84,7 +84,7 @@ while {$i < 5} {		;#第一列
 	incr i
 }
 
-while {$i < 10} {
+while {$i < 8} {
 	set n($i) [$ns node]
 	$n($i) set X_ 250
 	$n($i) set Y_ [expr 50+200*($i-5)]
@@ -94,7 +94,7 @@ while {$i < 10} {
 	incr i
 }
 
-while {$i < 15} {
+while {$i < 12} {
 	set n($i) [$ns node]
 	$n($i) set X_ 450
 	$n($i) set Y_ [expr 50+200*($i-10)]
@@ -104,7 +104,7 @@ while {$i < 15} {
 	incr i
 }
 
-while {$i < 20} {
+while {$i < 16} {
 	set n($i) [$ns node]
 	$n($i) set X_ 650
 	$n($i) set Y_ [expr 50+200*($i-15)]
@@ -114,15 +114,15 @@ while {$i < 20} {
 	incr i
 }
 
-while {$i < 25} {
-	set n($i) [$ns node]
-	$n($i) set X_ 850
-	$n($i) set Y_ [expr 50+200*($i-20)]
-	$n($i) set Z_ 0.0
-	$ns initial_node_pos $n($i) 10
-	
-	incr i
-}
+#while {$i < 25} {
+#	set n($i) [$ns node]
+#	$n($i) set X_ 850
+#	$n($i) set Y_ [expr 50+200*($i-20)]
+#	$n($i) set Z_ 0.0
+#	$ns initial_node_pos $n($i) 10
+#	
+#	incr i
+#}
 
 
 #=====================设置数据流==================================
@@ -161,12 +161,12 @@ proc RandomRangeInt {min max} {
 
 #设置数据流
 for {set i 0} {$i < $opt(flow)} {incr i} {
-    set node0 [RandomRangeInt 0 24]
-    set node1 [RandomRangeInt 0 24]
+    set node0 [RandomRangeInt 0 15]
+    set node1 [RandomRangeInt 0 15]
 
     while {$node0 == $node1} {
-        set node0 [RandomRangeInt 0 24]
-        set node1 [RandomRangeInt 0 24]
+        set node0 [RandomRangeInt 0 15]
+        set node1 [RandomRangeInt 0 15]
     }
 
 puts "$i $node0 $node1"

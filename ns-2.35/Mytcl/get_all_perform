@@ -1,23 +1,29 @@
 #!/bin/sh
-rm ./data02/drop_rate
-rm ./data02/delay_rate
-rm ./data02/throughput_rate
+rm ./data02/drop_rate9_02
+rm ./data02/delay_rate9_02
+rm ./data02/throughput_rate9_02
 
 #for a in $(seq 30)   #flow的个数
 for a in 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150;
 do
-	for b in $(seq 100)     #测试的次数
+	for b in $(seq 200)     #测试的次数
 	do
-		ns wireless-aodv-tdma.tcl 5 $a 10 > ./data02/data02.tcl
+		ns wireless-aodv-tdma.tcl 5 $a 9 > ./data02/data02.tcl
 
-		echo -n "$a	" >> ./data02/drop_rate
-		gawk -f drop.awk aodv-tdma.tr >> ./data02/drop_rate
+		echo -n "$a	" >> ./data02/drop_rate9_02
+		gawk -f drop.awk aodv-tdma.tr >> ./data02/drop_rate9_02
 
-		echo -n "$a	" >> ./data02/delay_rate
-		gawk -f delay.awk aodv-tdma.tr >> ./data02/delay_rate
+		echo -n "$a	" >> ./data02/delay_rate9_02
+		gawk -f delay.awk aodv-tdma.tr >> ./data02/delay_rate9_02
 
-		echo -n "$a	" >> ./data02/throughput_rate
-		gawk -f throughput.awk aodv-tdma.tr >> ./data02/throughput_rate
+		echo -n "$a	" >> ./data02/throughput_rate9_02
+		gawk -f throughput.awk aodv-tdma.tr >> ./data02/throughput_rate9_02
 	done
 done
+#rm ./data02/average_data/drop_ave9
+#rm ./data02/average_data/delay_ave9
+#rm ./data02/average_data/throughput_ave9
+gawk -f ./data02/average.awk ./data02/drop_rate9_02 > ./data02/average_data/drop_ave9
+gawk -f ./data02/average.awk ./data02/delay_rate9_02 > ./data02/average_data/delay_ave9
+gawk -f ./data02/average.awk ./data02/throughput_rate9_02 > ./data02/average_data/throughput_ave9
 exit 0

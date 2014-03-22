@@ -1,7 +1,7 @@
 #ifndef SHARE_H
 #define SHARE_H
 
-#define	MAX_SLOT_NUM_		10
+#define	MAX_SLOT_NUM_		9
 
 #define	SLOT_NOTHING		0
 #define	SLOT_SEND		1
