@@ -36,7 +36,8 @@ The AODV code developed by the CMU/MONARCH group was optimized and tuned by Sami
 #include <random.h>
 #include <cmu-trace.h>
 //#include <energy-model.h>
-
+#include <stdlib.h>
+#include <time.h>
 #define max(a,b)        ( (a) > (b) ? (a) : (b) )
 #define CURRENT_TIME    Scheduler::instance().clock()
 
@@ -756,47 +757,6 @@ printf("\n");
 ///////////////////////////////////////////////////////
 
 
-//calculate the factor of this node
-for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
-  if (temp_free_slot[i] != 0) {
-    temp_free_slot[i] = -1;
-  }
-  if (temp_free_slot[i] == 0) {
-    for (AODV_Neighbor *nb = (agent->nbhead).lh_first; nb; nb = nb->nb_link.le_next) {
-        //this algorithm is not right for my protocol
-	for (int b = i; b < 4 * MAX_SLOT_NUM_; b = b + MAX_SLOT_NUM_) {
-	  if ((nb->nb_slotCondition[i] == 0) && (nb->nb_nbSlotCondition[b] == 0)) {
-            temp_free_slot[i] ++;
-          }
-	}
-    }
-    temp_free_slot[i] = temp_free_slot[i] + rq->rq_slot_factor[i];
-  }
-}
-
-//printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-//printf("\n%f:index(%d):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):\n", CURRENT_TIME, index);
-/*for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
-  printf("%d,", temp_free_slot[i]);
-}
-printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-*/
-/*
-printf("in recvRREQ:");
-for (int i = 0; i < MAX_SLOT_NUM_; i++) {
-  printf(" %d ", temp_free_slot[i]);
-}
-printf("\n");
-*/
-
- //in my project, I just need one slot, find the slot number from 2(0 and 1 send control packet)
-/* int free_slot = SLOT_AS_CONTROL;
- for (; free_slot < MAX_SLOT_NUM_; free_slot++) {
-   if (temp_free_slot[free_slot] == 0) {
-     break;
-   }
- }
-*/
 
 //////////////////////////////////////////////////////////////////////
 //find global_rate slots in temp_free_slot[i]
@@ -808,28 +768,19 @@ int *free_slot_new = new int[(int)(agent->global_rate)];
 }
 */
 for (int a = 0; a < agent->global_rate; a++) {
-  int free_slot = SLOT_AS_CONTROL;
-  for (int c = SLOT_AS_CONTROL; c < MAX_SLOT_NUM_; c++) {
-    if (temp_free_slot[c] != -1) {
-      free_slot = c;
-      break;
-    }
+  int free_slot = 0;
+  for (; free_slot < MAX_SLOT_NUM_; free_slot++) {
+    if (temp_free_slot[free_slot] == 0) break;
   }
-  for (int b = SLOT_AS_CONTROL; b < MAX_SLOT_NUM_; b++ ) {
-    if ((temp_free_slot[free_slot] >= temp_free_slot[b]) && (temp_free_slot[b] != -1)) {
-      free_slot = b;
-    }
-  }
-  if (temp_free_slot[free_slot] == -1) {
-    printf("index(%d) has not enought slot to allocate!!!temp_free_slot[%d]:%d\n", \
-            agent->index, temp_free_slot[free_slot], free_slot);
-    //printf("\ntemp_free_slot[]:");
-    for (int i = 0; i < MAX_SLOT_NUM_; i++) {
-      printf("%d,", temp_free_slot[i]);
-    }
+  if (free_slot == MAX_SLOT_NUM_) {
+    printf("\nthere is no enough slot to assignment!!\n"); 
     Packet::free(p);
     return;
   }
+  /*srand((unsigned)time(NULL));
+  while (free_slot = rand() % (MAX_SLOT_NUM_ + 1 - SLOT_AS_CONTROL) + SLOT_AS_CONTROL) {
+    if (temp_free_slot[free_slot] == 0) break;
+  }*/
   free_slot_new[a] = free_slot;
   temp_free_slot[free_slot] = -1;
 }
@@ -1005,8 +956,6 @@ aodv_rt_entry *rt;
     Packet::free(p);
     return;
   } 
-//only when the node is forwarding node, it can drop request if it recently heard this request
-if (rq->rq_dst != index) {
  if (id_lookup(rq->rq_src, rq->rq_bcast_id)) {
 
 #ifdef DEBUG
@@ -1016,7 +965,6 @@ if (rq->rq_dst != index) {
    Packet::free(p);
    return;
  }
-}
 
 //record the condition of slots before the assignment of slots
  for (int a = 0; a < 10; a++) {
@@ -1027,13 +975,6 @@ if (rq->rq_dst != index) {
      break;
    }
  }
-/* for (int a = 0; a < 10; a++) {
-   printf("\n");
-   for (int b = SLOT_AS_CONTROL; b < MAX_SLOT_NUM_; b++) {
-     printf("%d,", rq->rq_route_all_slot[a][b]);
-   }
- }
-*/
 
 if (rq->rq_dst == index) {
   //calculate the estimated bandwidth
@@ -1186,56 +1127,6 @@ else {
    }
  }
 
-/////////////////////////////////////////////////////////
-/*printf("\nrecvRREQ:temp_free_slot:");
-for (int i = 0; i < MAX_SLOT_NUM_; i++) {
-  printf("%d,", temp_free_slot[i]);
-}
-printf("\n");
-*/
-///////////////////////////////////////////////////////
-
-
-//calculate the factor of this link
-for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
-  if (temp_free_slot[i] != 0) {
-    temp_free_slot[i] = -1;
-  }
-  if (temp_free_slot[i] == 0) {
-    for (AODV_Neighbor *nb = nbhead.lh_first; nb; nb = nb->nb_link.le_next) {
-        //this algorithm is not right for my protocol
-	for (int b = i; b < 4 * MAX_SLOT_NUM_; b = b + MAX_SLOT_NUM_) {
-	  if ((nb->nb_slotCondition[i] == 0) && (nb->nb_nbSlotCondition[b] == 0)) {
-            temp_free_slot[i] ++;
-          }
-	}
-    }
-    temp_free_slot[i] = temp_free_slot[i] + rq->rq_slot_factor[i];
-  }
-}
-
-//printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-printf("\n%f:index(%d):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):\n", CURRENT_TIME, index);
-for (int i = SLOT_AS_CONTROL; i < MAX_SLOT_NUM_; i++) {
-  printf("%d,", temp_free_slot[i]);
-}
-printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-/*
-printf("in recvRREQ:");
-for (int i = 0; i < MAX_SLOT_NUM_; i++) {
-  printf(" %d ", temp_free_slot[i]);
-}
-printf("\n");
-*/
-
- //in my project, I just need one slot, find the slot number from 2(0 and 1 send control packet)
-/* int free_slot = SLOT_AS_CONTROL;
- for (; free_slot < MAX_SLOT_NUM_; free_slot++) {
-   if (temp_free_slot[free_slot] == 0) {
-     break;
-   }
- }
-*/
 
 //////////////////////////////////////////////////////////////////////
 //find global_rate slots in temp_free_slot[i]
@@ -1247,28 +1138,19 @@ int *free_slot_new = new int[(int)(global_rate)];
 }
 */
 for (int a = 0; a < global_rate; a++) {
-  int free_slot = SLOT_AS_CONTROL;
-  for (int c = SLOT_AS_CONTROL; c < MAX_SLOT_NUM_; c++) {
-    if (temp_free_slot[c] != -1) {
-      free_slot = c;
-      break;
-    }
+  int free_slot = 0;
+  for (; free_slot < MAX_SLOT_NUM_; free_slot++) {
+    if (temp_free_slot[free_slot] == 0) break;
   }
-  for (int b = SLOT_AS_CONTROL; b < MAX_SLOT_NUM_; b++ ) {
-    if ((temp_free_slot[free_slot] >= temp_free_slot[b]) && (temp_free_slot[b] != -1)) {
-      free_slot = b;
-    }
-  }
-  if (temp_free_slot[free_slot] == -1) {
-    printf("index(%d) has not enought slot to allocate!!!temp_free_slot[%d]:%d\n", \
-            index, temp_free_slot[free_slot], free_slot);
-    printf("\ntemp_free_slot[]:");
-    for (int i = 0; i < MAX_SLOT_NUM_; i++) {
-      printf("%d,", temp_free_slot[i]);
-    }
+  if (free_slot == MAX_SLOT_NUM_) {
+    printf("\nthere is no enough slot to assignment!!\n");
     Packet::free(p);
     return;
   }
+  /*srand((unsigned)time(NULL));
+  while (free_slot = rand() % (MAX_SLOT_NUM_ + 1 - SLOT_AS_CONTROL) + SLOT_AS_CONTROL) {
+    if (temp_free_slot[free_slot] == 0) break;
+  }*/
   free_slot_new[a] = free_slot;
   temp_free_slot[free_slot] = -1;
 }

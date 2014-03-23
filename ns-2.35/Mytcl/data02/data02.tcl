@@ -1,16 +1,26 @@
-opt(flow)=5
+opt(flow)=10
 opt(slot_num_)=9
-opt(rate)=120
-0 9 7
-1 9 14
-2 13 11
-3 5 0
-4 8 1
-0.79373926892585089 40.375892836775577
-59.034073287171339 85.66973748880892
-79.917924003637367 80.548729133116424
-7.908587068276753 19.622856527391288
-76.640001068189747 88.497953064971583
+opt(rate)=150
+0 11 7
+1 1 7
+2 1 11
+3 6 12
+4 10 12
+5 9 12
+6 12 6
+7 9 3
+8 7 2
+9 3 14
+10.879509714841614 51.919777343012285
+15.697804007538501 32.991954699620585
+1.7520327594839191 46.414588646224978
+52.422603570121616 66.698203034092757
+41.747740489313259 54.274403887928649
+58.605889491087702 89.184676711067866
+26.861482917732321 60.943398327074661
+44.295782709631972 79.220000784480945
+55.998062089084677 59.429531246158071
+32.131654178784999 36.711782839480691
 Start Simulation...
 num_nodes is set 16
 channel.cc:sendUp - Calc highestAntennaZ_ and distCST_
@@ -18,1696 +28,2551 @@ highestAntennaZ_ = 1.5,  distCST_ = 550.0
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-0.793739:index(9):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+1.752033:index(1):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+3,3,3,3,3,3,3,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+1.812170:index(0):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,5,5,5,5,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+1.812170:index(2):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,5,5,5,5,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+1.812170:index(6):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,5,5,5,5,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+1.866170:index(5):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+0,0,0,-1,-1,-1,0,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+1.866170:index(3):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+3,3,3,-1,-1,-1,3,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+1.866170:index(7):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+3,3,3,-1,-1,-1,3,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+1.866170:index(11):add packet to rreq_queue_head
+
+1.866170:index(11):rq_src,rq_dst,rq_bcast_id,estimateBW:1, 11, 1, 4:
+
+1.866170:index(11):before timer:
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+2.866170:rreqTimer::handle
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 0,0,0,0,0,0,0,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-0.894170:index(8):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
 0,0,0,0,0,0,0,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-0.894170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-0,0,0,0,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-0.894170:index(4):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
 0,0,0,0,0,0,0,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+-2,-2,-2,-2,-2,-2,-2,
+-2,-2,-2,-2,-2,-2,-2,
+-2,-2,-2,-2,-2,-2,-2,
+-2,-2,-2,-2,-2,-2,-2,
+-2,-2,-2,-2,-2,-2,-2,
+-2,-2,-2,-2,-2,-2,-2,
+-2,-2,-2,-2,-2,-2,-2,
+5.814000:index(0)'s slot(2) timeout!
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+5.814000:index(0)'s slot(3) timeout!
 
-0.894170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-0,0,0,0,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+5.814000:index(0)'s slot(4) timeout!
 
-0.894170:index(10):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-0,0,0,0,0,0,0,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+5.814000:index(2)'s slot(2) timeout!
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+5.814000:index(2)'s slot(3) timeout!
 
-0.894170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-0,0,0,0,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+5.814000:index(2)'s slot(4) timeout!
 
-0.894170:index(14):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-0,0,0,0,0,0,0,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+5.868000:index(3)'s slot(5) timeout!
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+5.868000:index(3)'s slot(6) timeout!
 
-0.894170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-0,0,0,0,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+5.868000:index(3)'s slot(7) timeout!
 
-0.948170:index(5):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-0,0,0,0,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+5.868000:index(5)'s slot(5) timeout!
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+5.868000:index(5)'s slot(6) timeout!
 
-0.948170:index(5):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-0,-1,-1,-1,0,0,0,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+5.868000:index(5)'s slot(7) timeout!
 
-0.948170:index(13):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-1,1,1,1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+5.868000:index(7)'s slot(5) timeout!
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+5.868000:index(7)'s slot(6) timeout!
 
-0.948170:index(13):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-1,-1,-1,-1,1,1,1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-0.948170:index(11):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-0,0,0,0,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-0.948170:index(11):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-0,-1,-1,-1,0,0,0,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-0.948170:index(15):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-0,0,0,0,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-0.948170:index(15):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-0,-1,-1,-1,0,0,0,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-1.002170:index(0):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-0,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(0) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1074078207,0,-1,-1,-1,-1,-1,-1,-1,
-1.002170:index(6):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-0,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(6) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1074078207,0,-1,-1,-1,-1,-1,-1,-1,
-1.002170:index(12):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-1,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(12) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1074078207,0,-1,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-2.599739:index(9):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
-10,4,4,4,0,0,0,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-2.730170:index(8):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-14,6,6,6,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-2.730170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-4,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-2.730170:index(4):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-15,6,6,6,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-2.730170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-5,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-2.730170:index(10):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-19,6,6,6,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-2.730170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-9,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-2.730170:index(14):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-16,6,6,6,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-2.730170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-6,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-2.784170:index(5):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-14,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(5) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1079538566,0,-1,-1,-1,-1,-1,-1,-1,
-2.784170:index(13):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-10,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(13) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1079538566,0,-1,-1,-1,-1,-1,-1,-1,
-2.784170:index(11):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-14,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(11) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1079538566,0,-1,-1,-1,-1,-1,-1,-1,
-2.784170:index(15):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-15,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(15) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1079538566,0,-1,-1,-1,-1,-1,-1,-1,
-4.896000:index(4)'s slot(6) timeout!
-
-4.896000:index(4)'s slot(7) timeout!
-
-4.896000:index(4)'s slot(8) timeout!
-
-4.896000:index(8)'s slot(6) timeout!
-
-4.896000:index(8)'s slot(7) timeout!
-
-4.896000:index(8)'s slot(8) timeout!
-
-4.896000:index(10)'s slot(6) timeout!
-
-4.896000:index(10)'s slot(7) timeout!
-
-4.896000:index(10)'s slot(8) timeout!
-
-4.896000:index(14)'s slot(6) timeout!
-
-4.896000:index(14)'s slot(7) timeout!
-
-4.896000:index(14)'s slot(8) timeout!
-
-4.950000:index(5)'s slot(3) timeout!
-
-4.950000:index(5)'s slot(4) timeout!
-
-4.950000:index(5)'s slot(5) timeout!
-
-4.950000:index(11)'s slot(3) timeout!
-
-4.950000:index(11)'s slot(4) timeout!
-
-4.950000:index(11)'s slot(5) timeout!
-
-4.950000:index(13)'s slot(3) timeout!
-
-4.950000:index(13)'s slot(4) timeout!
-
-4.950000:index(13)'s slot(5) timeout!
-
-4.950000:index(15)'s slot(3) timeout!
-
-4.950000:index(15)'s slot(4) timeout!
-
-4.950000:index(15)'s slot(5) timeout!
+5.868000:index(7)'s slot(7) timeout!
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-6.211739:index(9):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
-11,0,0,0,11,11,11,
+10.879510:index(11):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,4,4,-1,-1,-1,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<1>, 10.926000, transmitting, but the channel is not idle...???
+<1>, 10.932000, transmitting, but the channel is not idle...???
+<1>, 10.938000, transmitting, but the channel is not idle...???
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+10.938170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+10,-1,-1,9,9,9,-1,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-6.294170:index(8):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-18,-1,-1,-1,18,18,18,
+there is no enough slot to assignment!!
+<1>, 10.980000, transmitting, but the channel is not idle...???
+<1>, 10.986000, transmitting, but the channel is not idle...???
+<1>, 10.992000, transmitting, but the channel is not idle...???
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+10.992170:index(9):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,11,11,-1,-1,10,11,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-6.294170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+10.992170:index(5):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,7,7,-1,-1,7,12,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+10.992170:index(15):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,7,7,-1,-1,6,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<1>, 11.034000, transmitting, but the channel is not idle...???
+<1>, 11.040000, transmitting, but the channel is not idle...???
+<1>, 11.046000, transmitting, but the channel is not idle...???
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+12.682710:index(11):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,0,0,-1,-1,-1,4,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<1>, 12.762000, transmitting, but the channel is not idle...???
+<1>, 12.768000, transmitting, but the channel is not idle...???
+<1>, 12.774000, transmitting, but the channel is not idle...???
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+14.940000:index(10)'s slot(3) timeout!
+
+14.940000:index(10)'s slot(4) timeout!
+
+14.940000:index(10)'s slot(8) timeout!
+
+14.994000:index(5)'s slot(2) timeout!
+
+14.994000:index(5)'s slot(5) timeout!
+
+14.994000:index(5)'s slot(6) timeout!
+
+14.994000:index(9)'s slot(2) timeout!
+
+14.994000:index(9)'s slot(5) timeout!
+
+14.994000:index(9)'s slot(6) timeout!
+
+14.994000:index(15)'s slot(2) timeout!
+
+14.994000:index(15)'s slot(5) timeout!
+
+14.994000:index(15)'s slot(6) timeout!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+15.697804:index(1):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,-1,-1,4,4,5,9,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+15.852170:index(0):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,2,2,-1,-1,-1,6,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+15.852170:index(2):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+2,2,2,-1,-1,-1,6,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+<1>, 15.894000, transmitting, but the channel is not idle...???
+<1>, 15.900000, transmitting, but the channel is not idle...???
+<1>, 15.906000, transmitting, but the channel is not idle...???
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+15.906170:index(5):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,4,4,7,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+15.906170:index(3):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,3,3,3,3,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+15.906170:index(7):add packet to rreq_queue_head
+
+15.906170:index(7):rq_src,rq_dst,rq_bcast_id,estimateBW:1, 7, 2, 4:
+
+15.906170:index(7):before timer:<1>, 15.948000, transmitting, but the channel is not idle...???
+<1>, 15.954000, transmitting, but the channel is not idle...???
+<1>, 15.960000, transmitting, but the channel is not idle...???
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+16.289110:index(11):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,4,4,-1,-1,-1,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<1>, 16.380000, transmitting, but the channel is not idle...???
+<1>, 16.386000, transmitting, but the channel is not idle...???
+<1>, 16.392000, transmitting, but the channel is not idle...???
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+16.392170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+10,-1,-1,9,9,9,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+<1>, 16.434000, transmitting, but the channel is not idle...???
+<1>, 16.440000, transmitting, but the channel is not idle...???
+<1>, 16.446000, transmitting, but the channel is not idle...???
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+16.446170:index(9):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,11,11,-1,-1,10,11,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+16.446170:index(5):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,5,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+16.446170:index(15):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,7,7,-1,-1,6,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<1>, 16.488000, transmitting, but the channel is not idle...???
+<1>, 16.494000, transmitting, but the channel is not idle...???
+<1>, 16.500000, transmitting, but the channel is not idle...???
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+16.906170:rreqTimer::handle
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+1,1,1,0,0,0,0,
+0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,
+-2,-2,-2,-2,-2,-2,-2,
+-2,-2,-2,-2,-2,-2,-2,
+-2,-2,-2,-2,-2,-2,-2,
+-2,-2,-2,-2,-2,-2,-2,
+-2,-2,-2,-2,-2,-2,-2,
+-2,-2,-2,-2,-2,-2,-2,
+-2,-2,-2,-2,-2,-2,-2,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+17.500000:index(1):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,-1,-1,0,0,0,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+19.854000:index(0)'s slot(5) timeout!
+
+19.854000:index(0)'s slot(6) timeout!
+
+19.854000:index(0)'s slot(7) timeout!
+
+19.908000:index(3)'s slot(2) timeout!
+
+19.908000:index(3)'s slot(3) timeout!
+
+19.908000:index(3)'s slot(4) timeout!
+
+19.908000:index(5)'s slot(3) timeout!
+
+19.908000:index(5)'s slot(4) timeout!
+
+19.908000:index(5)'s slot(8) timeout!
+
+20.394000:index(10)'s slot(3) timeout!
+
+20.394000:index(10)'s slot(4) timeout!
+
+20.394000:index(10)'s slot(8) timeout!
+
+20.448000:index(5)'s slot(2) timeout!
+
+20.448000:index(5)'s slot(5) timeout!
+
+20.448000:index(5)'s slot(6) timeout!
+
+20.448000:index(9)'s slot(2) timeout!
+
+20.448000:index(9)'s slot(5) timeout!
+
+20.448000:index(9)'s slot(6) timeout!
+
+20.448000:index(15)'s slot(2) timeout!
+
+20.448000:index(15)'s slot(5) timeout!
+
+20.448000:index(15)'s slot(6) timeout!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+21.107404:index(1):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,-1,-1,1,1,2,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+21.252170:index(0):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+3,2,2,-1,-1,-1,6,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+<1>, 21.294000, transmitting, but the channel is not idle...???
+<1>, 21.300000, transmitting, but the channel is not idle...???
+<1>, 21.306000, transmitting, but the channel is not idle...???
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+21.306170:index(5):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,2,2,7,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<1>, 21.348000, transmitting, but the channel is not idle...???
+<1>, 21.354000, transmitting, but the channel is not idle...???
+<1>, 21.360000, transmitting, but the channel is not idle...???
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+21.698710:index(11):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,4,4,-1,-1,-1,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<1>, 21.834000, transmitting, but the channel is not idle...???
+<1>, 21.840000, transmitting, but the channel is not idle...???
+<1>, 21.846000, transmitting, but the channel is not idle...???
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+21.846170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+10,-1,-1,9,9,9,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+<1>, 21.888000, transmitting, but the channel is not idle...???
+<1>, 21.894000, transmitting, but the channel is not idle...???
+<1>, 21.900000, transmitting, but the channel is not idle...???
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+21.900170:index(9):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,11,11,-1,-1,10,11,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+21.900170:index(5):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+21.900170:index(15):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,7,7,-1,-1,6,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<1>, 21.942000, transmitting, but the channel is not idle...???
+<1>, 21.948000, transmitting, but the channel is not idle...???
+<1>, 21.954000, transmitting, but the channel is not idle...???
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+25.254000:index(0)'s slot(5) timeout!
+
+25.254000:index(0)'s slot(6) timeout!
+
+25.254000:index(0)'s slot(7) timeout!
+
+25.308000:index(5)'s slot(2) timeout!
+
+25.308000:index(5)'s slot(3) timeout!
+
+25.308000:index(5)'s slot(4) timeout!
+
+25.848000:index(10)'s slot(3) timeout!
+
+25.848000:index(10)'s slot(4) timeout!
+
+25.848000:index(10)'s slot(8) timeout!
+
+25.902000:index(5)'s slot(5) timeout!
+
+25.902000:index(5)'s slot(6) timeout!
+
+25.902000:index(5)'s slot(7) timeout!
+
+25.902000:index(9)'s slot(2) timeout!
+
+25.902000:index(9)'s slot(5) timeout!
+
+25.902000:index(9)'s slot(6) timeout!
+
+25.902000:index(15)'s slot(2) timeout!
+
+25.902000:index(15)'s slot(5) timeout!
+
+25.902000:index(15)'s slot(6) timeout!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+26.517004:index(1):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,-1,-1,0,0,0,9,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+26.652170:index(0):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+3,2,2,-1,-1,-1,6,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+<1>, 26.694000, transmitting, but the channel is not idle...???
+<1>, 26.700000, transmitting, but the channel is not idle...???
+<1>, 26.706000, transmitting, but the channel is not idle...???
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+26.706170:index(5):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,1,1,4,12,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<1>, 26.748000, transmitting, but the channel is not idle...???
+<1>, 26.754000, transmitting, but the channel is not idle...???
+<1>, 26.760000, transmitting, but the channel is not idle...???
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+26.861483:index(12):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+3,3,3,3,3,3,3,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+26.976170:index(13):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,4,4,6,6,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+27.030170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+7,7,7,-1,-1,-1,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+27.030170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,8,8,-1,-1,-1,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+28.664683:index(12):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,0,0,1,1,1,3,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+28.758170:index(13):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,6,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+30.654000:index(0)'s slot(5) timeout!
+
+30.654000:index(0)'s slot(6) timeout!
+
+30.654000:index(0)'s slot(7) timeout!
+
+30.708000:index(5)'s slot(2) timeout!
+
+30.708000:index(5)'s slot(3) timeout!
+
+30.708000:index(5)'s slot(4) timeout!
+
+30.978000:index(13)'s slot(2) timeout!
+
+30.978000:index(13)'s slot(3) timeout!
+
+30.978000:index(13)'s slot(4) timeout!
+
+31.032000:index(8)'s slot(5) timeout!
+
+31.032000:index(8)'s slot(6) timeout!
+
+31.032000:index(8)'s slot(7) timeout!
+
+31.032000:index(14)'s slot(5) timeout!
+
+31.032000:index(14)'s slot(6) timeout!
+
+31.032000:index(14)'s slot(7) timeout!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+32.131654:index(3):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+0,0,0,0,0,0,3,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<1>, 32.202000, transmitting, but the channel is not idle...???
+<1>, 32.208000, transmitting, but the channel is not idle...???
+<1>, 32.214000, transmitting, but the channel is not idle...???
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+32.271083:index(12):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+3,3,3,0,0,0,3,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+32.376170:index(13):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,6,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+32.760000:index(13)'s slot(5) timeout!
+
+32.760000:index(13)'s slot(6) timeout!
+
+32.760000:index(13)'s slot(7) timeout!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+33.934854:index(3):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+0,0,0,0,0,0,3,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<1>, 34.038000, transmitting, but the channel is not idle...???
+<1>, 34.044000, transmitting, but the channel is not idle...???
+<1>, 34.050000, transmitting, but the channel is not idle...???
+
+there is no enough slot to assignment!!
+
+36.378000:index(13)'s slot(2) timeout!
+
+36.378000:index(13)'s slot(3) timeout!
+
+36.378000:index(13)'s slot(4) timeout!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+37.680683:index(12):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,0,0,3,3,3,3,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+37.776170:index(13):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+4,-1,-1,-1,6,6,6,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+37.830170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,7,7,7,-1,-1,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+37.830170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,6,6,9,-1,-1,9,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+38.000000:index(3):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+0,0,0,0,0,0,3,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<1>, 38.088000, transmitting, but the channel is not idle...???
+<1>, 38.094000, transmitting, but the channel is not idle...???
+<1>, 38.100000, transmitting, but the channel is not idle...???
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+38.901910:index(11):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,4,4,-1,-1,-1,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<1>, 38.952000, transmitting, but the channel is not idle...???
+<1>, 38.958000, transmitting, but the channel is not idle...???
+<1>, 38.964000, transmitting, but the channel is not idle...???
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+38.964170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+9,-1,-1,9,8,8,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+<1>, 39.006000, transmitting, but the channel is not idle...???
+<1>, 39.012000, transmitting, but the channel is not idle...???
+<1>, 39.018000, transmitting, but the channel is not idle...???
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+39.018170:index(9):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,9,9,-1,-1,5,11,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+39.018170:index(5):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,7,7,-1,-1,7,12,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+39.018170:index(15):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,6,6,-1,-1,3,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<1>, 39.060000, transmitting, but the channel is not idle...???
+<1>, 39.066000, transmitting, but the channel is not idle...???
+<1>, 39.072000, transmitting, but the channel is not idle...???
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+40.705110:index(11):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,0,0,-1,-1,-1,4,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<1>, 40.788000, transmitting, but the channel is not idle...???
+<1>, 40.794000, transmitting, but the channel is not idle...???
+<1>, 40.800000, transmitting, but the channel is not idle...???
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+41.747740:index(10):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,-1,-1,0,0,6,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+41.778000:index(13)'s slot(3) timeout!
+
+41.778000:index(13)'s slot(4) timeout!
+
+41.778000:index(13)'s slot(5) timeout!
+<1>, 41.814000, transmitting, but the channel is not idle...???
+<1>, 41.820000, transmitting, but the channel is not idle...???
+<1>, 41.826000, transmitting, but the channel is not idle...???
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+41.832000:index(8)'s slot(2) timeout!
+
+41.832000:index(8)'s slot(6) timeout!
+
+41.832000:index(8)'s slot(7) timeout!
+
+41.832000:index(14)'s slot(2) timeout!
+
+41.832000:index(14)'s slot(6) timeout!
+
+41.832000:index(14)'s slot(7) timeout!
+
+42.966000:index(10)'s slot(3) timeout!
+
+42.966000:index(10)'s slot(4) timeout!
+
+42.966000:index(10)'s slot(8) timeout!
+
+43.020000:index(5)'s slot(2) timeout!
+
+43.020000:index(5)'s slot(5) timeout!
+
+43.020000:index(5)'s slot(6) timeout!
+
+43.020000:index(9)'s slot(2) timeout!
+
+43.020000:index(9)'s slot(5) timeout!
+
+43.020000:index(9)'s slot(6) timeout!
+
+43.020000:index(15)'s slot(2) timeout!
+
+43.020000:index(15)'s slot(5) timeout!
+
+43.020000:index(15)'s slot(6) timeout!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+43.500000:index(3):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+0,0,0,0,0,0,3,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+43.550940:index(10):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,6,6,3,3,9,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<1>, 43.596000, transmitting, but the channel is not idle...???
+<1>, 43.602000, transmitting, but the channel is not idle...???
+<1>, 43.608000, transmitting, but the channel is not idle...???
+
+there is no enough slot to assignment!!
+<1>, 43.650000, transmitting, but the channel is not idle...???
+<1>, 43.656000, transmitting, but the channel is not idle...???
+<1>, 43.662000, transmitting, but the channel is not idle...???
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+43.662170:index(9):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+6,-1,-1,-1,5,10,11,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+43.662170:index(5):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,4,7,12,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+43.662170:index(11):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+43.662170:index(15):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+4,-1,-1,-1,3,6,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<1>, 43.704000, transmitting, but the channel is not idle...???
+<1>, 43.710000, transmitting, but the channel is not idle...???
+<1>, 43.716000, transmitting, but the channel is not idle...???
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+43.716170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,5,5,3,-1,-1,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+43.716170:index(0):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+3,2,2,4,-1,-1,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+43.716170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,6,6,3,-1,-1,6,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+43.716170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,7,7,5,-1,-1,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<1>, 43.758000, transmitting, but the channel is not idle...???
+<1>, 43.764000, transmitting, but the channel is not idle...???
+<1>, 43.770000, transmitting, but the channel is not idle...???
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+44.295783:index(9):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,-1,-1,-1,3,5,11,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+44.311510:index(11):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,-1,-1,-1,-1,-1,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<1>, 44.406000, transmitting, but the channel is not idle...???
+<1>, 44.412000, transmitting, but the channel is not idle...???
+<1>, 44.418000, transmitting, but the channel is not idle...???
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+44.418170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+10,1,1,2,-1,-1,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+<1>, 44.460000, transmitting, but the channel is not idle...???
+<1>, 44.466000, transmitting, but the channel is not idle...???
+<1>, 44.472000, transmitting, but the channel is not idle...???
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+46.098983:index(9):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,-1,-1,-1,0,0,5,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+47.157340:index(10):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+7,0,0,0,-1,-1,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<1>, 47.268000, transmitting, but the channel is not idle...???
+<1>, 47.274000, transmitting, but the channel is not idle...???
+<1>, 47.280000, transmitting, but the channel is not idle...???
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+47.664000:index(5)'s slot(3) timeout!
+
+47.664000:index(5)'s slot(4) timeout!
+
+47.664000:index(5)'s slot(5) timeout!
+
+47.664000:index(9)'s slot(3) timeout!
+
+47.664000:index(9)'s slot(4) timeout!
+
+47.664000:index(9)'s slot(5) timeout!
+
+47.664000:index(11)'s slot(3) timeout!
+
+47.664000:index(11)'s slot(4) timeout!
+
+47.664000:index(11)'s slot(8) timeout!
+
+47.664000:index(15)'s slot(3) timeout!
+
+47.664000:index(15)'s slot(4) timeout!
+
+47.664000:index(15)'s slot(5) timeout!
+
+47.718000:index(0)'s slot(6) timeout!
+
+47.718000:index(0)'s slot(7) timeout!
+
+47.718000:index(0)'s slot(8) timeout!
+
+47.718000:index(4)'s slot(6) timeout!
+
+47.718000:index(4)'s slot(7) timeout!
+
+47.718000:index(4)'s slot(8) timeout!
+
+47.718000:index(8)'s slot(2) timeout!
+
+47.718000:index(8)'s slot(6) timeout!
+
+47.718000:index(8)'s slot(7) timeout!
+
+47.718000:index(14)'s slot(2) timeout!
+
+47.718000:index(14)'s slot(6) timeout!
+
+47.718000:index(14)'s slot(7) timeout!
+
+48.420000:index(10)'s slot(6) timeout!
+
+48.420000:index(10)'s slot(7) timeout!
+
+48.420000:index(10)'s slot(8) timeout!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+49.705383:index(9):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+11,9,9,8,10,10,11,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+49.721110:index(11):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,4,4,-1,-1,-1,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+49.764170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,7,5,5,6,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+49.764170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,4,3,3,4,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+49.764170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,9,6,6,9,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+49.764170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,9,7,7,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+49.818170:index(5):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,5,5,-1,-1,-1,10,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+49.818170:index(13):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,4,4,-1,-1,-1,6,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+49.818170:index(15):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+7,6,6,-1,-1,-1,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+52.422604:index(6):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,-1,-1,-1,-1,-1,11,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+52.566940:index(10):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,-1,-1,4,4,4,12,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+52.680170:index(9):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,0,0,-1,-1,-1,11,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+52.872000:index(11)'s slot(5) timeout!
+
+52.872000:index(11)'s slot(6) timeout!
+
+52.872000:index(11)'s slot(7) timeout!
+
+53.094000:index(6)'s slot(2) timeout!
+
+53.094000:index(6)'s slot(3) timeout!
+
+53.094000:index(6)'s slot(4) timeout!
+
+53.094000:index(6)'s slot(5) timeout!
+
+53.094000:index(6)'s slot(6) timeout!
+
+53.094000:index(6)'s slot(7) timeout!
+
+53.256000:index(1)'s slot(2) timeout!
+
+53.256000:index(1)'s slot(3) timeout!
+
+53.256000:index(1)'s slot(4) timeout!
+
+53.766000:index(4)'s slot(2) timeout!
+
+53.766000:index(4)'s slot(3) timeout!
+
+53.766000:index(4)'s slot(4) timeout!
+
+53.766000:index(8)'s slot(2) timeout!
+
+53.766000:index(8)'s slot(3) timeout!
+
+53.766000:index(8)'s slot(4) timeout!
+
+53.766000:index(10)'s slot(2) timeout!
+
+53.766000:index(10)'s slot(3) timeout!
+
+53.766000:index(10)'s slot(4) timeout!
+
+53.766000:index(14)'s slot(2) timeout!
+
+53.766000:index(14)'s slot(3) timeout!
+
+53.766000:index(14)'s slot(4) timeout!
+
+53.820000:index(5)'s slot(5) timeout!
+
+53.820000:index(5)'s slot(6) timeout!
+
+53.820000:index(5)'s slot(7) timeout!
+
+53.820000:index(13)'s slot(5) timeout!
+
+53.820000:index(13)'s slot(6) timeout!
+
+53.820000:index(13)'s slot(7) timeout!
+
+53.820000:index(15)'s slot(5) timeout!
+
+53.820000:index(15)'s slot(6) timeout!
+
+53.820000:index(15)'s slot(7) timeout!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+54.225804:index(6):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,2,2,2,2,2,11,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+54.354170:index(5):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,5,5,12,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+54.354170:index(1):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+5,-1,-1,-1,4,4,9,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+54.354170:index(7):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+54.354170:index(11):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+7,-1,-1,-1,4,4,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+54.408170:index(0):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,3,3,2,-1,-1,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+54.408170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+1,1,1,0,-1,-1,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+54.408170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+3,3,3,3,-1,-1,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+54.883883:index(12):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+1,1,1,3,3,3,3,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+55.002170:index(13):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,3,3,3,6,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+55.056170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+3,3,3,-1,-1,-1,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+55.056170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+5,5,5,-1,-1,-1,9,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+55.114983:index(9):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+11,10,10,-1,-1,-1,5,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+55.218170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+55.218170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,0,-1,-1,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+55.218170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,3,-1,-1,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+55.218170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+55.998062:index(7):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,-1,-1,-1,-1,-1,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+56.136170:index(2):add packet to rreq_queue_head
+
+56.136170:index(2):rq_src,rq_dst,rq_bcast_id,estimateBW:7, 2, 1, 1:
+
+56.136170:index(2):before timer:
+56.682000:index(9)'s slot(5) timeout!
+
+56.682000:index(9)'s slot(6) timeout!
+
+56.682000:index(9)'s slot(7) timeout!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+56.687083:index(12):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,0,0,1,1,1,3,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+56.784170:index(13):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,6,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+57.136170:rreqTimer::handle
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+57.801262:index(7):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,-1,-1,-1,-1,-1,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+57.832204:index(6):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,0,0,0,3,3,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+57.918170:index(5):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+57.918170:index(1):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+57.918170:index(11):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+57.918170:index(2):add packet to rreq_queue_head
+
+57.918170:index(2):rq_src,rq_dst,rq_bcast_id,estimateBW:7, 2, 2, 1:
+
+57.918170:index(2):before timer:
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+58.356000:index(1)'s slot(3) timeout!
+
+58.356000:index(1)'s slot(4) timeout!
+
+58.356000:index(1)'s slot(5) timeout!
+
+58.356000:index(5)'s slot(3) timeout!
+
+58.356000:index(5)'s slot(4) timeout!
+
+58.356000:index(5)'s slot(5) timeout!
+
+58.356000:index(7)'s slot(5) timeout!
+
+58.356000:index(7)'s slot(6) timeout!
+
+58.356000:index(7)'s slot(7) timeout!
+
+58.356000:index(11)'s slot(3) timeout!
+
+58.356000:index(11)'s slot(4) timeout!
+
+58.356000:index(11)'s slot(5) timeout!
+
+58.410000:index(0)'s slot(2) timeout!
+
+58.410000:index(0)'s slot(6) timeout!
+
+58.410000:index(0)'s slot(7) timeout!
+
+58.410000:index(4)'s slot(6) timeout!
+
+58.410000:index(4)'s slot(7) timeout!
+
+58.410000:index(4)'s slot(8) timeout!
+
+58.410000:index(10)'s slot(6) timeout!
+
+58.410000:index(10)'s slot(7) timeout!
+
+58.410000:index(10)'s slot(8) timeout!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+58.605889:index(9):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,0,0,3,3,3,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+58.674170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,2,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+58.674170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,4,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+58.918170:rreqTimer::handle
+
+there is no enough slot to assignment!!
+
+59.004000:index(13)'s slot(2) timeout!
+
+59.004000:index(13)'s slot(3) timeout!
+
+59.004000:index(13)'s slot(4) timeout!
+
+59.058000:index(8)'s slot(5) timeout!
+
+59.058000:index(8)'s slot(6) timeout!
+
+59.058000:index(8)'s slot(7) timeout!
+
+59.058000:index(14)'s slot(5) timeout!
+
+59.058000:index(14)'s slot(6) timeout!
+
+59.058000:index(14)'s slot(7) timeout!
+
+59.220000:index(4)'s slot(2) timeout!
+
+59.220000:index(4)'s slot(3) timeout!
+
+59.220000:index(4)'s slot(4) timeout!
+
+59.220000:index(8)'s slot(2) timeout!
+
+59.220000:index(8)'s slot(3) timeout!
+
+59.220000:index(8)'s slot(4) timeout!
+
+59.220000:index(10)'s slot(2) timeout!
+
+59.220000:index(10)'s slot(3) timeout!
+
+59.220000:index(10)'s slot(4) timeout!
+
+59.220000:index(14)'s slot(2) timeout!
+
+59.220000:index(14)'s slot(3) timeout!
+
+59.220000:index(14)'s slot(4) timeout!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+60.293483:index(12):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+2,2,2,0,0,0,3,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+60.402170:index(13):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,6,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+60.409089:index(9):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,9,9,2,2,2,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+60.510170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+5,-1,-1,-1,1,1,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+60.510170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
 7,-1,-1,-1,-1,-1,-1,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-6.294170:index(4):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-19,-1,-1,-1,19,19,19,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-6.294170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-8,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-6.294170:index(10):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-23,-1,-1,-1,22,22,22,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-6.294170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-12,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-6.294170:index(14):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-20,-1,-1,-1,20,20,20,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-6.294170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-9,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-6.348170:index(5):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-20,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(5) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1086193679,0,-1,-1,-1,-1,-1,-1,-1,
-6.348170:index(13):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-13,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(13) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1086193679,0,-1,-1,-1,-1,-1,-1,-1,
-6.348170:index(11):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-20,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(11) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1086193679,0,-1,-1,-1,-1,-1,-1,-1,
-6.348170:index(15):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-19,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(15) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1086193679,0,-1,-1,-1,-1,-1,-1,-1,
-6.732000:index(4)'s slot(3) timeout!
-
-6.732000:index(4)'s slot(4) timeout!
-
-6.732000:index(4)'s slot(5) timeout!
-
-6.732000:index(8)'s slot(3) timeout!
-
-6.732000:index(8)'s slot(4) timeout!
-
-6.732000:index(8)'s slot(5) timeout!
-
-6.732000:index(10)'s slot(3) timeout!
-
-6.732000:index(10)'s slot(4) timeout!
-
-6.732000:index(10)'s slot(5) timeout!
-
-6.732000:index(14)'s slot(3) timeout!
-
-6.732000:index(14)'s slot(4) timeout!
-
-6.732000:index(14)'s slot(5) timeout!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-7.908587:index(5):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
-12,11,11,11,6,6,6,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-8.022170:index(4):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-20,15,15,15,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-8.022170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-8,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-8.022170:index(0):add packet to rreq_queue_head
-
-8.022170:index(0):rq_src,rq_dst,rq_bcast_id,estimateBW:5, 0, 1, 7:
-
-8.022170:index(0):before timer:
-8.022170:index(6):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-23,21,21,21,15,15,15,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-8.022170:index(6):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-11,10,10,10,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-8.022170:index(10):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-24,19,19,19,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-8.022170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-12,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-8.076170:index(9):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-19,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(9) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1087843570,0,-1,-1,-1,-1,-1,-1,-1,
-8.076170:index(1):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-20,19,19,19,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-8.076170:index(1):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-9,-1,-1,-1,9,9,9,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-8.076170:index(7):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-18,17,17,17,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-8.076170:index(7):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-7,-1,-1,-1,7,7,7,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-8.076170:index(11):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-19,17,17,17,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-8.076170:index(11):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-8,-1,-1,-1,4,4,4,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-8.076170:index(15):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-19,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(15) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1087843570,0,-1,-1,-1,-1,-1,-1,-1,
-8.130170:index(0):drop rreq from index(5)(the estimateBW not better)
-8.130170:index(2):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-15,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(2) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1088464453,0,-1,-1,-1,-1,-1,-1,-1,
-9.022170:rreqTimer::handle
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,
--2,-2,-2,-2,-2,-2,-2,
--2,-2,-2,-2,-2,-2,-2,
--2,-2,-2,-2,-2,-2,-2,
--2,-2,-2,-2,-2,-2,-2,
--2,-2,-2,-2,-2,-2,-2,
--2,-2,-2,-2,-2,-2,-2,
--2,-2,-2,-2,-2,-2,-2,
--2,-2,-2,-2,-2,-2,-2,
-10.296000:index(4)'s slot(6) timeout!
-
-10.296000:index(4)'s slot(7) timeout!
-
-10.296000:index(4)'s slot(8) timeout!
-
-10.296000:index(8)'s slot(6) timeout!
-
-10.296000:index(8)'s slot(7) timeout!
-
-10.296000:index(8)'s slot(8) timeout!
-
-10.296000:index(10)'s slot(6) timeout!
-
-10.296000:index(10)'s slot(7) timeout!
-
-10.296000:index(10)'s slot(8) timeout!
-
-10.296000:index(14)'s slot(6) timeout!
-
-10.296000:index(14)'s slot(7) timeout!
-
-10.296000:index(14)'s slot(8) timeout!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-11.615739:index(9):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
-11,5,5,5,9,9,9,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-11.694170:index(8):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-18,10,10,10,15,15,15,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-11.694170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-7,-1,-1,-1,6,6,6,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-11.694170:index(4):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-19,-1,-1,-1,13,13,13,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-11.694170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-8,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-11.694170:index(10):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-23,-1,-1,-1,16,16,16,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-11.694170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-12,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-11.694170:index(14):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-20,11,11,11,17,17,17,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-11.694170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-9,-1,-1,-1,8,8,8,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-11.748170:index(5):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-20,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(5) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1088634977,0,-1,-1,-1,-1,-1,-1,-1,
-11.748170:index(13):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-13,-1,-1,-1,12,12,12,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-11.748170:index(13):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-6,6,6,6,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-11.748170:index(11):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-20,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(11) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1088634977,0,-1,-1,-1,-1,-1,-1,-1,
-11.748170:index(15):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-19,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(15) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1088634977,0,-1,-1,-1,-1,-1,-1,-1,
-11.802170:index(12):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-9,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(12) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1088640776,0,-1,-1,-1,-1,-1,-1,-1,
-12.024000:index(4)'s slot(3) timeout!
-
-12.024000:index(4)'s slot(4) timeout!
-
-12.024000:index(4)'s slot(5) timeout!
-
-12.024000:index(6)'s slot(6) timeout!
-
-12.024000:index(6)'s slot(7) timeout!
-
-12.024000:index(6)'s slot(8) timeout!
-
-12.024000:index(10)'s slot(3) timeout!
-
-12.024000:index(10)'s slot(4) timeout!
-
-12.024000:index(10)'s slot(5) timeout!
-
-12.078000:index(1)'s slot(3) timeout!
-
-12.078000:index(1)'s slot(4) timeout!
-
-12.078000:index(1)'s slot(5) timeout!
-
-12.078000:index(7)'s slot(3) timeout!
-
-12.078000:index(7)'s slot(4) timeout!
-
-12.078000:index(7)'s slot(5) timeout!
-
-12.078000:index(11)'s slot(3) timeout!
-
-12.078000:index(11)'s slot(4) timeout!
-
-12.078000:index(11)'s slot(5) timeout!
-
-15.696000:index(4)'s slot(6) timeout!
-
-15.696000:index(4)'s slot(7) timeout!
-
-15.696000:index(4)'s slot(8) timeout!
-
-15.696000:index(8)'s slot(3) timeout!
-
-15.696000:index(8)'s slot(4) timeout!
-
-15.696000:index(8)'s slot(5) timeout!
-
-15.696000:index(10)'s slot(6) timeout!
-
-15.696000:index(10)'s slot(7) timeout!
-
-15.696000:index(10)'s slot(8) timeout!
-
-15.696000:index(14)'s slot(3) timeout!
-
-15.696000:index(14)'s slot(4) timeout!
-
-15.696000:index(14)'s slot(5) timeout!
-
-15.750000:index(13)'s slot(6) timeout!
-
-15.750000:index(13)'s slot(7) timeout!
-
-15.750000:index(13)'s slot(8) timeout!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-28.835739:index(9):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
-11,11,11,11,9,9,9,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-28.920170:index(8):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-18,18,18,18,16,16,16,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-28.920170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-7,7,7,7,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-28.920170:index(4):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-19,19,19,19,13,13,13,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-28.920170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-8,8,8,8,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-28.920170:index(10):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-23,23,23,23,17,17,17,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-28.920170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-12,12,12,12,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-28.920170:index(14):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-20,20,20,20,18,18,18,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-28.920170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-9,9,9,9,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-28.974170:index(5):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-20,20,20,20,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-28.974170:index(5):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-12,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-28.974170:index(13):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-13,13,13,13,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-28.974170:index(13):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-6,-1,-1,-1,6,6,6,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-28.974170:index(11):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-20,20,20,20,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-28.974170:index(11):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-8,-1,-1,-1,6,6,6,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-28.974170:index(15):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-19,19,19,19,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-28.974170:index(15):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-7,-1,-1,-1,6,6,6,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-29.028170:index(0):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-19,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(0) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1090602563,0,-1,-1,-1,-1,-1,-1,-1,
-29.028170:index(6):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-23,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(6) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1090602563,0,-1,-1,-1,-1,-1,-1,-1,
-29.028170:index(12):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-9,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(12) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1090602563,0,-1,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-30.641739:index(9):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
-11,6,6,6,0,0,0,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-30.756170:index(8):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-18,10,10,10,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-30.756170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-7,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-30.756170:index(4):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-19,10,10,10,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-30.756170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-8,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-30.756170:index(10):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-23,10,10,10,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-30.756170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-12,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-30.756170:index(14):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-20,10,10,10,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-30.756170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-9,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-30.810170:index(5):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-20,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(5) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1090672061,0,-1,-1,-1,-1,-1,-1,-1,
-30.810170:index(13):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-13,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(13) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1090672061,0,-1,-1,-1,-1,-1,-1,-1,
-30.810170:index(11):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-20,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(11) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1090672061,0,-1,-1,-1,-1,-1,-1,-1,
-30.810170:index(15):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-19,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(15) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1090672061,0,-1,-1,-1,-1,-1,-1,-1,
-32.922000:index(4)'s slot(6) timeout!
-
-32.922000:index(4)'s slot(7) timeout!
-
-32.922000:index(4)'s slot(8) timeout!
-
-32.922000:index(8)'s slot(6) timeout!
-
-32.922000:index(8)'s slot(7) timeout!
-
-32.922000:index(8)'s slot(8) timeout!
-
-32.922000:index(10)'s slot(6) timeout!
-
-32.922000:index(10)'s slot(7) timeout!
-
-32.922000:index(10)'s slot(8) timeout!
-
-32.922000:index(14)'s slot(6) timeout!
-
-32.922000:index(14)'s slot(7) timeout!
-
-32.922000:index(14)'s slot(8) timeout!
-
-32.976000:index(5)'s slot(3) timeout!
-
-32.976000:index(5)'s slot(4) timeout!
-
-32.976000:index(5)'s slot(5) timeout!
-
-32.976000:index(11)'s slot(3) timeout!
-
-32.976000:index(11)'s slot(4) timeout!
-
-32.976000:index(11)'s slot(5) timeout!
-
-32.976000:index(13)'s slot(3) timeout!
-
-32.976000:index(13)'s slot(4) timeout!
-
-32.976000:index(13)'s slot(5) timeout!
-
-32.976000:index(15)'s slot(3) timeout!
-
-32.976000:index(15)'s slot(4) timeout!
-
-32.976000:index(15)'s slot(5) timeout!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-34.253739:index(9):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
-11,0,0,0,7,7,7,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-34.374170:index(8):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-18,-1,-1,-1,13,13,13,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-34.374170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-7,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-34.374170:index(4):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-19,-1,-1,-1,10,10,10,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-34.374170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-8,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-34.374170:index(10):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-23,-1,-1,-1,11,11,11,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-34.374170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-12,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-34.374170:index(14):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-20,-1,-1,-1,13,13,13,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-34.374170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-9,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-34.428170:index(5):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-20,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(5) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1090813164,0,-1,-1,-1,-1,-1,-1,-1,
-34.428170:index(13):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-13,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(13) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1090813164,0,-1,-1,-1,-1,-1,-1,-1,
-34.428170:index(11):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-20,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(11) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1090813164,0,-1,-1,-1,-1,-1,-1,-1,
-34.428170:index(15):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-19,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(15) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1090813164,0,-1,-1,-1,-1,-1,-1,-1,
-34.758000:index(4)'s slot(3) timeout!
-
-34.758000:index(4)'s slot(4) timeout!
-
-34.758000:index(4)'s slot(5) timeout!
-
-34.758000:index(8)'s slot(3) timeout!
-
-34.758000:index(8)'s slot(4) timeout!
-
-34.758000:index(8)'s slot(5) timeout!
-
-34.758000:index(10)'s slot(3) timeout!
-
-34.758000:index(10)'s slot(4) timeout!
-
-34.758000:index(10)'s slot(5) timeout!
-
-34.758000:index(14)'s slot(3) timeout!
-
-34.758000:index(14)'s slot(4) timeout!
-
-34.758000:index(14)'s slot(5) timeout!
-
-38.376000:index(4)'s slot(6) timeout!
-
-38.376000:index(4)'s slot(7) timeout!
-
-38.376000:index(4)'s slot(8) timeout!
-
-38.376000:index(8)'s slot(6) timeout!
-
-38.376000:index(8)'s slot(7) timeout!
-
-38.376000:index(8)'s slot(8) timeout!
-
-38.376000:index(10)'s slot(6) timeout!
-
-38.376000:index(10)'s slot(7) timeout!
-
-38.376000:index(10)'s slot(8) timeout!
-
-38.376000:index(14)'s slot(6) timeout!
-
-38.376000:index(14)'s slot(7) timeout!
-
-38.376000:index(14)'s slot(8) timeout!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-39.657739:index(9):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
-11,11,11,11,9,9,9,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-39.720170:index(8):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-18,18,18,18,14,14,14,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-39.720170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-7,7,7,7,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-39.720170:index(4):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-19,19,19,19,11,11,11,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-39.720170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-8,8,8,8,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-39.720170:index(10):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-23,23,23,23,12,12,12,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-39.720170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-12,12,12,12,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-39.720170:index(14):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-20,20,20,20,16,16,16,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-39.720170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-9,9,9,9,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-39.774170:index(5):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-20,20,20,20,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-39.774170:index(5):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-12,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-39.774170:index(13):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-13,13,13,13,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-39.774170:index(13):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-6,-1,-1,-1,6,6,6,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-39.774170:index(11):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-20,20,20,20,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-39.774170:index(11):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-8,-1,-1,-1,6,6,6,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-39.774170:index(15):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-19,19,19,19,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-39.774170:index(15):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-7,-1,-1,-1,6,6,6,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-39.828170:index(0):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-19,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(0) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1091023764,0,-1,-1,-1,-1,-1,-1,-1,
-39.828170:index(6):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-23,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(6) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1091023764,0,-1,-1,-1,-1,-1,-1,-1,
-39.828170:index(12):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-9,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(12) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1091023764,0,-1,-1,-1,-1,-1,-1,-1,
-43.722000:index(4)'s slot(6) timeout!
-
-43.722000:index(4)'s slot(7) timeout!
-
-43.722000:index(4)'s slot(8) timeout!
-
-43.722000:index(8)'s slot(6) timeout!
-
-43.722000:index(8)'s slot(7) timeout!
-
-43.722000:index(8)'s slot(8) timeout!
-
-43.722000:index(10)'s slot(6) timeout!
-
-43.722000:index(10)'s slot(7) timeout!
-
-43.722000:index(10)'s slot(8) timeout!
-
-43.722000:index(14)'s slot(6) timeout!
-
-43.722000:index(14)'s slot(7) timeout!
-
-43.722000:index(14)'s slot(8) timeout!
-
-43.776000:index(5)'s slot(3) timeout!
-
-43.776000:index(5)'s slot(4) timeout!
-
-43.776000:index(5)'s slot(5) timeout!
-
-43.776000:index(11)'s slot(3) timeout!
-
-43.776000:index(11)'s slot(4) timeout!
-
-43.776000:index(11)'s slot(5) timeout!
-
-43.776000:index(13)'s slot(3) timeout!
-
-43.776000:index(13)'s slot(4) timeout!
-
-43.776000:index(13)'s slot(5) timeout!
-
-43.776000:index(15)'s slot(3) timeout!
-
-43.776000:index(15)'s slot(4) timeout!
-
-43.776000:index(15)'s slot(5) timeout!
-
-59.028000:index(0)'s slot(6) timeout!
-
-59.028000:index(0)'s slot(7) timeout!
-
-59.028000:index(0)'s slot(8) timeout!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-59.034073:index(9):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
-11,11,11,11,9,9,9,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-59.160170:index(8):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-18,18,18,18,16,16,16,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-59.160170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-7,7,7,7,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-59.160170:index(4):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-19,19,19,19,13,13,13,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-59.160170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-8,8,8,8,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-59.160170:index(10):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-23,23,23,23,17,17,17,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-59.160170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-12,12,12,12,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-59.160170:index(14):add packet to rreq_queue_head
-
-59.160170:index(14):rq_src,rq_dst,rq_bcast_id,estimateBW:9, 14, 9, 7:
-
-59.160170:index(14):before timer:
-59.196000:index(5)'s slot(6) timeout!
-
-59.196000:index(5)'s slot(7) timeout!
-
-59.196000:index(5)'s slot(8) timeout!
-
-59.214170:index(5):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-20,20,20,20,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-59.214170:index(5):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-12,-1,-1,-1,7,7,7,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-59.214170:index(13):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-13,13,13,13,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-59.214170:index(13):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-6,-1,-1,-1,6,6,6,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-59.214170:index(11):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-20,20,20,20,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-59.214170:index(11):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-8,-1,-1,-1,6,6,6,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-59.214170:index(15):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-19,19,19,19,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-59.214170:index(15):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-7,-1,-1,-1,6,6,6,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-59.268170:index(0):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-19,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(0) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1091674770,0,-1,-1,-1,-1,-1,-1,-1,
-59.268170:index(6):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-23,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(6) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1091674770,0,-1,-1,-1,-1,-1,-1,-1,
-59.268170:index(12):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-9,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(12) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1091674770,0,-1,-1,-1,-1,-1,-1,-1,
-59.268170:index(14):drop rreq from index(9)(the estimateBW not better)
-60.160170:rreqTimer::handle
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,
--2,-2,-2,-2,-2,-2,-2,
--2,-2,-2,-2,-2,-2,-2,
--2,-2,-2,-2,-2,-2,-2,
--2,-2,-2,-2,-2,-2,-2,
--2,-2,-2,-2,-2,-2,-2,
--2,-2,-2,-2,-2,-2,-2,
--2,-2,-2,-2,-2,-2,-2,
--2,-2,-2,-2,-2,-2,-2,
-63.162000:index(4)'s slot(6) timeout!
-
-63.162000:index(4)'s slot(7) timeout!
-
-63.162000:index(4)'s slot(8) timeout!
-
-63.162000:index(8)'s slot(6) timeout!
-
-63.162000:index(8)'s slot(7) timeout!
-
-63.162000:index(8)'s slot(8) timeout!
-
-63.162000:index(10)'s slot(6) timeout!
-
-63.162000:index(10)'s slot(7) timeout!
-
-63.162000:index(10)'s slot(8) timeout!
-
-63.216000:index(5)'s slot(3) timeout!
-
-63.216000:index(5)'s slot(4) timeout!
-
-63.216000:index(5)'s slot(5) timeout!
-
-63.216000:index(11)'s slot(3) timeout!
-
-63.216000:index(11)'s slot(4) timeout!
-
-63.216000:index(11)'s slot(5) timeout!
-
-63.216000:index(13)'s slot(3) timeout!
-
-63.216000:index(13)'s slot(4) timeout!
-
-63.216000:index(13)'s slot(5) timeout!
-
-63.216000:index(15)'s slot(3) timeout!
-
-63.216000:index(15)'s slot(4) timeout!
-
-63.216000:index(15)'s slot(5) timeout!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-76.640001:index(8):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
-7,7,7,7,2,2,2,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-76.710170:index(9):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-18,18,18,18,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-76.710170:index(9):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+60.510170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
 11,-1,-1,-1,-1,-1,-1,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-76.710170:index(13):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-13,13,13,13,4,4,4,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-76.710170:index(13):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-6,6,6,6,-1,-1,-1,
+60.510170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+7,-1,-1,-1,2,2,9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-76.764170:index(4):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-19,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(4) has not enought slot to allocate!!!temp_free_slot[-1]:2
+there is no enough slot to assignment!!
 
-temp_free_slot[]:1093046094,0,-1,-1,-1,-1,-1,-1,-1,
-76.764170:index(10):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-23,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(10) has not enought slot to allocate!!!temp_free_slot[-1]:2
+there is no enough slot to assignment!!
 
-temp_free_slot[]:1093046094,0,-1,-1,-1,-1,-1,-1,-1,
-76.764170:index(14):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-20,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(14) has not enought slot to allocate!!!temp_free_slot[-1]:2
+there is no enough slot to assignment!!
 
-temp_free_slot[]:1093046094,0,-1,-1,-1,-1,-1,-1,-1,
-76.764170:index(12):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-9,9,9,9,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+there is no enough slot to assignment!!
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+60.786000:index(13)'s slot(5) timeout!
 
-76.764170:index(12):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-3,-1,-1,-1,2,2,2,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+60.786000:index(13)'s slot(6) timeout!
+
+60.786000:index(13)'s slot(7) timeout!
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-78.446001:index(8):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
-7,2,2,2,0,0,0,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-78.546170:index(9):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-18,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(9) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1093080415,0,-1,-1,-1,-1,-1,-1,-1,
-78.546170:index(13):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-13,5,5,5,-1,-1,-1,
+61.500000:index(7):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,-1,-1,4,1,1,3,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-78.546170:index(13):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-6,-1,-1,-1,-1,-1,-1,
+61.590170:index(6):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,7,7,-1,-1,-1,2,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-78.600170:index(12):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-9,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(12) has not enought slot to allocate!!!temp_free_slot[-1]:2
+61.590170:index(2):add packet to rreq_queue_head
 
-temp_free_slot[]:1093081455,-1074343832,-1,-1,-1,-1,-1,-1,-1,
-78.600170:index(14):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-15,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(14) has not enought slot to allocate!!!temp_free_slot[-1]:2
+61.590170:index(2):rq_src,rq_dst,rq_bcast_id,estimateBW:7, 2, 3, 1:
 
-temp_free_slot[]:1093081455,-1074343832,-1,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+61.590170:index(2):before timer:
+there is no enough slot to assignment!!
 
-79.917924:index(13):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
-6,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+there is no enough slot to assignment!!
 
-80.004170:index(12):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-9,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(12) has not enought slot to allocate!!!temp_free_slot[-1]:2
+there is no enough slot to assignment!!
 
-temp_free_slot[]:1093108496,0,-1,-1,-1,-1,-1,-1,-1,
-80.004170:index(8):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-13,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(8) has not enought slot to allocate!!!temp_free_slot[-1]:2
+61.920000:index(1)'s slot(6) timeout!
 
-temp_free_slot[]:1093108496,0,-1,-1,-1,-1,-1,-1,-1,
-80.004170:index(14):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-15,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(14) has not enought slot to allocate!!!temp_free_slot[-1]:2
+61.920000:index(1)'s slot(7) timeout!
 
-temp_free_slot[]:1093108496,0,-1,-1,-1,-1,-1,-1,-1,
-80.712000:index(9)'s slot(3) timeout!
+61.920000:index(1)'s slot(8) timeout!
 
-80.712000:index(9)'s slot(4) timeout!
+61.920000:index(5)'s slot(6) timeout!
 
-80.712000:index(9)'s slot(5) timeout!
+61.920000:index(5)'s slot(7) timeout!
 
-80.712000:index(13)'s slot(6) timeout!
+61.920000:index(5)'s slot(8) timeout!
 
-80.712000:index(13)'s slot(7) timeout!
+61.920000:index(11)'s slot(6) timeout!
 
-80.712000:index(13)'s slot(8) timeout!
+61.920000:index(11)'s slot(7) timeout!
 
-80.766000:index(12)'s slot(3) timeout!
+61.920000:index(11)'s slot(8) timeout!
 
-80.766000:index(12)'s slot(4) timeout!
+62.590170:rreqTimer::handle
 
-80.766000:index(12)'s slot(5) timeout!
+there is no enough slot to assignment!!
+
+62.676000:index(4)'s slot(5) timeout!
+
+62.676000:index(4)'s slot(6) timeout!
+
+62.676000:index(4)'s slot(7) timeout!
+
+62.676000:index(10)'s slot(5) timeout!
+
+62.676000:index(10)'s slot(6) timeout!
+
+62.676000:index(10)'s slot(7) timeout!
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-82.000000:index(13):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
-6,-1,-1,-1,1,1,1,
+63.241804:index(6):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,5,5,-1,-1,-1,8,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+63.318170:index(5):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+11,-1,-1,8,7,7,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+63.318170:index(1):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+5,-1,-1,2,1,1,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+63.318170:index(11):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+7,-1,-1,4,4,4,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+63.372170:index(0):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,4,4,-1,-1,4,5,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+63.372170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,5,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+63.372170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,5,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-82.058001:index(8):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
-7,4,4,4,0,0,0,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-82.110170:index(12):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-9,-1,-1,-1,3,3,3,
+64.015489:index(9):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,0,0,2,7,11,5,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-82.110170:index(12):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-3,0,0,0,-1,-1,-1,
+64.074170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,-1,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-82.110170:index(8):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-13,-1,-1,-1,1,1,1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-82.110170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-7,4,4,4,-1,-1,-1,
+64.074170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,-1,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-82.110170:index(14):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-15,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(14) has not enought slot to allocate!!!temp_free_slot[-1]:2
+there is no enough slot to assignment!!
 
-temp_free_slot[]:1093149058,0,-1,-1,-1,-1,-1,-1,-1,
-82.164170:index(9):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-18,13,13,13,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+there is no enough slot to assignment!!
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+64.404000:index(13)'s slot(2) timeout!
 
-82.164170:index(9):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-11,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+64.404000:index(13)'s slot(3) timeout!
 
-82.218170:index(13):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-13,-1,-1,-1,1,1,1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+64.404000:index(13)'s slot(4) timeout!
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+64.512000:index(4)'s slot(3) timeout!
 
-82.218170:index(13):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-6,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+64.512000:index(4)'s slot(4) timeout!
 
-82.218170:index(4):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-19,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(4) has not enought slot to allocate!!!temp_free_slot[-1]:2
+64.512000:index(4)'s slot(8) timeout!
 
-temp_free_slot[]:1093151138,1656,-1,-1,-1,-1,-1,-1,-1,
-82.218170:index(10):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-23,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(10) has not enought slot to allocate!!!temp_free_slot[-1]:2
+64.512000:index(8)'s slot(3) timeout!
 
-temp_free_slot[]:1093151138,1656,-1,-1,-1,-1,-1,-1,-1,
-82.218170:index(14):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-20,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(14) has not enought slot to allocate!!!temp_free_slot[-1]:2
+64.512000:index(8)'s slot(4) timeout!
 
-temp_free_slot[]:1093151138,1656,-1,-1,-1,-1,-1,-1,-1,
-82.272170:index(12):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-9,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(12) has not enought slot to allocate!!!temp_free_slot[-1]:2
+64.512000:index(8)'s slot(5) timeout!
 
-temp_free_slot[]:1093152178,0,-1,-1,-1,-1,-1,-1,-1,
-82.272170:index(14):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-15,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(14) has not enought slot to allocate!!!temp_free_slot[-1]:2
+64.512000:index(10)'s slot(3) timeout!
 
-temp_free_slot[]:1093152178,0,-1,-1,-1,-1,-1,-1,-1,
-82.548000:index(13)'s slot(3) timeout!
+64.512000:index(10)'s slot(4) timeout!
 
-82.548000:index(13)'s slot(4) timeout!
+64.512000:index(10)'s slot(8) timeout!
 
-82.548000:index(13)'s slot(5) timeout!
+64.512000:index(14)'s slot(3) timeout!
+
+64.512000:index(14)'s slot(4) timeout!
+
+64.512000:index(14)'s slot(5) timeout!
+
+65.592000:index(6)'s slot(5) timeout!
+
+65.592000:index(6)'s slot(6) timeout!
+
+65.592000:index(6)'s slot(7) timeout!
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-86.000000:index(13):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
-6,4,4,4,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-86.106170:index(12):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-9,7,7,7,-1,-1,-1,
+66.000000:index(12):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+3,3,3,3,1,1,1,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-86.106170:index(12):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-3,-1,-1,-1,-1,-1,-1,
+66.126170:index(13):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,6,1,1,1,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-86.106170:index(8):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-13,7,7,7,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+there is no enough slot to assignment!!
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+there is no enough slot to assignment!!
 
-86.106170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-7,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+66.912000:index(7)'s slot(2) timeout!
 
-86.106170:index(14):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-15,9,9,9,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+66.912000:index(7)'s slot(3) timeout!
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-86.106170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-9,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-86.112000:index(8)'s slot(6) timeout!
-
-86.112000:index(8)'s slot(7) timeout!
-
-86.112000:index(8)'s slot(8) timeout!
-
-86.112000:index(12)'s slot(6) timeout!
-
-86.112000:index(12)'s slot(7) timeout!
-
-86.112000:index(12)'s slot(8) timeout!
-
-86.160170:index(9):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-18,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(9) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1093227061,-1074343832,-1,-1,-1,-1,-1,-1,-1,
-86.160170:index(15):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-16,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(15) has not enought slot to allocate!!!temp_free_slot[-1]:2
-
-temp_free_slot[]:1093227061,-1074343832,-1,-1,-1,-1,-1,-1,-1,
-86.166000:index(9)'s slot(3) timeout!
-
-86.166000:index(9)'s slot(4) timeout!
-
-86.166000:index(9)'s slot(5) timeout!
-
-86.220000:index(13)'s slot(6) timeout!
-
-86.220000:index(13)'s slot(7) timeout!
-
-86.220000:index(13)'s slot(8) timeout!
+66.912000:index(7)'s slot(4) timeout!
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-87.462001:index(8):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
-7,-1,-1,-1,0,0,0,
+67.000000:index(7):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+3,0,0,4,4,4,3,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-87.564170:index(9):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-18,-1,-1,-1,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(9) has not enought slot to allocate!!!temp_free_slot[-1]:2
+67.080000:index(2)'s slot(2) timeout!
 
-temp_free_slot[]:1093254102,0,-1,-1,-1,-1,-1,-1,-1,
-87.564170:index(13):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-13,-1,-1,-1,2,2,2,
+67.080000:index(2)'s slot(3) timeout!
+
+67.080000:index(2)'s slot(4) timeout!
+
+67.080000:index(2)'s slot(5) timeout!
+
+67.080000:index(2)'s slot(6) timeout!
+
+67.080000:index(2)'s slot(7) timeout!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+67.152170:index(6):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,3,3,8,2,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+67.152170:index(2):add packet to rreq_queue_head
+
+67.152170:index(2):rq_src,rq_dst,rq_bcast_id,estimateBW:7, 2, 4, 7:
+
+67.152170:index(2):before timer:
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+67.206170:index(5):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,-1,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-87.564170:index(13):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-6,0,0,0,-1,-1,-1,
+67.206170:index(1):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,-1,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-87.618170:index(12):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-9,-1,-1,-1,-1,-1,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+67.206170:index(11):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,-1,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(12) has not enought slot to allocate!!!temp_free_slot[-1]:2
 
-temp_free_slot[]:1093255142,0,-1,-1,-1,-1,-1,-1,-1,
-87.618170:index(14):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-15,-1,-1,-1,-1,-1,-1,
+there is no enough slot to assignment!!
+
+67.260170:index(2):drop rreq from index(7)(the estimateBW not better)
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+67.320000:index(1)'s slot(3) timeout!
+
+67.320000:index(1)'s slot(4) timeout!
+
+67.320000:index(1)'s slot(8) timeout!
+
+67.320000:index(5)'s slot(3) timeout!
+
+67.320000:index(5)'s slot(4) timeout!
+
+67.320000:index(5)'s slot(8) timeout!
+
+67.320000:index(11)'s slot(3) timeout!
+
+67.320000:index(11)'s slot(4) timeout!
+
+67.320000:index(11)'s slot(8) timeout!
+
+67.374000:index(0)'s slot(2) timeout!
+
+67.374000:index(0)'s slot(5) timeout!
+
+67.374000:index(0)'s slot(6) timeout!
+
+67.374000:index(4)'s slot(2) timeout!
+
+67.374000:index(4)'s slot(5) timeout!
+
+67.374000:index(4)'s slot(6) timeout!
+
+67.374000:index(10)'s slot(2) timeout!
+
+67.374000:index(10)'s slot(5) timeout!
+
+67.374000:index(10)'s slot(6) timeout!
+
+68.076000:index(8)'s slot(6) timeout!
+
+68.076000:index(8)'s slot(7) timeout!
+
+68.076000:index(8)'s slot(8) timeout!
+
+68.076000:index(14)'s slot(6) timeout!
+
+68.076000:index(14)'s slot(7) timeout!
+
+68.076000:index(14)'s slot(8) timeout!
+
+68.152170:rreqTimer::handle
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,
+-2,-2,-2,-2,-2,-2,-2,
+-2,-2,-2,-2,-2,-2,-2,
+-2,-2,-2,-2,-2,-2,-2,
+-2,-2,-2,-2,-2,-2,-2,
+-2,-2,-2,-2,-2,-2,-2,
+-2,-2,-2,-2,-2,-2,-2,
+-2,-2,-2,-2,-2,-2,-2,
+-2,-2,-2,-2,-2,-2,-2,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+69.425089:index(9):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+9,9,9,8,8,8,11,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(14) has not enought slot to allocate!!!temp_free_slot[-1]:2
 
-temp_free_slot[]:1093255142,0,-1,-1,-1,-1,-1,-1,-1,
-90.108000:index(8)'s slot(3) timeout!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-90.108000:index(8)'s slot(4) timeout!
+69.528170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,6,4,5,5,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-90.108000:index(8)'s slot(5) timeout!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-90.108000:index(12)'s slot(3) timeout!
+69.528170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,3,2,3,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-90.108000:index(12)'s slot(4) timeout!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-90.108000:index(12)'s slot(5) timeout!
+69.528170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,5,4,5,11,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-90.108000:index(14)'s slot(3) timeout!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-90.108000:index(14)'s slot(4) timeout!
+69.528170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,8,6,7,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-90.108000:index(14)'s slot(5) timeout!
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+69.582170:index(13):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,6,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+69.582170:index(15):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+6,6,6,-1,-1,-1,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+69.636170:index(12):add packet to rreq_queue_head
+
+69.636170:index(12):rq_src,rq_dst,rq_bcast_id,estimateBW:9, 12, 8, 2:
+
+69.636170:index(12):before timer:
+70.128000:index(13)'s slot(2) timeout!
+
+70.128000:index(13)'s slot(3) timeout!
+
+70.128000:index(13)'s slot(4) timeout!
+
+70.636170:rreqTimer::handle
+
+there is no enough slot to assignment!!
+
+71.154000:index(6)'s slot(2) timeout!
+
+71.154000:index(6)'s slot(3) timeout!
+
+71.154000:index(6)'s slot(4) timeout!
+
+71.208000:index(1)'s slot(5) timeout!
+
+71.208000:index(1)'s slot(6) timeout!
+
+71.208000:index(1)'s slot(7) timeout!
+
+71.208000:index(5)'s slot(5) timeout!
+
+71.208000:index(5)'s slot(6) timeout!
+
+71.208000:index(5)'s slot(7) timeout!
+
+71.208000:index(11)'s slot(5) timeout!
+
+71.208000:index(11)'s slot(6) timeout!
+
+71.208000:index(11)'s slot(7) timeout!
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-91.500000:index(13):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
-6,6,6,6,-1,-1,-1,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-91.566000:index(13)'s slot(6) timeout!
-
-91.566000:index(13)'s slot(7) timeout!
-
-91.566000:index(13)'s slot(8) timeout!
-
-91.614170:index(12):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-9,8,8,8,-1,-1,-1,
+72.318183:index(9):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,0,0,4,4,4,11,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-91.614170:index(12):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-3,-1,-1,-1,0,0,0,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-91.614170:index(8):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-13,11,11,11,-1,-1,-1,
+72.390170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,7,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-91.614170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-7,-1,-1,-1,0,0,0,
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-91.614170:index(14):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-15,13,13,13,-1,-1,-1,
+72.390170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,8,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-91.614170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
-9,-1,-1,-1,-1,-1,-1,
+72.390170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,12,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-91.668170:index(9):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-18,-1,-1,-1,-1,-1,-1,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+72.390170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,9,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(9) has not enought slot to allocate!!!temp_free_slot[-1]:2
 
-temp_free_slot[]:1093333145,0,-1,-1,-1,-1,-1,-1,-1,
-91.668170:index(15):recvRequest:temp_free_slot[SLOT_AS_CONTROL....MAX_SLOT_NUM_](choose minimun value):
-16,-1,-1,-1,-1,-1,-1,
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+73.530000:index(4)'s slot(2) timeout!
+
+73.530000:index(4)'s slot(3) timeout!
+
+73.530000:index(4)'s slot(4) timeout!
+
+73.530000:index(8)'s slot(2) timeout!
+
+73.530000:index(8)'s slot(3) timeout!
+
+73.530000:index(8)'s slot(4) timeout!
+
+73.530000:index(10)'s slot(2) timeout!
+
+73.530000:index(10)'s slot(3) timeout!
+
+73.530000:index(10)'s slot(4) timeout!
+
+73.530000:index(14)'s slot(2) timeout!
+
+73.530000:index(14)'s slot(3) timeout!
+
+73.530000:index(14)'s slot(4) timeout!
+
+73.584000:index(13)'s slot(5) timeout!
+
+73.584000:index(13)'s slot(6) timeout!
+
+73.584000:index(13)'s slot(7) timeout!
+
+73.584000:index(15)'s slot(5) timeout!
+
+73.584000:index(15)'s slot(6) timeout!
+
+73.584000:index(15)'s slot(7) timeout!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+74.121383:index(9):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+11,11,11,0,0,0,11,
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-index(15) has not enought slot to allocate!!!temp_free_slot[-1]:2
 
-temp_free_slot[]:1093333145,0,-1,-1,-1,-1,-1,-1,-1,
-95.616000:index(8)'s slot(3) timeout!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-95.616000:index(8)'s slot(4) timeout!
+74.226170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-95.616000:index(8)'s slot(5) timeout!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-95.616000:index(12)'s slot(3) timeout!
+74.226170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-95.616000:index(12)'s slot(4) timeout!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-95.616000:index(12)'s slot(5) timeout!
+74.226170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,12,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-95.616000:index(14)'s slot(3) timeout!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-95.616000:index(14)'s slot(4) timeout!
+74.226170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,9,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-95.616000:index(14)'s slot(5) timeout!
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+76.392000:index(4)'s slot(5) timeout!
+
+76.392000:index(4)'s slot(6) timeout!
+
+76.392000:index(4)'s slot(7) timeout!
+
+76.392000:index(8)'s slot(5) timeout!
+
+76.392000:index(8)'s slot(6) timeout!
+
+76.392000:index(8)'s slot(7) timeout!
+
+76.392000:index(10)'s slot(5) timeout!
+
+76.392000:index(10)'s slot(6) timeout!
+
+76.392000:index(10)'s slot(7) timeout!
+
+76.392000:index(14)'s slot(5) timeout!
+
+76.392000:index(14)'s slot(6) timeout!
+
+76.392000:index(14)'s slot(7) timeout!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+77.727783:index(9):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,0,0,11,11,11,11,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+77.844170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+77.844170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+77.844170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,12,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+77.844170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,9,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+78.228000:index(4)'s slot(2) timeout!
+
+78.228000:index(4)'s slot(3) timeout!
+
+78.228000:index(4)'s slot(4) timeout!
+
+78.228000:index(8)'s slot(2) timeout!
+
+78.228000:index(8)'s slot(3) timeout!
+
+78.228000:index(8)'s slot(4) timeout!
+
+78.228000:index(10)'s slot(2) timeout!
+
+78.228000:index(10)'s slot(3) timeout!
+
+78.228000:index(10)'s slot(4) timeout!
+
+78.228000:index(14)'s slot(2) timeout!
+
+78.228000:index(14)'s slot(3) timeout!
+
+78.228000:index(14)'s slot(4) timeout!
+
+81.846000:index(4)'s slot(5) timeout!
+
+81.846000:index(4)'s slot(6) timeout!
+
+81.846000:index(4)'s slot(7) timeout!
+
+81.846000:index(8)'s slot(5) timeout!
+
+81.846000:index(8)'s slot(6) timeout!
+
+81.846000:index(8)'s slot(7) timeout!
+
+81.846000:index(10)'s slot(5) timeout!
+
+81.846000:index(10)'s slot(6) timeout!
+
+81.846000:index(10)'s slot(7) timeout!
+
+81.846000:index(14)'s slot(5) timeout!
+
+81.846000:index(14)'s slot(6) timeout!
+
+81.846000:index(14)'s slot(7) timeout!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+86.628289:index(9):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+11,11,11,11,11,11,11,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+86.700170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,7,7,7,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+86.700170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,8,8,8,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+86.700170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,12,12,12,12,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+86.700170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,9,9,9,9,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+86.754170:index(5):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+11,11,11,-1,-1,-1,12,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+86.754170:index(13):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+6,6,6,-1,-1,-1,6,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+86.754170:index(11):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+7,7,7,-1,-1,-1,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+86.754170:index(15):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+7,7,7,-1,-1,-1,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+86.808170:index(12):add packet to rreq_queue_head
+
+86.808170:index(12):rq_src,rq_dst,rq_bcast_id,estimateBW:9, 12, 12, 4:
+
+86.808170:index(12):before timer:
+87.808170:rreqTimer::handle
+
+there is no enough slot to assignment!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+88.431489:index(9):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+-1,0,0,5,5,5,11,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+88.482170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+88.482170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+88.482170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,12,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+88.482170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,-1,-1,-1,9,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+90.702000:index(4)'s slot(2) timeout!
+
+90.702000:index(4)'s slot(3) timeout!
+
+90.702000:index(4)'s slot(4) timeout!
+
+90.702000:index(8)'s slot(2) timeout!
+
+90.702000:index(8)'s slot(3) timeout!
+
+90.702000:index(8)'s slot(4) timeout!
+
+90.702000:index(10)'s slot(2) timeout!
+
+90.702000:index(10)'s slot(3) timeout!
+
+90.702000:index(10)'s slot(4) timeout!
+
+90.702000:index(14)'s slot(2) timeout!
+
+90.702000:index(14)'s slot(3) timeout!
+
+90.702000:index(14)'s slot(4) timeout!
+
+90.756000:index(5)'s slot(5) timeout!
+
+90.756000:index(5)'s slot(6) timeout!
+
+90.756000:index(5)'s slot(7) timeout!
+
+90.756000:index(11)'s slot(5) timeout!
+
+90.756000:index(11)'s slot(6) timeout!
+
+90.756000:index(11)'s slot(7) timeout!
+
+90.756000:index(13)'s slot(5) timeout!
+
+90.756000:index(13)'s slot(6) timeout!
+
+90.756000:index(13)'s slot(7) timeout!
+
+90.756000:index(15)'s slot(5) timeout!
+
+90.756000:index(15)'s slot(6) timeout!
+
+90.756000:index(15)'s slot(7) timeout!
+
+92.484000:index(4)'s slot(5) timeout!
+
+92.484000:index(4)'s slot(6) timeout!
+
+92.484000:index(4)'s slot(7) timeout!
+
+92.484000:index(8)'s slot(5) timeout!
+
+92.484000:index(8)'s slot(6) timeout!
+
+92.484000:index(8)'s slot(7) timeout!
+
+92.484000:index(10)'s slot(5) timeout!
+
+92.484000:index(10)'s slot(6) timeout!
+
+92.484000:index(10)'s slot(7) timeout!
+
+92.484000:index(14)'s slot(5) timeout!
+
+92.484000:index(14)'s slot(6) timeout!
+
+92.484000:index(14)'s slot(7) timeout!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+92.500000:index(9):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+11,11,11,0,0,0,11,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+92.586170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,1,1,1,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+92.586170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,2,2,2,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+92.586170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,3,3,3,12,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+92.586170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,1,1,1,9,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+92.640170:index(5):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+11,11,11,-1,-1,-1,12,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+92.640170:index(13):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+6,6,6,-1,-1,-1,6,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+92.640170:index(11):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+7,7,7,-1,-1,-1,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+92.640170:index(15):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+7,7,7,-1,-1,-1,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+92.694170:index(12):add packet to rreq_queue_head
+
+92.694170:index(12):rq_src,rq_dst,rq_bcast_id,estimateBW:9, 12, 14, 4:
+
+92.694170:index(12):before timer:
+93.694170:rreqTimer::handle
+
+there is no enough slot to assignment!!
+
+96.588000:index(4)'s slot(2) timeout!
+
+96.588000:index(4)'s slot(3) timeout!
+
+96.588000:index(4)'s slot(4) timeout!
+
+96.588000:index(8)'s slot(2) timeout!
+
+96.588000:index(8)'s slot(3) timeout!
+
+96.588000:index(8)'s slot(4) timeout!
+
+96.588000:index(10)'s slot(2) timeout!
+
+96.588000:index(10)'s slot(3) timeout!
+
+96.588000:index(10)'s slot(4) timeout!
+
+96.588000:index(14)'s slot(2) timeout!
+
+96.588000:index(14)'s slot(3) timeout!
+
+96.588000:index(14)'s slot(4) timeout!
+
+96.642000:index(5)'s slot(5) timeout!
+
+96.642000:index(5)'s slot(6) timeout!
+
+96.642000:index(5)'s slot(7) timeout!
+
+96.642000:index(11)'s slot(5) timeout!
+
+96.642000:index(11)'s slot(6) timeout!
+
+96.642000:index(11)'s slot(7) timeout!
+
+96.642000:index(13)'s slot(5) timeout!
+
+96.642000:index(13)'s slot(6) timeout!
+
+96.642000:index(13)'s slot(7) timeout!
+
+96.642000:index(15)'s slot(5) timeout!
+
+96.642000:index(15)'s slot(6) timeout!
+
+96.642000:index(15)'s slot(7) timeout!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+98.000000:index(9):sendRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_]:
+11,11,11,9,9,9,11,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+98.148170:index(8):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,7,7,7,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+98.148170:index(4):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,8,8,8,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+98.148170:index(10):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,12,12,12,12,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+98.148170:index(14):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,-1,-1,9,9,9,9,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+98.202170:index(5):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,7,7,-1,-1,-1,12,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+98.202170:index(13):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+6,6,6,-1,-1,-1,6,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+98.202170:index(11):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+-1,3,3,-1,-1,-1,8,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+98.202170:index(15):recvRequest:rq_slot_factor[SLOT_AS_CONTROL....MAX_SLOT_NUM_](before forward):
+7,7,7,-1,-1,-1,7,
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+there is no enough slot to assignment!!
+
+there is no enough slot to assignment!!
+
+98.256170:index(12):add packet to rreq_queue_head
+
+98.256170:index(12):rq_src,rq_dst,rq_bcast_id,estimateBW:9, 12, 15, 4:
+
+98.256170:index(12):before timer:
+99.256170:rreqTimer::handle
+
+there is no enough slot to assignment!!
