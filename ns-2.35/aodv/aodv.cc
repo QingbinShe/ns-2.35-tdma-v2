@@ -768,7 +768,7 @@ int *free_slot_new = new int[(int)(agent->global_rate)];
 }
 */
 for (int a = 0; a < agent->global_rate; a++) {
-  int free_slot = 0;
+  int free_slot = SLOT_AS_CONTROL;
   for (; free_slot < MAX_SLOT_NUM_; free_slot++) {
     if (temp_free_slot[free_slot] == 0) break;
   }
@@ -798,7 +798,7 @@ for (int i = 0; i < agent->global_rate; i++) {
  /*
   * Cache the broadcast ID
   */
- agent->id_insert(rq->rq_src, rq->rq_bcast_id);
+// agent->id_insert(rq->rq_src, rq->rq_bcast_id);
 
  /* 
   * We are either going to forward the REQUEST or generate a
@@ -965,6 +965,7 @@ aodv_rt_entry *rt;
    Packet::free(p);
    return;
  }
+id_insert(rq->rq_src, rq->rq_bcast_id);
 
 //record the condition of slots before the assignment of slots
  for (int a = 0; a < 10; a++) {
@@ -1138,7 +1139,7 @@ int *free_slot_new = new int[(int)(global_rate)];
 }
 */
 for (int a = 0; a < global_rate; a++) {
-  int free_slot = 0;
+  int free_slot = SLOT_AS_CONTROL;
   for (; free_slot < MAX_SLOT_NUM_; free_slot++) {
     if (temp_free_slot[free_slot] == 0) break;
   }
@@ -1213,7 +1214,7 @@ printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
  /*
   * Cache the broadcast ID
   */
- id_insert(rq->rq_src, rq->rq_bcast_id);
+// id_insert(rq->rq_src, rq->rq_bcast_id);
 
 
 
