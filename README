@@ -55,3 +55,6 @@ or
 The nsnam Project
 http://www.nsnam.org
 
+5. What kind of job do I do:
+I rewrite the aodv.cc to let aodv can assign different number of slots in route discovery process
+add a time slot assignment algorithm and add the bandwidth estimation.
